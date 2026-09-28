@@ -1,0 +1,44 @@
+The island starts as a well on a round patch of sand. Everything after that is wishes – and the sea.
+
+## Two tiles every dawn
+
+Every morning, **before** the day’s wish, the sea raises two tiles of shore. It prefers tiles with a lot of land
+around them, so bays fill up, and a hidden field unique to this island, so it grows capes and inlets instead of a
+perfect circle. Land never sinks again.
+
+Grass and sand are not stored as choices: a tile with land on all four sides is grass, every other land tile is beach.
+The terrain is a pure function of which tiles are land – so the sea shapes the meadows, too.
+
+## Six kinds, and room for each
+
+A wish is one of six kinds. Each kind has its ground and a number of places that grows with the island:
+
+<KindTable />
+
+The limits keep the island varied: if everybody wishes for houses, the houses have to wait while the lanterns, owls
+and boats catch up. A wish that does not fit **yet** is not refused – it stays open as a star and gets one comment
+saying what is missing.
+
+## Why it never locks up
+
+A rule system like this can paint itself into a corner: if every kind were full and no tile free, nothing could ever
+come true again. Here the numbers make that impossible. Every tile of land adds a little room to every kind:
+
+<GrowthNumbers />
+
+Together that is more than one place per tile – and the sea adds two tiles a day while only one wish comes true. So
+some kind always has room, and the free land never runs out. The tests grow a whole year of messages in a bottle and
+check that every single day found a place.
+
+## Harbours
+
+Boats and fish need water next to the shore. As the island grows, it would slowly swallow them into ponds – so the sea
+keeps two tiles of open water around every water wish. The island grows around them and leaves a little harbour.
+
+## Checked from the first day
+
+`npm run world:check` replays the whole log from the well: every dawn has to raise free shore, every wish has to
+stand on the right ground, on a free tile, with room for its kind – on the day it came true. Change one character in
+`world.json` by hand and the check fails.
+
+<IslandFigure simulated day={365} caption="A year of messages in a bottle, grown by the same rules. Real wishes will look very different." />

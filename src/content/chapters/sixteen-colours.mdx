@@ -1,0 +1,47 @@
+Every wish becomes a **sprite**: sixteen by sixteen pixels in a palette of fifteen colours. Small enough to check
+with a few lines of code, rich enough to draw a lighthouse, an owl or a very small library.
+
+## The palette
+
+Each colour has a letter. A dot is transparent. Gold, cream and orange **glow at night** – windows, flames, lanterns;
+everything else is seen by moonlight.
+
+<Palette />
+
+## A drawing made of text
+
+A sprite is sixteen lines of sixteen characters. That is the whole file format – it fits in an issue, in a JSON line
+and in a code review.
+
+<SpriteSource bottle="lantern" />
+
+The code accepts a sprite when it has sixteen rows of sixteen characters from the palette, at least twenty coloured
+pixels, at least two colours (an outline and a fill), and some transparent space. Things stand on the bottom rows: the
+island is seen from above, the things on it from the front.
+
+## When you only describe it
+
+Most people will not draw. That is fine: Claude draws the sprite from the words in the wish. Before anything is
+written, the routine renders its drawing large – with numbered rows and columns, and once more at island scale by
+moonlight – and looks at it. If the cat looks like a potato, it draws again. Only a sprite that passes the checks
+can be applied.
+
+<Callout icon="✎">
+  Want to draw it yourself? Put your sixteen lines into the <em>drawing</em> field of the wish form. The routine keeps
+  it if it passes the checks, and fixes only what does not.
+</Callout>
+
+## Three ways to see it
+
+- **In the README**, the island is a night picture: the still layers are an embedded PNG (a year-old island would
+  otherwise weigh megabytes as vector paths), the moving ones – waves, twinkling stars, today’s marker – are SVG.
+- **On this site**, every pixel of every sprite is a small cube. The figures turn to face you like paper theatre,
+  pop up on the day their wish came true, and whatever is gold glows.
+- **On its own**, every wish is also a small file, `world/sprites/w<id>.svg`, free to reuse under CC BY 4.0.
+
+## Messages in a bottle
+
+When no wish fits – or nobody wished – the islanders send a message in a bottle and wish for something themselves.
+These are the drawings they can pick from:
+
+<Bottles />
