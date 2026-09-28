@@ -1,60 +1,53 @@
-import { hashCell, type Season, type Terrain, type WorldContext } from '@/features/world';
+import { hashCell, type IslandMap, type Terrain } from '@/features/island';
 import type { PixelCanvas } from './canvas';
-import type { Palette } from './palette';
+import { NIGHT } from './palette';
 
 /**
- * Terrain at pixel level. Tiles are 8×8 pixels, but the ground is interpolated between tile
- * centres (a bilinear "marching squares" field) so coasts, meadows and rocks get soft,
- * rounded outlines instead of hard squares. The sea darkens with distance from the shore,
- * using ordered dithering like old console games.
+ * The ground at pixel level. A tile is 16 × 16 pixels – one sprite – but the coast is
+ * interpolated between tile centres, so the island gets soft, rounded shores instead of hard
+ * squares. The sea darkens with distance from the shore, dithered like old console games, and
+ * the texture (tufts, speckles, waves) is placed per tile so the SVG stays small.
  */
 
-export const TILE = 8;
+export const TILE = 16;
 
-const TYPES: readonly Terrain[] = ['water', 'sand', 'grass', 'rock', 'forest'];
+const TYPES: readonly Terrain[] = ['water', 'sand', 'grass'];
 const WATER = 0;
 const SAND = 1;
 const GRASS = 2;
-const ROCK = 3;
-const FOREST = 4;
 
 const BAYER = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5].map((v) => (v + 0.5) / 16);
 const bayer = (x: number, y: number) => BAYER[(y & 3) * 4 + (x & 3)] as number;
 
-const FOREST_BLOBS = [
-  ['.bb.', 'bcbb', 'bbbb', '.bb.'],
-  ['.cb.', 'bbbb', 'bbbb', '.b..'],
-  ['..c.', '.bbb', 'bbbb', '.bb.'],
-];
-const BOULDER = ['.hh.', 'hmmz', 'hmmz', '.zz.'];
-
-export interface TerrainFrame {
+/** A square window onto the map, in tiles. */
+export interface Frame {
   x: number;
   y: number;
   size: number;
 }
 
-export interface WaveLayers {
-  a: PixelCanvas;
-  b: PixelCanvas;
+export interface TerrainLayers {
+  base: PixelCanvas;
+  waveA: PixelCanvas;
+  waveB: PixelCanvas;
 }
 
-export function paintTerrain(
-  ctx: WorldContext,
-  frame: TerrainFrame,
-  C: Palette,
-  season: Season,
-  base: PixelCanvas,
-  waves: WaveLayers,
-): void {
+/** Pixel classes of a frame, reused by the painter to seat sprites and draw glows. */
+export interface Ground {
+  size: number;
+  kind: Uint8Array;
+  /** Distance from land in pixels (0 on land). */
+  dist: Float32Array;
+}
+
+export function classify(map: IslandMap, frame: Frame): Ground {
   const size = frame.size * TILE;
   const originX = frame.x * TILE;
   const originY = frame.y * TILE;
   const kind = new Uint8Array(size * size);
-  const typeIndex = (tx: number, ty: number) => TYPES.indexOf(ctx.grid.get(tx, ty) ?? 'water');
+  const typeIndex = (tx: number, ty: number) => TYPES.indexOf(map.get(tx, ty));
   const acc = new Float32Array(TYPES.length);
 
-  // 1 · classify every pixel from the four nearest tile centres
   for (let py = 0; py < size; py++) {
     for (let px = 0; px < size; px++) {
       const gx = originX + px;
@@ -70,125 +63,117 @@ export function paintTerrain(
       acc[typeIndex(x0 + 1, y0)]! += ax * (1 - ay);
       acc[typeIndex(x0, y0 + 1)]! += (1 - ax) * ay;
       acc[typeIndex(x0 + 1, y0 + 1)]! += ax * ay;
-      const noise = ((hashCell(gx, gy, 5) % 1000) / 1000 - 0.5) * 0.16;
+      const noise = ((hashCell(gx >> 1, gy >> 1, 5) % 1000) / 1000 - 0.5) * 0.12;
       let k = WATER;
       if (1 - (acc[WATER] as number) + noise > 0.5) {
-        let best = -1;
-        for (let t = 1; t < TYPES.length; t++) {
-          const w = (acc[t] as number) + ((hashCell(gx, gy, 20 + t) % 1000) / 1000) * 0.14;
-          if ((acc[t] as number) > 0 && w > best) {
-            best = w;
-            k = t;
-          }
-        }
+        const grassy = (acc[GRASS] as number) + ((hashCell(gx >> 1, gy >> 1, 21) % 1000) / 1000 - 0.5) * 0.1;
+        k = grassy > (acc[SAND] as number) ? GRASS : SAND;
       }
       kind[py * size + px] = k;
     }
   }
 
-  // 2 · chamfer distance (3-4) from land, in thirds of a pixel
+  // chamfer distance (3-4) from land, stored in pixels
   const dist = new Float32Array(size * size);
   for (let i = 0; i < dist.length; i++) dist[i] = kind[i] === WATER ? 1e9 : 0;
   const at = (x: number, y: number) =>
     x < 0 || y < 0 || x >= size || y >= size ? 1e9 : (dist[y * size + x] as number);
-  for (let y = 0; y < size; y++) {
+  for (let y = 0; y < size; y++)
     for (let x = 0; x < size; x++) {
       const i = y * size + x;
-      dist[i] = Math.min(
-        dist[i] as number,
-        at(x - 1, y) + 3,
-        at(x, y - 1) + 3,
-        at(x - 1, y - 1) + 4,
-        at(x + 1, y - 1) + 4,
-      );
+      dist[i] = Math.min(dist[i] as number, at(x - 1, y) + 3, at(x, y - 1) + 3, at(x - 1, y - 1) + 4, at(x + 1, y - 1) + 4);
     }
-  }
-  for (let y = size - 1; y >= 0; y--) {
+  for (let y = size - 1; y >= 0; y--)
     for (let x = size - 1; x >= 0; x--) {
       const i = y * size + x;
-      dist[i] = Math.min(
-        dist[i] as number,
-        at(x + 1, y) + 3,
-        at(x, y + 1) + 3,
-        at(x + 1, y + 1) + 4,
-        at(x - 1, y + 1) + 4,
-      );
+      dist[i] = Math.min(dist[i] as number, at(x + 1, y) + 3, at(x, y + 1) + 3, at(x + 1, y + 1) + 4, at(x - 1, y + 1) + 4);
     }
-  }
+  for (let i = 0; i < dist.length; i++) dist[i] = (dist[i] as number) / 3;
+  return { size, kind, dist };
+}
 
+export function paintTerrain(map: IslandMap, frame: Frame, layers: TerrainLayers): Ground {
+  const ground = classify(map, frame);
+  const { size, kind, dist } = ground;
+  const originX = frame.x * TILE;
+  const originY = frame.y * TILE;
   const kindAt = (x: number, y: number) =>
     x < 0 || y < 0 || x >= size || y >= size ? WATER : (kind[y * size + x] as number);
-  const touches = (x: number, y: number, test: (k: number) => boolean) =>
-    test(kindAt(x - 1, y)) || test(kindAt(x + 1, y)) || test(kindAt(x, y - 1)) || test(kindAt(x, y + 1));
+  const touches = (x: number, y: number, k: number) =>
+    kindAt(x - 1, y) === k || kindAt(x + 1, y) === k || kindAt(x, y - 1) === k || kindAt(x, y + 1) === k;
+  const C = NIGHT;
 
-  // 3 · colour
   for (let py = 0; py < size; py++) {
     for (let px = 0; px < size; px++) {
       const gx = originX + px;
       const gy = originY + py;
       const k = kind[py * size + px] as number;
-      const h = hashCell(gx, gy, 3) % 100;
       let color: string;
-      switch (k) {
-        case WATER: {
-          const d = (dist[py * size + px] as number) / 3;
-          if (touches(px, py, (n) => n !== WATER)) color = h % 6 === 0 ? C.sea2 : C.foam;
-          else if (d > 2.6 && d < 3.5 && h % 3 !== 0) color = C.sea3;
-          else if (d <= 5) color = C.sea2;
-          else if (d <= 9) color = bayer(gx, gy) < (d - 5) / 4 ? C.sea1 : C.sea2;
-          else if (d <= 16) color = C.sea1;
-          else if (d <= 28) color = bayer(gx, gy) < (d - 16) / 12 ? C.sea0 : C.sea1;
-          else color = C.sea0;
-          break;
-        }
-        case SAND:
-          color = h < 5 ? C.sand2 : h < 9 ? C.sand0 : C.sand1;
-          if (touches(px, py, (n) => n === WATER)) color = C.sand0;
-          break;
-        case GRASS:
-          color = h < 8 ? C.grass2 : h < 15 ? C.grass0 : C.grass1;
-          if (touches(px, py, (n) => n === SAND || n === WATER) && (gx + gy) % 2 === 0) color = C.sand1;
-          break;
-        case FOREST: {
-          const cell = hashCell(gx >> 2, gy >> 2, 13);
-          const blob = FOREST_BLOBS[cell % FOREST_BLOBS.length] as string[];
-          const ch = blob[gy & 3]?.[gx & 3] ?? '.';
-          if (ch === '.') color = C.forest0;
-          else if (season === 'winter' && (gy & 3) === 0) color = C.snow;
-          else color = ch === 'c' ? C.forest2 : C.forest1;
-          if (touches(px, py, (n) => n === GRASS || n === SAND) && ch === '.') color = C.grass0;
-          break;
-        }
-        default: {
-          const shift = ((gy >> 2) & 1) * 2;
-          const ch = BOULDER[gy & 3]?.[(gx + shift) & 3] ?? '.';
-          color = ch === 'h' ? (season === 'winter' ? C.snow : C.rock2) : ch === 'm' ? C.rock1 : C.rock0;
-          if (h < 4) color = C.rock0;
-          if (kindAt(px, py + 1) !== ROCK && ch !== 'h') color = C.rock0;
-        }
+      if (k === WATER) {
+        const d = dist[py * size + px] as number;
+        const h = hashCell(gx, gy, 3) % 100;
+        if (d <= 1.01) color = h < 22 ? C.sea3 : C.foam;
+        else if (d <= 4) color = C.sea3;
+        else if (d <= 7) color = bayer(gx, gy) < (d - 4) / 3 ? C.sea2 : C.sea3;
+        else if (d <= 14) color = C.sea2;
+        else if (d <= 22) color = bayer(gx, gy) < (d - 14) / 8 ? C.sea1 : C.sea2;
+        else if (d <= 40) color = C.sea1;
+        else if (d <= 56) color = bayer(gx, gy) < (d - 40) / 16 ? C.sea0 : C.sea1;
+        else color = C.sea0;
+      } else if (k === SAND) {
+        color = touches(px, py, WATER) ? C.sand0 : C.sand1;
+      } else {
+        color = touches(px, py, SAND) || touches(px, py, WATER) ? ((gx + gy) & 1 ? C.grass1 : C.sand1) : C.grass1;
       }
-      base.put(px, py, color);
+      layers.base.put(px, py, color);
     }
   }
 
-  // 4 · waves on open water, two frames
+  // texture, placed per tile: speckles on sand, tufts and dark patches on grass
+  for (let ty = 0; ty < frame.size; ty++) {
+    for (let tx = 0; tx < frame.size; tx++) {
+      const terrain = map.get(frame.x + tx, frame.y + ty);
+      if (terrain === 'water') continue;
+      for (let n = 0; n < 4; n++) {
+        const h = hashCell(frame.x + tx, frame.y + ty, 40 + n);
+        const px = tx * TILE + 2 + (h % 12);
+        const py = ty * TILE + 2 + ((h >> 5) % 12);
+        const here = kindAt(px, py);
+        if (here === SAND && n < 2) layers.base.put(px, py, n === 0 ? C.sand2 : C.sand0);
+        if (here === GRASS && kindAt(px - 1, py) === GRASS && kindAt(px + 1, py) === GRASS && kindAt(px, py - 1) === GRASS) {
+          if (n < 3) {
+            layers.base.put(px - 1, py, C.grass2);
+            layers.base.put(px + 1, py, C.grass2);
+            layers.base.put(px, py - 1, (h >> 11) % 5 === 0 ? C.grass3 : C.grass2);
+          } else {
+            layers.base.put(px, py, C.grass0);
+            layers.base.put(px + 1, py, C.grass0);
+          }
+        }
+      }
+    }
+  }
+
+  // waves and moon glints on open water, two frames
   for (let ty = 0; ty < frame.size; ty++) {
     for (let tx = 0; tx < frame.size; tx++) {
       const hw = hashCell(frame.x + tx, frame.y + ty, 9);
       if (hw % 3 !== 0) continue;
-      const wx = tx * TILE + (hw % 5);
-      const wy = ty * TILE + 1 + ((hw >> 3) % 6);
+      const wx = tx * TILE + (hw % 9);
+      const wy = ty * TILE + 2 + ((hw >> 4) % 11);
       let open = true;
-      for (let i = -1; i < 5; i++) {
-        const x = wx + i;
-        if (kindAt(x, wy) !== WATER || (dist[wy * size + Math.min(size - 1, Math.max(0, x))] as number) / 3 < 12)
-          open = false;
+      for (let i = -2; i < 7; i++) {
+        const x = Math.min(size - 1, Math.max(0, wx + i));
+        if (kindAt(x, wy) !== WATER || (dist[wy * size + x] as number) < 10) open = false;
       }
       if (!open) continue;
-      for (let i = 0; i < 3; i++) {
-        waves.a.put(wx + i, wy, C.sea3);
-        waves.b.put(wx + i + 1, wy, C.sea3);
+      const glint = (hw >> 9) % 4 === 0;
+      const color = glint ? C.glint : C.sea3;
+      for (let i = 0; i < (glint ? 2 : 4); i++) {
+        layers.waveA.put(wx + i, wy, color);
+        layers.waveB.put(wx + i + 1, wy + (glint ? 0 : 1), color);
       }
     }
   }
+  return ground;
 }

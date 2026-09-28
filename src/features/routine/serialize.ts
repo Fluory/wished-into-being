@@ -1,23 +1,25 @@
-import type { DayEntry, Element, World } from '@/features/world';
+import type { DayEntry, Element, World } from '@/features/island';
 
 /**
  * Stable, diff-friendly JSON for world.json: one terrain row, element or day per line, keys
- * in a fixed order. A daily commit therefore shows up as one changed map character (or one
- * new element line) plus one new log line.
+ * in a fixed order. A daily commit therefore shows up as a few changed map characters (the new
+ * shore), one new element line (with its sprite) and one new log line.
  */
 
-const ELEMENT_KEYS: (keyof Element)[] = ['id', 'day', 'type', 'x', 'y', 'variant', 'name', 'role', 'home'];
+const ELEMENT_KEYS: (keyof Element)[] = ['id', 'day', 'kind', 'name', 'x', 'y', 'issue', 'wisher', 'votes', 'sprite'];
 const DAY_KEYS: (keyof DayEntry)[] = [
   'day',
   'date',
   'action',
-  'x',
-  'y',
+  'element',
   'title',
   'lore',
   'source',
-  'terrain',
-  'element',
+  'issue',
+  'wisher',
+  'votes',
+  'land',
+  'stars',
 ];
 
 function ordered<T extends object>(value: T, keys: readonly (keyof T)[]): string {

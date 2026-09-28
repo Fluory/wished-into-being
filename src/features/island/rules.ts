@@ -197,7 +197,7 @@ export function pickTile(state: IslandState, kind: Kind, near: Near, seed: strin
  * land, so the island grows capes and bays instead of a perfect circle.
  */
 export function shoreField(x: number, y: number, salt: number): number {
-  const size = 7;
+  const size = 5;
   const gx = Math.floor(x / size);
   const gy = Math.floor(y / size);
   const ease = (t: number) => t * t * (3 - 2 * t);
@@ -213,20 +213,25 @@ export function shoreField(x: number, y: number, salt: number): number {
  * The growth: tiles per dawn, the weight of the shore field, the pull towards the middle (keeps
  * the island roughly round) and the daily jitter.
  */
-export const GROWTH = { tiles: 2, field: 2.2, pull: 0.12, jitter: 0.6 } as const;
+export const GROWTH = { tiles: 2, field: 2.6, pull: 0.1, jitter: 1.4 } as const;
+
+/** Water wishes keep open water this far around them, so the land never locks a boat in a pond. */
+export const HARBOUR = 2;
 
 /**
  * Where the sea raises land at dawn: a free shore tile, preferring tiles with much land around
- * them (so bays fill up) and the high parts of the island's shore field. Null when the island
- * has reached the edge of the map everywhere.
+ * them (so bays fill up) and the high parts of the island's shore field, never next to a water
+ * wish. Null when the island has reached the edge of the map everywhere.
  */
 export function growthTile(state: IslandState, genesis: string, date: string): [number, number] | null {
   const salt = hashString(`shore:${genesis}`);
+  const harbours = state.elements.filter((e) => KIND_INFO[e.kind].ground === 'coast');
   let best: [number, number] | null = null;
   let bestScore = -Infinity;
   for (let y = MARGIN; y < HEIGHT - MARGIN; y++) {
     for (let x = MARGIN; x < WIDTH - MARGIN; x++) {
       if (!state.map.isCoast(x, y) || occupied(state, x, y)) continue;
+      if (harbours.some((e) => Math.abs(e.x - x) <= HARBOUR && Math.abs(e.y - y) <= HARBOUR)) continue;
       const jitter = (hashString(`${date}:${x},${y}`) % 1000) / 1000;
       const pull = Math.hypot(x - WIDTH / 2, y - HEIGHT / 2);
       const score =

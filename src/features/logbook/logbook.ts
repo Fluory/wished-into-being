@@ -1,32 +1,47 @@
-import { CATALOGUE, formatDate, formatMonth, worldStats, type DayEntry, type World } from '@/features/world';
+import { formatDate, formatMonth, islandStats, type DayEntry, type World } from '@/features/island';
+import { issueUrl, profileUrl } from '@/shared/repo';
 
 /**
- * LOGBOOK.md – the island's chronicle, newest day first, one line per day.
- * Generated from world.json; never edit it by hand.
+ * LOGBOOK.md – the island's chronicle, newest day first: every wish with its sprite, who wished
+ * it and the line of lore it came with. Generated from world.json; never edit it by hand.
  */
 
-function icon(entry: DayEntry): string {
-  if (entry.action === 'genesis') return '🌊';
-  return CATALOGUE[entry.action].emoji;
+export function spritePath(elementId: string): string {
+  return `world/sprites/${elementId}.svg`;
 }
 
-function line(entry: DayEntry): string {
-  const [, , d] = entry.date.split('-');
-  const month = formatDate(entry.date).split(' ')[1];
-  const auto = entry.source === 'director' ? ' <sub>· auto</sub>' : '';
-  return `- **Day ${entry.day}** · ${Number(d)} ${month} · ${icon(entry)} **${entry.title}** — ${entry.lore}${auto}`;
+/** "wished by @octo-cat in #12 · 5 votes" as Markdown links, or where the day came from. */
+export function creditMarkdown(entry: DayEntry): string {
+  if (entry.action === 'genesis') return 'the beginning';
+  if (entry.action === 'bottle')
+    return entry.source === 'director'
+      ? 'a message in a bottle from the islanders · picked by the director'
+      : 'a message in a bottle from the islanders';
+  const votes = entry.votes ?? 0;
+  return `wished by [@${entry.wisher}](${profileUrl(entry.wisher ?? '')}) in [#${entry.issue}](${issueUrl(entry.issue ?? 0)}) · ${votes} ${votes === 1 ? 'vote' : 'votes'}`;
+}
+
+function block(entry: DayEntry): string[] {
+  return [
+    `### <img src="${spritePath(entry.element)}" width="40" height="40" alt=""> Day ${entry.day} · ${entry.title}`,
+    '',
+    `<sub>${formatDate(entry.date)} · ${creditMarkdown(entry)}</sub>`,
+    '',
+    `> ${entry.lore}`,
+    '',
+  ];
 }
 
 export function renderLogbook(world: World): string {
-  const stats = worldStats(world);
+  const stats = islandStats(world);
   const out: string[] = [
     '# Logbook',
     '',
-    `> The chronicle of **${world.name}**, newest day first – one line per day, written by the daily routine`,
+    `> The chronicle of **${world.name}**, newest day first – one wish per day, granted by the daily routine`,
     '> ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);',
-    '> this file is generated from it. Days marked *auto* were decided by the rule-based director instead of Claude.',
+    '> this file is generated from it.',
     '',
-    `**Day ${stats.day}** · ${stats.land} tiles of land · ${stats.houses} houses · ${stats.inhabitants} inhabitants · ${stats.animals} animals · founded ${formatDate(world.genesis)}`,
+    `**Day ${stats.day}** · ${stats.wishes} ${stats.wishes === 1 ? 'wish' : 'wishes'} granted for ${stats.wishers} ${stats.wishers === 1 ? 'person' : 'people'} · ${stats.bottles} ${stats.bottles === 1 ? 'message' : 'messages'} in a bottle · ${stats.land} tiles of land · ${stats.open} ${stats.open === 1 ? 'star' : 'stars'} still waiting · founded ${formatDate(world.genesis)}`,
   ];
   let month = '';
   for (const entry of [...world.days].reverse()) {
@@ -35,8 +50,9 @@ export function renderLogbook(world: World): string {
       month = m;
       out.push('', `## ${m}`, '');
     }
-    out.push(line(entry));
+    out.push(...block(entry));
   }
+  while (out[out.length - 1] === '') out.pop();
   out.push('');
   return out.join('\n');
 }

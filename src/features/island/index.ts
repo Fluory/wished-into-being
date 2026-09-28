@@ -36,6 +36,7 @@ export {
   freeTiles,
   GROWTH,
   growthTile,
+  HARBOUR,
   hasFreeTile,
   inside,
   islandState,
