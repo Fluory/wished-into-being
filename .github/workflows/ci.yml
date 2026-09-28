@@ -99,11 +99,11 @@ jobs:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           base="origin/${{ github.base_ref }}"
-          echo "$TITLE" | grep -qE '^Day [0-9]+: .{3,80}$' || { echo "::error::title must be 'Day N: …'"; exit 1; }
+          echo "$TITLE" | grep -qE '^Day [0-9]+: .{3,120}$' || { echo "::error::title must be 'Day N: …'"; exit 1; }
           changed="$(git diff --name-only "$base...$HEAD_SHA")"
           printf 'changed:\n%s\n' "$changed"
-          if printf '%s\n' "$changed" | grep -vqE '^(world/world\.json|world/isle\.svg|LOGBOOK\.md)$'; then
-            echo "::error::a daily pull request may only change world/world.json, world/isle.svg and LOGBOOK.md"
+          if printf '%s\n' "$changed" | grep -vqE '^(world/world\.json|world/isle\.svg|world/sprites/w[0-9]+\.svg|LOGBOOK\.md)$'; then
+            echo "::error::a daily pull request may only change world/world.json, world/isle.svg, world/sprites/*.svg and LOGBOOK.md"
             exit 1
           fi
           [ "$(git rev-list --count "$base..$HEAD_SHA")" = "1" ] || { echo "::error::a daily pull request contains exactly one commit"; exit 1; }

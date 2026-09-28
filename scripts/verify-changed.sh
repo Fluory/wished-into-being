@@ -22,5 +22,5 @@ for f in "${code[@]}"; do case "$f" in *.ts|*.tsx|*.mjs) lintable+=("$f") ;; esa
 if [ ${#lintable[@]} -gt 0 ]; then npx eslint "${lintable[@]}"; fi
 npx tsc --noEmit
 if [ ${#src[@]} -gt 0 ]; then npx vitest related --run "${src[@]}"; fi
-if printf '%s\n' "${changed[@]}" | grep -qE '^(world/|src/features/(world|render|logbook|routine)/)'; then npm run -s world:check; fi
+if printf '%s\n' "${changed[@]}" | grep -qE '^(world/|src/features/(island|render|logbook|routine)/)'; then npm run -s world:check; fi
 echo "verify:changed green"

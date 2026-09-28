@@ -29,9 +29,10 @@ export default function DatenschutzPage() {
         </p>
         <h2>1. Überblick</h2>
         <p>
-          Diese Website zeigt eine Pixel-Insel aus einem öffentlichen GitHub-Repository. Es gibt keine Konten, keine
-          Formulare, keine Cookies, kein Tracking und keine Analyse-Dienste. Personenbezogene Daten verarbeiten wir nur,
-          soweit es für die Auslieferung der Seiten technisch nötig ist (Art. 6 Abs. 1 lit. f DSGVO).
+          Diese Website zeigt eine Pixel-Insel aus einem öffentlichen GitHub-Repository. Auf der Website selbst gibt es
+          keine Konten, keine Formulare, keine Cookies, kein Tracking und keine Analyse-Dienste. Personenbezogene Daten
+          verarbeiten wir nur, soweit es für die Auslieferung der Seiten technisch nötig ist (Art. 6 Abs. 1 lit. f
+          DSGVO), und – wenn Sie einen Wunsch einreichen – Ihren GitHub-Benutzernamen (Abschnitt 4).
         </p>
         <h2>2. Hosting und Server-Logs</h2>
         <p>
@@ -49,11 +50,21 @@ export default function DatenschutzPage() {
           geladen und eingebettet – Ihr Browser verbindet sich dafür nicht mit GitHub. Die 3D-Szene wird vollständig in
           Ihrem Browser berechnet.
         </p>
-        <h2>4. Lokaler Speicher</h2>
+        <h2>4. Wünsche und GitHub-Namen</h2>
         <p>
-          Wenn Sie den Tag-/Nacht-Schalter benutzen, speichert Ihr Browser diese Einstellung im lokalen Speicher
-          (localStorage). Das geschieht nur auf Ihren ausdrücklichen Wunsch, wird nicht an uns übertragen und lässt sich
-          über die Browsereinstellungen löschen (§ 25 Abs. 2 Nr. 2 TDDDG).
+          Wünsche werden als öffentliche Issues auf GitHub eingereicht; dort gelten die Bedingungen von GitHub. Eine
+          tägliche, automatisierte Routine liest die offenen Wünsche und ihre 👍-Reaktionen. Wird ein Wunsch erfüllt,
+          speichern wir im öffentlichen Repository und zeigen auf dieser Website: Ihren GitHub-Benutzernamen, die Nummer
+          des Issues, die Zahl der Stimmen und den Inhalt des Wunsches (Name, Beschreibung als Zeichnung, eine Zeile
+          Text). Ihr Name steht außerdem als Co-Autor im Commit des Tages; dafür wird Ihre öffentliche GitHub-Nutzer-ID
+          verwendet.
+        </p>
+        <p>
+          Rechtsgrundlage ist Ihre Einwilligung, die Sie im Wunsch-Formular erteilen (Art. 6 Abs. 1 lit. a DSGVO). Sie
+          können sie jederzeit widerrufen: Solange der Wunsch nicht erfüllt ist, genügt es, das Issue zu schließen. Nach
+          der Erfüllung ist der Eintrag Teil der öffentlichen Chronik und der Git-Historie, die sich technisch nicht
+          nachträglich ändern lässt; schreiben Sie uns, dann entfernen wir die Nennung aus den aktuellen Dateien und von
+          dieser Website, soweit das möglich ist.
         </p>
         <h2>5. Links zu GitHub</h2>
         <p>

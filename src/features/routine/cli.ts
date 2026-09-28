@@ -29,6 +29,7 @@ import {
 } from '@/features/island';
 import { renderSpriteSvg } from '@/features/render';
 import { abs, PATHS, readWorld, staleFiles, worldExists, writeWorld } from './files';
+import { rankWishes } from './wishes';
 import {
   commitMessage,
   commitTitle,
@@ -47,6 +48,7 @@ import {
  *
  *   npm run day -- status                 is today's wish already there?
  *   npm run day -- plan                   the island at dawn, room per kind, bottles, a fallback
+ *   npm run day -- wishes --from tmp/wishes.json   the open wishes (from wish-reader) checked and ranked
  *   npm run day -- try --kind … --name … --sprite-file …   would this wish fit today? (no changes)
  *   npm run day -- sprite-preview --sprite-file …           render a sprite to look at (PNG)
  *   npm run day -- apply --action wish --issue 12 --wisher octo-cat --votes 5 --kind light
@@ -82,6 +84,7 @@ const { positionals, values } = parseArgs({
     lore: { type: 'string' },
     stars: { type: 'string' },
     out: { type: 'string' },
+    from: { type: 'string' },
     reason: { type: 'string' },
     why: { type: 'string' },
     'image-url': { type: 'string' },
@@ -226,6 +229,25 @@ switch (command) {
     print(plan(readWorld(), today()));
     break;
 
+  case 'wishes': {
+    const file = values.from ?? fail('--from is required: the JSON the wish-reader agent returned, saved to a file');
+    const date = today();
+    const world = readWorld();
+    if (status(world, date).done) fail(`Day for ${date} is already recorded – nothing to do.`, EXIT_ALREADY_DONE);
+    let input: unknown;
+    try {
+      input = JSON.parse(readFileSync(file as string, 'utf8'));
+    } catch {
+      fail(`${file} is not valid JSON – ask the wish-reader again`);
+    }
+    try {
+      print(rankWishes(world, date, input));
+    } catch (error) {
+      fail(error instanceof Error ? error.message : String(error));
+    }
+    break;
+  }
+
   case 'try': {
     const date = today();
     const world = readWorld();
@@ -347,7 +369,7 @@ switch (command) {
       [
         'usage: npm run day -- <command> [options]',
         '',
-        '  status | plan | try | sprite-preview | apply | auto | check | render',
+        '  status | plan | wishes | try | sprite-preview | apply | auto | check | render',
         '  pr-body | commit-title | commit-message | comment | genesis',
         '',
         '  --date YYYY-MM-DD   pretend it is this day (default: today in Europe/Berlin)',

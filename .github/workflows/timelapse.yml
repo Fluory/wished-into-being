@@ -22,7 +22,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Render the timelapse
-        run: npm run media -- timelapse --source real --scale 3 --out timelapse.gif
+        run: npm run media -- timelapse --source real --out timelapse.gif
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -32,4 +32,4 @@ jobs:
           gh release delete "$tag" --yes --cleanup-tag 2>/dev/null || true
           gh release create "$tag" timelapse.gif \
             --title "Timelapse $(date -u +'%B %Y') – day $day" \
-            --notes "The island from the sandbank to day $day, one frame per day. Rendered from world/world.json by the Timelapse workflow."
+            --notes "The island from the wishing well to day $day, one frame per day. Rendered from world/world.json by the Timelapse workflow."

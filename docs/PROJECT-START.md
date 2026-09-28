@@ -1,8 +1,8 @@
-# Project Start – One Tile a Day
+# Project Start – Wished into Being
 
 > Gründungsdokument nach `Entwicklungsplan/templates/base/PROJECT-START.md`. Discovery (1–6) stammt
 > aus dem Konzept „Daily Isle – eine Welt, die jeden Tag wächst" (28.09.2026, @Flo); die drei
-> Mechaniken des Konzepts wurden auf drei Repos verteilt – dieses Repo ist die **Living World**.
+> Mechaniken des Konzepts wurden auf drei Repos verteilt – dieses Repo ist die **Community-Mechanik**.
 
 **Aktueller Status:** `foundation-ready`
 **Orchestrator / Projektverantwortung:** @Fluory · **Datum gestartet:** 2026-09-28
@@ -11,41 +11,44 @@
 
 ## 1. Problem und Ziel
 
-**Problem:** Generative Welten entstehen meist auf Knopfdruck und sind danach fertig – niemand kommt
-wieder. Tägliche Commits („jeden Tag ein Commit") sind meist bedeutungslos.
+**Problem:** Community-Kunst auf GitHub ist meist ein Wettrennen (Pixel-Wände, Pull-Request-Spam) oder braucht
+Moderation rund um die Uhr. Ein täglicher Commit ist meist bedeutungslos.
 
-**Zielgruppe:** GitHub- und Open-Source-Publikum, Pixel-Art- und Creative-Coding-Interessierte,
-Menschen, die einem langsamen Experiment zusehen wollen.
+**Zielgruppe:** GitHub- und Open-Source-Publikum, Pixel-Art-Fans, alle, die etwas Kleines zu einer gemeinsamen
+Welt beitragen wollen – ohne Code zu schreiben.
 
-**Nutzenversprechen:** Eine Insel, die jeden Tag um genau ein Element wächst – mit Regeln, Lore und
-einer Commit-Historie, die sich wie eine Chronik liest. Transparent als „AI-maintained".
+**Nutzenversprechen:** Eine Insel, auf der alles von jemandem gewünscht wurde. Wünschen per Issue, abstimmen per
+👍 – jeden Morgen wird der beliebteste passende Wunsch als Pixel-Sprite Wirklichkeit, mit Namensnennung im
+Logbuch und als Co-Autor des Commits. Transparent als „AI-maintained".
 
-**Erster Meilenstein:** Die Insel wächst täglich allein nach den Weltregeln (MVP laut Konzept):
-Repo, `world.json`, Renderer, Routine, Website.
+**Erster Meilenstein:** Wünsche werden täglich zuverlässig und sicher erfüllt (MVP laut Konzept, Mechanik 2):
+Issue-Formular, Wish-Reader, Prüfung in Code, Routine, Website.
 
 **Erfolgskriterien:**
 - [ ] 30 Tage in Folge genau ein Commit pro Tag auf `main`, kein Doppel-Commit
-- [ ] Jede Tagesänderung besteht `world:check` (Regeln, Historie, generierte Dateien)
-- [ ] Website zeigt die Insel des jeweiligen Commits (Vercel-Deploy je Merge)
+- [ ] Jeder erfüllte Wunsch besteht `world:check` und nennt seine Wünschende korrekt
+- [ ] Kein Wunsch-Text hat je eine andere Aktion als „erfüllen / ablehnen / warten" ausgelöst (Eval-Set grün)
 
-**Nicht-Ziele (erster Meilenstein):** Wetter (→ Repo `Grow`), Community-Wünsche (→ Repo
-`wished-into-being`), Konten, Kommentare, Tracking, Monetarisierung.
+**Nicht-Ziele (erster Meilenstein):** Tageswelt nach eigenen Regeln (→ `one-tile-a-day`), Wetter (→ `Grow`),
+Konten, Kommentare auf der Website, Tracking, Monetarisierung.
 
 ## 2. Scope und Nutzerablauf
 
 | Rolle | Darf / braucht |
 |---|---|
-| Besucher | Website ansehen, Karte/Zeitleiste bedienen, Logbuch lesen |
-| Routine (Claude) | genau eine Tagesänderung über `npm run day`, ein PR |
+| Wünschende | Issue mit dem Wunsch-Formular öffnen, 👍 vergeben |
+| Besucher | Website ansehen, Karte/Zeitleiste, Galerie, Logbuch |
+| Routine (Claude) | Wünsche über den Wish-Reader lesen, genau einen Tag über `npm run day`, ein PR, Kommentare/Labels |
 | Maintainer | Code-PRs, Regeln ändern, Review |
 
-**Vertical Slice:** 08:47 Routine startet → `status` → `plan` → Claude wählt + schreibt Lore →
-`apply` (Regelprüfung) → `verify` → PR → CI grün → Squash-Merge (1 Commit) → Vercel-Deploy →
-Fehlerfall: Regelverstoß = Exit 2 + neuer Versuch/`auto`; CI rot = kein Merge, Tag bleibt leer.
+**Vertical Slice:** Issue „Wish: …" + 👍 → 08:59 Routine → `status` → Wish-Reader → `wishes` (Code prüft und
+sortiert) → Moderation → Zeichnung + `sprite-preview` → `apply` → `verify` → PR (`Closes #n`) → CI grün →
+Squash-Merge (1 Commit, Wünschende als Co-Autor) → Vercel-Deploy → Issue geschlossen mit Dank.
+Fehlerfall: Regelverstoß = Exit 2/4 + nächster Wunsch/Flaschenpost; CI rot = kein Merge, Tag bleibt leer.
 
 ## 3. Reifegrad und Risiko
 
-- **Stufe:** P0 – öffentliches Experiment (keine Konten, keine personenbezogenen Daten außer Hosting-Logs)
+- **Stufe:** P0 – öffentliches Experiment (keine Konten; personenbezogen nur GitHub-Namen mit Einwilligung)
 - **Sichtbarkeit:** `public` – Begründung: bewusst Open Source, die Historie ist das Werk
 - **Sprache:** Code, Doku, Commits, Lore, Website englisch; Rechtstexte deutsch
 
@@ -53,13 +56,13 @@ Fehlerfall: Regelverstoß = Exit 2 + neuer Versuch/`auto`; CI rot = kein Merge, 
 |---|---|---|
 | Öffentliche Nutzer? | Ja | Recht-Add-on (Impressum, Datenschutz) |
 | Login / Rollen? | Nein | – |
-| Personenbezogene Daten? | Nein | nur Server-Logs beim Hoster |
+| Personenbezogene Daten? | Ja | GitHub-Namen der Wünschenden, Einwilligung im Formular; Datenschutz-Add-on, Datenschutzerklärung §4 |
 | Persistente Datenbank? | Nein | Welt liegt in Git |
-| Externe APIs? | Nein | – |
-| LLM / Agentenfunktion? | Ja | KI-Add-on: Prompt versioniert (`ROUTINE.md`), Evals (`evals/`) |
+| Externe APIs? | Nein | GitHub nur über die Werkzeuge der Routine |
+| LLM / Agentenfunktion? | Ja | KI-Add-on: Prompt versioniert (`ROUTINE.md`), Wish-Reader read-only, Prompt-Injection-Evals (`evals/`) |
 | Öffentliche Website? | Ja | Impressum/Datenschutz, Daten per Env-Variablen |
 
-**Aktivierte Add-ons:** KI/RAG, Recht.
+**Aktivierte Add-ons:** KI/RAG, Recht, Datenschutz.
 
 ## 4. Technikentscheidungen
 
@@ -71,11 +74,12 @@ Fehlerfall: Regelverstoß = Exit 2 + neuer Versuch/`auto`; CI rot = kein Merge, 
 | Datenbank | keine – `world/world.json` in Git | jeder Commit = eine nachvollziehbare Änderung | gesetzt |
 | Hosting | Vercel (Hobby) | Deploy je Merge, keine Server | gesetzt |
 | CI | GitHub Actions (systemweit) | SYSTEM.md §11 | gesetzt |
-| KI | Claude-Routine (Claude Code in der Cloud) | tägliche Auswahl + Lore | gesetzt |
+| KI | Claude-Routine (Claude Code in der Cloud) + Subagent `wish-reader` | Wünsche lesen (read-only), beurteilen, zeichnen, Lore | gesetzt |
 
 **Offene Entscheidungen aus dem Konzept – als Default entschieden, änderbar:**
-Name englisch („One Tile a Day", Repo-Name) · Thema Insel · Stil Pixel-Art (README) + 3D (Website) ·
-Raster 64 × 64 (reicht für Jahre, Rahmen zoomt mit) · persönlicher Account `Fluory` · Uhrzeit 08:47.
+Name englisch („Wished into Being", Repo-Name) · Thema Insel bei Nacht · Stil Pixel-Art 16 × 16 (README) +
+Voxel-Figuren in 3D (Website) · Raster 64 × 64, das Meer hebt 2 Felder pro Morgen · Abstimmung per 👍 (mind. 1,
+bei Gleichstand der ältere Wunsch) · persönlicher Account `Fluory` · Uhrzeit 08:59.
 
 ## 5. Sicherheit, Daten und Betrieb
 
@@ -92,7 +96,7 @@ Board `Inbox → Ready → In Progress → In Review → Done`; Labels aus `.git
 
 - [x] Problem, Ziel und Nicht-Ziele verstanden – aus dem Konzept
 - [x] Vertical Slice festgelegt
-- [x] Stufe und Risikoprofil entschieden (P0, KI + Recht)
+- [x] Stufe und Risikoprofil entschieden (P0, KI + Recht + Datenschutz)
 - [x] Sichtbarkeit entschieden (public)
 - [x] Tech-Stack entschieden (Vorgabe im Auftrag)
 - [x] Budget: 0 € (GitHub Free, Vercel Hobby, vorhandenes Claude-Abo)

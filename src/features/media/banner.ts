@@ -26,6 +26,21 @@ function spriteGroup(rows: readonly string[], x: number, y: number, px: number):
 
 const PARADE = ['lantern', 'cottage', 'pine', 'cat', 'owl', 'crystal'] as const;
 
+/** Moonlit wave glints on the sea band, in two alternating frames. */
+function waves(width: number, top: number, bottom: number, animated: boolean): string {
+  const a: string[] = [];
+  const b: string[] = [];
+  for (let i = 0; i < 26; i++) {
+    const x = (i * 211) % width;
+    const y = top + ((i * 37) % Math.max(8, bottom - top - 8));
+    a.push(`M${x} ${y}h14v3h-14z`);
+    b.push(`M${x + 6} ${y}h14v3h-14z`);
+  }
+  const frame = (d: string[], cls: string) =>
+    `<path class="${animated ? cls : ''}" fill="${NIGHT.sea3}" d="${d.join('')}"/>`;
+  return animated ? frame(a, 'wa') + frame(b, 'wb') : frame(a, '');
+}
+
 export function bannerSvg(options: { width?: number; height?: number; animated?: boolean } = {}): string {
   const width = options.width ?? 1280;
   const height = options.height ?? 400;
@@ -88,6 +103,8 @@ export function bannerSvg(options: { width?: number; height?: number; animated?:
   const style = [
     ...keyframes,
     '.tw{animation:tw 2.6s steps(1) infinite}.tw1{animation-delay:-1.3s}',
+    '.wa{animation:tw 1.8s steps(1) infinite}.wb{animation:wb 1.8s steps(1) infinite}',
+    '@keyframes wb{0%{opacity:.35}50%{opacity:1}}',
     '@keyframes tw{0%{opacity:1}50%{opacity:.35}}',
     '.shoot{animation:shoot 7s ease-in infinite}',
     `@keyframes shoot{0%,78%{transform:translate(0,0);opacity:0}80%{opacity:1}92%{transform:translate(-${Math.round(width * 0.35)}px,${Math.round(height * 0.3)}px);opacity:0}100%{opacity:0}}`,
@@ -111,11 +128,14 @@ export function bannerSvg(options: { width?: number; height?: number; animated?:
       ? `<g class="shoot"><rect x="${Math.round(width * 0.8)}" y="${Math.round(height * 0.06)}" width="46" height="3" fill="#fff3c4" transform="rotate(-40 ${Math.round(width * 0.8)} ${Math.round(height * 0.06)})"/></g>`
       : '',
     `<rect y="${ground + px * 4}" width="${width}" height="${height - ground}" fill="${NIGHT.sea1}"/>`,
+    waves(width, ground + px * 5, height, animated),
     strip,
     sprites,
     `<path transform="translate(${left} ${top}) scale(${title})" fill="${NIGHT.gold}" d="${textPath('WISHED')}"/>`,
     `<path transform="translate(${left} ${line2}) scale(${title})" fill="${NIGHT.text}" d="${textPath('INTO BEING')}"/>`,
-    `<rect class="${animated ? 'cursor' : ''}" x="${left + 60 * title}" y="${line2}" width="${5 * title}" height="${7 * title}" fill="${NIGHT.gold}" opacity=".85"/>`,
+    animated
+      ? `<rect class="cursor" x="${left + 60 * title}" y="${line2}" width="${5 * title}" height="${7 * title}" fill="${NIGHT.gold}" opacity=".85"/>`
+      : '',
     `<path transform="translate(${left + 2} ${sub}) scale(3)" fill="${NIGHT.textDim}" d="${textPath('AN ISLAND WHERE EVERYTHING')}"/>`,
     `<path transform="translate(${left + 2} ${sub + 30}) scale(3)" fill="${NIGHT.textDim}" d="${textPath('WAS WISHED FOR BY SOMEONE')}"/>`,
     `<path transform="translate(${left + 2} ${sub + 68}) scale(2)" fill="${NIGHT.gold}" opacity=".8" d="${textPath('OPEN A WISH · GATHER VOTES · ONE COMES TRUE EVERY DAY')}"/>`,

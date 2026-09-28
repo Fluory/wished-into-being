@@ -1,1 +1,5 @@
 blank_issues_enabled: true
+contact_links:
+  - name: How wishes work
+    url: https://github.com/Fluory/wished-into-being/blob/main/RULES.md
+    about: The kinds, the room on the island, the palette – and why some wishes wait.

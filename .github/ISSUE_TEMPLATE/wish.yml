@@ -1,0 +1,69 @@
+name: ✨ Make a wish
+description: Wish for one thing on the island. Every morning the most-wanted wish that fits comes true.
+title: 'Wish: '
+labels: [wish]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **One thing, a name and a few words about it.** Everybody can vote for your wish with a 👍 on this issue.
+        Every morning at 08:59 (Europe/Berlin) a Claude routine grants the wish with the most 👍 that fits the
+        [rules of the island](https://github.com/Fluory/wished-into-being/blob/main/RULES.md) – it draws it as a
+        16 × 16 sprite, places it and writes it into the logbook with your name.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      description: Buildings and plants need grass, water wishes float next to the shore.
+      options:
+        - building
+        - plant
+        - creature
+        - object
+        - light
+        - water
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: What it is called on the island – 3 to 40 characters, plain words.
+      placeholder: A glass lighthouse
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What does it look like?
+      description: A few words for the drawing – shape, colours, what makes it special. No links.
+      placeholder: Tall and made of sea glass, with a warm gold light on top.
+    validations:
+      required: true
+  - type: dropdown
+    id: near
+    attributes:
+      label: Where should it stand?
+      options:
+        - anywhere
+        - near the well
+        - near the water
+        - somewhere quiet
+  - type: textarea
+    id: sprite
+    attributes:
+      label: Drawing (optional)
+      description: |
+        16 lines of 16 characters. `.` is transparent; the letters are colours –
+        k ink · n navy · v violet · p lilac · r red · o orange · y gold · c cream · w white ·
+        g green · d dark green · b blue · t teal · u brown · e grey. Leave it empty and Claude draws it.
+      render: text
+  - type: checkboxes
+    id: promise
+    attributes:
+      label: The small print
+      options:
+        - label: My wish is kind – nothing hurtful or violent, no politics, real people, brands or links.
+          required: true
+        - label: If it comes true, my GitHub name appears in the logbook, on the website and as co-author of that day's commit, and the wish and its drawing are shared under CC BY 4.0 like the rest of the island.
+          required: true
