@@ -1,14 +1,14 @@
 'use client';
 
 import { create } from 'zustand';
-import type { World } from '@/features/world';
+import type { World } from '@/features/island';
 
 /**
  * Shared state between the pages and the one persistent 3D canvas. Pages never touch
  * three.js – they only tell the scene *what* to show (which world, which day, where to look).
  */
 
-export type CameraPreset = 'hero' | 'overview' | 'top' | 'focus' | 'far';
+export type CameraPreset = 'hero' | 'overview' | 'top' | 'focus' | 'far' | 'sky' | 'low';
 export type Source = 'real' | 'simulation';
 
 export interface Focus {
@@ -20,7 +20,7 @@ interface SceneState {
   real: World | null;
   simulation: World | null;
   source: Source;
-  /** Day shown by the island. Fractional values animate tiles popping in. */
+  /** Day shown by the island. Fractional values animate wishes popping in. */
   day: number;
   camera: CameraPreset;
   focus: Focus | null;
@@ -32,7 +32,6 @@ interface SceneState {
   shift: number;
   /** Vertical shift (fraction of the viewport height); positive moves the island down. */
   shiftY: number;
-  night: boolean;
   set: (patch: Partial<Omit<SceneState, 'set'>>) => void;
 }
 
@@ -47,7 +46,6 @@ export const useScene = create<SceneState>((set) => ({
   orbit: true,
   shift: 0,
   shiftY: 0,
-  night: false,
   set: (patch) => set(patch),
 }));
 

@@ -169,7 +169,8 @@ export function pickTile(state: IslandState, kind: Kind, near: Near, seed: strin
       case 'water': {
         let best = 99;
         for (let dy = -3; dy <= 3; dy++)
-          for (let dx = -3; dx <= 3; dx++) if (!state.map.isLand(x + dx, y + dy)) best = Math.min(best, Math.hypot(dx, dy));
+          for (let dx = -3; dx <= 3; dx++)
+            if (!state.map.isLand(x + dx, y + dy)) best = Math.min(best, Math.hypot(dx, dy));
         return -best + jitter * 0.5;
       }
       case 'quiet': {
@@ -235,7 +236,10 @@ export function growthTile(state: IslandState, genesis: string, date: string): [
       const jitter = (hashString(`${date}:${x},${y}`) % 1000) / 1000;
       const pull = Math.hypot(x - WIDTH / 2, y - HEIGHT / 2);
       const score =
-        state.map.landNeighbours(x, y) + GROWTH.field * shoreField(x, y, salt) - GROWTH.pull * pull + GROWTH.jitter * jitter;
+        state.map.landNeighbours(x, y) +
+        GROWTH.field * shoreField(x, y, salt) -
+        GROWTH.pull * pull +
+        GROWTH.jitter * jitter;
       if (score > bestScore) {
         best = [x, y];
         bestScore = score;

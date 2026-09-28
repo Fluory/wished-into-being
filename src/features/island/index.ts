@@ -28,7 +28,15 @@ export { applyBottle, bottleOptions, bottleWish, simulateBottles, type BottleCho
 export { validateWorld, worldAt } from './history';
 export { checkLogin, checkText, tidyName } from './lore';
 export { IslandMap } from './map';
-export { GLOWING, PALETTE_CHARS, PALETTE_NAMES, SPRITE_PALETTE, SPRITE_SIZE, TRANSPARENT, type PaletteChar } from './palette';
+export {
+  GLOWING,
+  PALETTE_CHARS,
+  PALETTE_NAMES,
+  SPRITE_PALETTE,
+  SPRITE_SIZE,
+  TRANSPARENT,
+  type PaletteChar,
+} from './palette';
 export { createRng, hashCell, hashString, pick, type Rng } from './rng';
 export {
   checkTile,

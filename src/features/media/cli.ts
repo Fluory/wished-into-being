@@ -19,7 +19,7 @@ const { positionals, values } = parseArgs({
     out: { type: 'string' },
     source: { type: 'string', default: 'real' },
     every: { type: 'string', default: '1' },
-    scale: { type: 'string', default: '2' },
+    scale: { type: 'string', default: '1' },
   },
 });
 
@@ -47,7 +47,7 @@ switch (positionals[0]) {
     const gif = timelapseGif(world, {
       every: Number(values.every),
       scale: Number(values.scale),
-      label: simulated ? 'SIMULATED YEAR' : undefined,
+      label: simulated ? 'SIMULATED YEAR · BOTTLES ONLY' : undefined,
     });
     write(values.out ?? 'timelapse.gif', gif);
     break;

@@ -101,7 +101,10 @@ export function renderIsleSvg(world: World, options: SvgOptions = {}): string {
     .map((s) => {
       const label = `#${s.issue}`;
       const size = 2;
-      const lx = Math.min(WIDTH - PAD / 2 - textWidth(label) * size, Math.max(PAD / 2, s.x * scale - (textWidth(label) * size) / 2));
+      const lx = Math.min(
+        WIDTH - PAD / 2 - textWidth(label) * size,
+        Math.max(PAD / 2, s.x * scale - (textWidth(label) * size) / 2),
+      );
       const ly = s.y * scale + (s.size + 2) * scale + 6;
       return `<path transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) scale(${size})" fill="${NIGHT.gold}" fill-opacity=".85" d="${textPath(label)}"/>`;
     })

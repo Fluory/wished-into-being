@@ -11,7 +11,7 @@ export default function NotFound() {
       <SceneDirective camera="far" dim={0.2} />
       <div className={`${pageStyles.panel} glass`} style={{ display: 'grid', gap: 'var(--s-4)' }}>
         <p className="eyebrow">404 · open sea</p>
-        <h1 className="h2">This tile has not risen yet.</h1>
+        <h1 className="h2">Nobody has wished for this page yet.</h1>
         <p className="lede">Maybe tomorrow. Until then, the island is this way.</p>
         <p>
           <Link href="/" className="btn btn-accent">

@@ -81,12 +81,24 @@ export function classify(map: IslandMap, frame: Frame): Ground {
   for (let y = 0; y < size; y++)
     for (let x = 0; x < size; x++) {
       const i = y * size + x;
-      dist[i] = Math.min(dist[i] as number, at(x - 1, y) + 3, at(x, y - 1) + 3, at(x - 1, y - 1) + 4, at(x + 1, y - 1) + 4);
+      dist[i] = Math.min(
+        dist[i] as number,
+        at(x - 1, y) + 3,
+        at(x, y - 1) + 3,
+        at(x - 1, y - 1) + 4,
+        at(x + 1, y - 1) + 4,
+      );
     }
   for (let y = size - 1; y >= 0; y--)
     for (let x = size - 1; x >= 0; x--) {
       const i = y * size + x;
-      dist[i] = Math.min(dist[i] as number, at(x + 1, y) + 3, at(x, y + 1) + 3, at(x + 1, y + 1) + 4, at(x - 1, y + 1) + 4);
+      dist[i] = Math.min(
+        dist[i] as number,
+        at(x + 1, y) + 3,
+        at(x, y + 1) + 3,
+        at(x + 1, y + 1) + 4,
+        at(x - 1, y + 1) + 4,
+      );
     }
   for (let i = 0; i < dist.length; i++) dist[i] = (dist[i] as number) / 3;
   return { size, kind, dist };
@@ -140,7 +152,12 @@ export function paintTerrain(map: IslandMap, frame: Frame, layers: TerrainLayers
         const py = ty * TILE + 2 + ((h >> 5) % 12);
         const here = kindAt(px, py);
         if (here === SAND && n < 2) layers.base.put(px, py, n === 0 ? C.sand2 : C.sand0);
-        if (here === GRASS && kindAt(px - 1, py) === GRASS && kindAt(px + 1, py) === GRASS && kindAt(px, py - 1) === GRASS) {
+        if (
+          here === GRASS &&
+          kindAt(px - 1, py) === GRASS &&
+          kindAt(px + 1, py) === GRASS &&
+          kindAt(px, py - 1) === GRASS
+        ) {
           if (n < 3) {
             layers.base.put(px - 1, py, C.grass2);
             layers.base.put(px + 1, py, C.grass2);

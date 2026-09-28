@@ -4,7 +4,11 @@ import { wish } from '@/features/island/testing';
 import { serializeWorld } from './serialize';
 
 describe('world.json serialisation', () => {
-  const world = applyDay(simulateBottles(createGenesis('2026-09-28'), 20), wish({ stars: [{ issue: 9, votes: 2 }] }), '2026-10-19').world;
+  const world = applyDay(
+    simulateBottles(createGenesis('2026-09-28'), 20),
+    wish({ stars: [{ issue: 9, votes: 2 }] }),
+    '2026-10-19',
+  ).world;
   const text = serializeWorld(world);
 
   it('round-trips without loss', () => {

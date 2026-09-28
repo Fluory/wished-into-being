@@ -1,14 +1,24 @@
+import { REPO, repoUrl, WISH_URL } from '@/shared/repo';
+
 /** Site-wide constants. The repository is the product – every page links back to it. */
 export const SITE = {
-  name: 'One Tile a Day',
-  short: 'one-tile-a-day',
+  name: 'Wished into Being',
+  short: 'wished-into-being',
   owner: 'Fluory',
-  repo: 'Fluory/one-tile-a-day',
+  repo: REPO,
+  wishUrl: WISH_URL,
   description:
-    'A pixel island in a public GitHub repository that grows by exactly one tile every day – placed by a Claude routine, one commit at a time.',
-  routineTime: '08:47',
+    'An island in a public GitHub repository where everything was wished for by someone. Open a wish, gather thumbs-ups – every morning a Claude routine draws the most-wanted wish as pixel art and places it on the island. One commit a day.',
+  routineTime: '08:59',
   timeZone: 'Europe/Berlin',
   siblings: [
+    {
+      name: 'One Tile a Day',
+      repo: 'Fluory/one-tile-a-day',
+      tagline: 'A pixel island that grows by exactly one tile every day.',
+      image: 'https://raw.githubusercontent.com/Fluory/one-tile-a-day/main/world/isle.svg',
+      site: process.env.NEXT_PUBLIC_TILE_URL,
+    },
     {
       name: 'Grow',
       repo: 'Fluory/Grow',
@@ -16,19 +26,10 @@ export const SITE = {
       image: 'https://raw.githubusercontent.com/Fluory/Grow/main/world/garden.svg',
       site: process.env.NEXT_PUBLIC_GROW_URL,
     },
-    {
-      name: 'Wished into Being',
-      repo: 'Fluory/wished-into-being',
-      tagline: 'An island where everything was wished for by someone.',
-      image: 'https://raw.githubusercontent.com/Fluory/wished-into-being/main/world/isle.svg',
-      site: process.env.NEXT_PUBLIC_WISHED_URL,
-    },
   ],
 } as const;
 
-export function repoUrl(path = ''): string {
-  return `https://github.com/${SITE.repo}${path ? `/${path}` : ''}`;
-}
+export { repoUrl };
 
 /** Absolute site URL: explicit env var, else the Vercel production domain, else localhost. */
 export function siteUrl(): URL {

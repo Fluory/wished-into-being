@@ -30,13 +30,15 @@ export function checkSprite(rows: readonly string[]): string | null {
     const row = rows[y] ?? '';
     if (row.length !== SPRITE_SIZE) return `row ${y + 1} has ${row.length} characters, expected ${SPRITE_SIZE}`;
     for (const c of row) {
-      if (!allowed.has(c)) return `row ${y + 1} uses "${c}" – only "${TRANSPARENT}" and ${PALETTE_CHARS.join('')} are allowed`;
+      if (!allowed.has(c))
+        return `row ${y + 1} uses "${c}" – only "${TRANSPARENT}" and ${PALETTE_CHARS.join('')} are allowed`;
     }
   }
   const stats = spriteStats(rows);
   if (stats.opaque < MIN_PIXELS) return `a sprite needs at least ${MIN_PIXELS} coloured pixels (has ${stats.opaque})`;
   if (stats.colors < 2) return 'a sprite needs at least two colours (an outline and a fill)';
-  if (stats.opaque === SPRITE_SIZE * SPRITE_SIZE) return 'a sprite may not fill the whole tile – leave some transparent pixels';
+  if (stats.opaque === SPRITE_SIZE * SPRITE_SIZE)
+    return 'a sprite may not fill the whole tile – leave some transparent pixels';
   return null;
 }
 

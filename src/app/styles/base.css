@@ -32,8 +32,9 @@ body {
   line-height: 1.6;
   color: var(--ink);
   background:
+    radial-gradient(60% 40% at 18% 8%, rgb(246 238 207 / 0.08) 0%, transparent 70%),
     radial-gradient(90% 45% at 72% 0%, var(--glow) 0%, transparent 70%),
-    linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 24%, var(--sky-low) 100%);
+    linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 30%, var(--horizon) 100%);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -80,14 +81,10 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 560;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
   margin: 0;
-  font-variation-settings:
-    'SOFT' 100,
-    'WONK' 1,
-    'opsz' 144;
   text-wrap: balance;
 }
 
@@ -98,9 +95,17 @@ p {
 
 .display {
   font-size: var(--step-7);
-  line-height: 0.88;
-  letter-spacing: -0.045em;
-  font-weight: 480;
+  line-height: 0.86;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+.display em,
+.h1 em,
+.h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
 }
 
 .h1 {
@@ -128,8 +133,8 @@ p {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink);
-  opacity: 0.78;
+  color: var(--gold);
+  opacity: 0.9;
 }
 
 .pixel {

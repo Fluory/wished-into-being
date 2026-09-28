@@ -2,9 +2,11 @@
 
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { chooseFrame, paintWorld, TILE, toRgba } from '@/features/render';
+import { formatDate, KIND_INFO, worldAt, type DayEntry, type Element, type World } from '@/features/island';
+import { chooseFrame, NIGHT, paintIsland, TILE, toRgba } from '@/features/render';
 import { useScene } from '@/features/scene';
-import { CATALOGUE, formatDate, worldAt, type DayEntry, type World } from '@/features/world';
+import { Sprite } from '@/features/sprites';
+import { Credit } from '@/features/story';
 import styles from './map.module.css';
 
 interface Hover {
@@ -14,35 +16,38 @@ interface Hover {
   py: number;
 }
 
-const MIN_ZOOM = 1;
-const MAX_ZOOM = 12;
+const MIN_ZOOM = 0.5;
+const MAX_ZOOM = 8;
 
-function entriesAt(world: World, x: number, y: number, day: number): DayEntry[] {
-  return world.days.filter((d) => d.day <= day && d.x === x && d.y === y && d.action !== 'genesis');
+function elementAt(world: World, x: number, y: number): { element: Element; entry: DayEntry } | null {
+  const element = world.elements.find((e) => e.x === x && e.y === y);
+  const entry = element ? world.days.find((d) => d.element === element.id) : undefined;
+  return element && entry ? { element, entry } : null;
 }
 
 /**
- * The interactive pixel map: zoom, pan, hover for lore, and a timeline that rebuilds the
- * island for any day. The 3D scene behind follows the slider.
+ * The interactive pixel map: zoom, pan, hover for the wish on a tile, and a timeline that
+ * rebuilds the island for any day. The 3D scene behind follows the slider.
  */
 export function MapExplorer({ world }: { world: World }) {
   const last = world.days[world.days.length - 1]?.day ?? 0;
   const frame = useMemo(() => {
     const f = chooseFrame(world);
-    if (f.size >= 24 || world.width < 24) return f;
-    const grow = 24 - f.size;
-    const clamp = (v: number) => Math.max(0, Math.min(world.width - 24, v));
-    return { x: clamp(f.x - grow / 2), y: clamp(f.y - grow / 2), size: 24 };
+    const min = 20;
+    if (f.size >= min || world.width < min) return f;
+    const grow = min - f.size;
+    const clamp = (v: number) => Math.max(0, Math.min(world.width - min, v));
+    return { x: clamp(f.x - Math.floor(grow / 2)), y: clamp(f.y - Math.floor(grow / 2)), size: min };
   }, [world]);
   const [day, setDay] = useState(last);
-  const [zoom, setZoom] = useState(5);
+  const [zoom, setZoom] = useState(3);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [hover, setHover] = useState<Hover | null>(null);
   const [pinned, setPinned] = useState<{ x: number; y: number } | null>(null);
   const [playing, setPlaying] = useState(false);
   const canvas = useRef<HTMLCanvasElement>(null);
   const bitmap = useRef<HTMLCanvasElement | null>(null);
-  const seaColor = useRef('#1b4f6b');
+  const seaColor = useRef<string>(NIGHT.sea0);
   const tight = useMemo(() => chooseFrame(world).size * TILE, [world]);
   const drag = useRef<{ x: number; y: number; panX: number; panY: number; moved: boolean } | null>(null);
   const [dragging, setDragging] = useState(false);
@@ -70,19 +75,14 @@ export function MapExplorer({ world }: { world: World }) {
     ctx.drawImage(off, ox, oy, size * scale, size * scale);
   }, [zoom, pan, size]);
 
+  const pinnedElement = pinned ? elementAt(shown, pinned.x, pinned.y)?.element.id : undefined;
+
   // Paint the island for the chosen day into an offscreen bitmap (1 pixel = 1 art pixel).
   useEffect(() => {
-    const painted = paintWorld(shown, { frame, highlight: pinned ?? undefined });
+    const painted = paintIsland(shown, { frame, sky: false, highlight: pinnedElement ?? null });
     const rgba = toRgba(
-      [
-        painted.base,
-        painted.overlays.waveA,
-        painted.overlays.bob,
-        painted.overlays.sailsA,
-        painted.overlays.lamp,
-        painted.overlays.mark,
-      ],
-      painted.palette.sea0,
+      [painted.base, painted.overlays.waveA, painted.overlays.glow, painted.overlays.mark],
+      NIGHT.sea0,
     );
     const off = document.createElement('canvas');
     off.width = painted.width;
@@ -91,9 +91,9 @@ export function MapExplorer({ world }: { world: World }) {
     if (!ctx) return;
     ctx.putImageData(new ImageData(new Uint8ClampedArray(rgba), painted.width, painted.height), 0, 0);
     bitmap.current = off;
-    seaColor.current = painted.palette.sea0;
+    seaColor.current = NIGHT.sea0;
     draw();
-  }, [shown, frame, pinned, draw]);
+  }, [shown, frame, pinnedElement, draw]);
 
   useEffect(() => {
     draw();
@@ -106,7 +106,7 @@ export function MapExplorer({ world }: { world: World }) {
   useEffect(() => {
     const rect = canvas.current?.getBoundingClientRect();
     if (!rect) return;
-    const fit = (Math.min(rect.width, rect.height) / tight) * 0.9;
+    const fit = (Math.min(rect.width, rect.height) / tight) * 0.92;
     setZoom(Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, fit)));
   }, [tight]);
 
@@ -118,7 +118,7 @@ export function MapExplorer({ world }: { world: World }) {
   }, [day]);
   useEffect(() => () => useScene.getState().set({ day: Infinity, dim: 0, orbit: true, camera: 'hero' }), []);
 
-  // Playback: a day every ~90 ms.
+  // Playback: a day every ~120 ms.
   useEffect(() => {
     if (!playing) return;
     const id = window.setInterval(() => {
@@ -129,7 +129,7 @@ export function MapExplorer({ world }: { world: World }) {
         }
         return d + 1;
       });
-    }, 90);
+    }, 120);
     return () => window.clearInterval(id);
   }, [playing, last]);
 
@@ -187,21 +187,11 @@ export function MapExplorer({ world }: { world: World }) {
   };
 
   const current = world.days.find((d) => d.day === day) ?? [...world.days].reverse().find((d) => d.day <= day);
+  const currentElement = current ? world.elements.find((e) => e.id === current.element) : undefined;
   const focusTile = pinned ?? (hover ? { x: hover.x, y: hover.y } : null);
-  const focusEntries = focusTile ? entriesAt(world, focusTile.x, focusTile.y, day) : [];
+  const focus = focusTile ? elementAt(shown, focusTile.x, focusTile.y) : null;
   const terrain = focusTile ? shown.terrain[focusTile.y]?.[focusTile.x] : undefined;
-  const terrainName =
-    terrain === '~'
-      ? 'open sea'
-      : terrain === '.'
-        ? 'sand'
-        : terrain === ','
-          ? 'meadow'
-          : terrain === '^'
-            ? 'rock'
-            : terrain === '*'
-              ? 'forest'
-              : '';
+  const terrainName = terrain === '~' ? 'open sea' : terrain === '.' ? 'beach' : terrain === ',' ? 'meadow' : '';
 
   return (
     <div className={styles.explorer}>
@@ -211,7 +201,7 @@ export function MapExplorer({ world }: { world: World }) {
           className={styles.canvas}
           tabIndex={0}
           role="img"
-          aria-label={`Pixel map of the island on day ${day}. Drag to pan, scroll or +/- to zoom, click a tile for its story.`}
+          aria-label={`Pixel map of the island on day ${day}. Drag to pan, scroll or +/- to zoom, click a tile to see the wish on it.`}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
@@ -228,7 +218,7 @@ export function MapExplorer({ world }: { world: World }) {
             <span className="pixel">
               {hover.x},{hover.y}
             </span>{' '}
-            {entriesAt(world, hover.x, hover.y, day).slice(-1)[0]?.title ?? 'Nothing happened here yet'}
+            {elementAt(shown, hover.x, hover.y)?.element.name ?? (terrain === '~' ? 'open sea' : 'free land')}
           </div>
         )}
         <div className={styles.zoom}>
@@ -243,7 +233,7 @@ export function MapExplorer({ world }: { world: World }) {
             onClick={() => {
               const rect = canvas.current?.getBoundingClientRect();
               setZoom(
-                rect ? Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, (Math.min(rect.width, rect.height) / tight) * 0.9)) : 5,
+                rect ? Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, (Math.min(rect.width, rect.height) / tight) * 0.92)) : 3,
               );
               setPan({ x: 0, y: 0 });
             }}
@@ -260,7 +250,7 @@ export function MapExplorer({ world }: { world: World }) {
           className={styles.play}
           onClick={() => setPlaying((p) => !p)}
           aria-pressed={playing}
-          aria-label={playing ? 'Pause' : 'Play the island from day 0'}
+          aria-label={playing ? 'Pause' : 'Play the island from the well'}
         >
           {playing ? '❚❚' : '▶'}
         </button>
@@ -292,22 +282,23 @@ export function MapExplorer({ world }: { world: World }) {
             <p className="eyebrow">
               Tile {focusTile.x}, {focusTile.y} · {terrainName}
             </p>
-            {focusEntries.length === 0 ? (
-              <p className="muted">Nothing has happened on this tile yet{day < last ? ' on this day' : ''}.</p>
+            {focus ? (
+              <Link href={`/day/${focus.entry.day}`} className={styles.wish}>
+                <Sprite rows={focus.element.sprite} size={72} />
+                <span>
+                  <span className={styles.panelTitle}>{focus.element.name}</span>
+                  <span className="muted">
+                    Day {focus.entry.day} · {KIND_INFO[focus.element.kind].label} ·{' '}
+                    <Credit entry={focus.entry} short links={false} />
+                  </span>
+                  <span className={styles.wishLore}>{focus.entry.lore}</span>
+                </span>
+              </Link>
             ) : (
-              <ol className={styles.history}>
-                {focusEntries.map((e) => (
-                  <li key={e.day}>
-                    <Link href={`/day/${e.day}`} className={styles.historyItem}>
-                      <span className="pixel">DAY {e.day}</span>
-                      <strong>
-                        {e.action === 'genesis' ? '🌊' : CATALOGUE[e.action].emoji} {e.title}
-                      </strong>
-                      <span className="muted">{e.lore}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ol>
+              <p className="muted">
+                {terrain === '~' ? 'Open sea – for now.' : 'Free land – room for a wish.'}
+                {day < last ? ' (on this day)' : ''}
+              </p>
             )}
             {pinned && (
               <button type="button" className="btn btn-ghost" onClick={() => setPinned(null)}>
@@ -318,10 +309,18 @@ export function MapExplorer({ world }: { world: World }) {
         ) : current ? (
           <>
             <p className="eyebrow">Day {current.day}</p>
-            <p className={styles.panelTitle}>{current.title}</p>
-            <p className="muted">{current.lore}</p>
+            <div className={styles.wish}>
+              {currentElement && <Sprite rows={currentElement.sprite} size={72} />}
+              <span>
+                <span className={styles.panelTitle}>{current.title}</span>
+                <span className="muted">
+                  <Credit entry={current} short links={false} />
+                </span>
+                <span className={styles.wishLore}>{current.lore}</span>
+              </span>
+            </div>
             <p className="muted" style={{ fontSize: 'var(--step--1)' }}>
-              Hover or click a tile to read its story.
+              Hover or click a tile to see the wish on it.
             </p>
           </>
         ) : null}

@@ -21,7 +21,16 @@ export function moonPhase(date: string): number {
 }
 
 export function moonName(phase: number): string {
-  const names = ['new moon', 'waxing crescent', 'first quarter', 'waxing gibbous', 'full moon', 'waning gibbous', 'last quarter', 'waning crescent'];
+  const names = [
+    'new moon',
+    'waxing crescent',
+    'first quarter',
+    'waxing gibbous',
+    'full moon',
+    'waning gibbous',
+    'last quarter',
+    'waning crescent',
+  ];
   return names[Math.round(phase * 8) % 8] ?? 'moon';
 }
 
@@ -90,7 +99,8 @@ export function paintSky(layers: SkyLayers, h: number, date: string, stars: read
     const t = (y / Math.max(1, h - 1)) * (bands.length - 1);
     const i = Math.min(bands.length - 2, Math.floor(t));
     const f = t - i;
-    for (let x = 0; x < w; x++) layers.base.put(x, y, (BAYER[(y & 3) * 4 + (x & 3)] as number) < f ? bands[i + 1]! : bands[i]!);
+    for (let x = 0; x < w; x++)
+      layers.base.put(x, y, (BAYER[(y & 3) * 4 + (x & 3)] as number) < f ? bands[i + 1]! : bands[i]!);
   }
 
   // the moon, upper right

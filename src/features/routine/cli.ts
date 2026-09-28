@@ -93,7 +93,10 @@ const { positionals, values } = parseArgs({
 
 /** Pretty JSON, but short number lists ([x, y] tiles) stay on one line. */
 const json = (value: unknown) =>
-  JSON.stringify(value, null, 2).replace(/\[\s+(-?\d+(?:,\s+-?\d+)*)\s+\]/g, (_m, inner: string) => `[${inner.split(/,\s+/).join(', ')}]`);
+  JSON.stringify(value, null, 2).replace(
+    /\[\s+(-?\d+(?:,\s+-?\d+)*)\s+\]/g,
+    (_m, inner: string) => `[${inner.split(/,\s+/).join(', ')}]`,
+  );
 const print = (value: unknown) => process.stdout.write(`${typeof value === 'string' ? value : json(value)}\n`);
 const fail = (message: string, code = 1): never => {
   process.stderr.write(`✗ ${message}\n`);
@@ -243,7 +246,14 @@ switch (command) {
     print(
       tile
         ? { fits: true, tile }
-        : { fits: false, wait: input.x === undefined, reason: input.x === undefined ? 'no free place for this kind today' : checkTile(state, input.kind, input.x, input.y ?? 0) },
+        : {
+            fits: false,
+            wait: input.x === undefined,
+            reason:
+              input.x === undefined
+                ? 'no free place for this kind today'
+                : checkTile(state, input.kind, input.x, input.y ?? 0),
+          },
     );
     break;
   }
@@ -252,7 +262,9 @@ switch (command) {
     const sprite = spriteFromFile();
     const out = values.out ?? 'tmp/sprite-preview.png';
     const problem = checkSprite(sprite);
-    const svg = renderSpriteSvg(sprite.length === 16 ? sprite : [...sprite, ...Array(16).fill('.'.repeat(16))].slice(0, 16));
+    const svg = renderSpriteSvg(
+      sprite.length === 16 ? sprite : [...sprite, ...Array(16).fill('.'.repeat(16))].slice(0, 16),
+    );
     mkdirSync(dirname(abs(out)), { recursive: true });
     writeFileSync(abs(out), new Resvg(svg, { fitTo: { mode: 'width', value: 900 } }).render().asPng());
     print({ ok: problem === null, ...(problem ? { problem } : {}), ...spriteStats(sprite), png: out });
@@ -291,7 +303,9 @@ switch (command) {
     }
     if (problems.length) fail(`world check failed:\n  - ${problems.join('\n  - ')}`);
     const world = readWorld();
-    print(`world ok – day ${world.days[world.days.length - 1]?.day}, ${world.elements.length} on the island, generated files up to date`);
+    print(
+      `world ok – day ${world.days[world.days.length - 1]?.day}, ${world.elements.length} on the island, generated files up to date`,
+    );
     break;
   }
 

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Figtree, Fraunces, JetBrains_Mono, Silkscreen } from 'next/font/google';
+import { Cormorant_Garamond, Figtree, JetBrains_Mono, Silkscreen } from 'next/font/google';
 import { ViewTransition } from 'react';
 import { SiteFooter, SiteHeader } from '@/features/chrome';
 import { SceneRoot } from '@/features/scene';
@@ -7,10 +7,11 @@ import { getLatest, getStats, SITE, siteUrl } from '@/features/world-data';
 import { SmoothScroll } from '@/shared/motion';
 import './globals.css';
 
-const fraunces = Fraunces({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  variable: '--font-fraunces',
-  axes: ['SOFT', 'WONK', 'opsz'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
   display: 'swap',
 });
 const figtree = Figtree({ subsets: ['latin'], variable: '--font-figtree', display: 'swap' });
@@ -27,25 +28,25 @@ export async function generateMetadata(): Promise<Metadata> {
   const stats = getStats();
   return {
     metadataBase: siteUrl(),
-    title: { default: `${SITE.name} – an island that grows one tile a day`, template: `%s · ${SITE.name}` },
+    title: { default: `${SITE.name} – an island made of wishes`, template: `%s · ${SITE.name}` },
     description: SITE.description,
     applicationName: SITE.name,
     authors: [{ name: 'Florian Hein', url: 'https://github.com/Fluory' }],
     keywords: [
       'pixel art',
-      'generative art',
-      'GitHub',
+      'community',
+      'wishes',
+      'GitHub issues',
       'Claude',
       'routine',
       'one commit a day',
       'open source',
-      'island',
     ],
     openGraph: {
       type: 'website',
       siteName: SITE.name,
       title: `${SITE.name} · Day ${latest.day}: ${latest.title}`,
-      description: `${latest.lore} – ${stats.land} tiles of land, ${stats.inhabitants} inhabitants.`,
+      description: `${latest.lore} – ${stats.wishes} wishes granted, ${stats.open} stars still waiting.`,
     },
     twitter: { card: 'summary_large_image' },
     alternates: { canonical: '/' },
@@ -53,26 +54,22 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f7e6cf' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a1420' },
-  ],
-  colorScheme: 'light dark',
+  themeColor: '#0d0b29',
+  colorScheme: 'dark',
 };
 
-const THEME_SCRIPT = `(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('isle-theme');var n=t?t==='night':window.matchMedia('(prefers-color-scheme: dark)').matches;d.dataset.theme=n?'night':'day';}catch(e){d.dataset.theme='day';}})();`;
+const JS_SCRIPT = `document.documentElement.classList.add('js');`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const latest = getLatest();
   return (
     <html
       lang="en"
-      data-theme="day"
-      className={`${fraunces.variable} ${figtree.variable} ${silkscreen.variable} ${jetbrains.variable}`}
+      className={`${cormorant.variable} ${figtree.variable} ${silkscreen.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: JS_SCRIPT }} />
       </head>
       <body>
         <a href="#main" className="skip-link">
@@ -80,13 +77,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <SceneRoot />
         <SmoothScroll>
-          <SiteHeader day={latest.day} repo={SITE.repo} />
+          <SiteHeader day={latest.day} repo={SITE.repo} wishUrl={SITE.wishUrl} />
           <ViewTransition default="page">
             <main id="main" style={{ position: 'relative', zIndex: 1 }}>
               {children}
             </main>
           </ViewTransition>
-          <SiteFooter day={latest.day} repo={SITE.repo} siblings={SITE.siblings} />
+          <SiteFooter day={latest.day} repo={SITE.repo} wishUrl={SITE.wishUrl} siblings={SITE.siblings} />
         </SmoothScroll>
         <div className="grain" aria-hidden="true" />
       </body>

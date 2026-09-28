@@ -12,7 +12,7 @@
   inset: -56px -96px -56px -120px;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(closest-side, color-mix(in oklab, var(--paper) 82%, transparent) 30%, transparent);
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--night-0) 78%, transparent) 30%, transparent);
 }
 
 .headTitle {

@@ -79,9 +79,20 @@ export function plan(world: World, date: string) {
       lore: d.lore,
       ...(d.wisher ? { wisher: d.wisher, issue: d.issue } : {}),
     })),
-    bottles: options.map((o) => ({ key: o.bottle.key, name: o.name, kind: o.bottle.kind, near: o.bottle.near, lore: o.lore })),
+    bottles: options.map((o) => ({
+      key: o.bottle.key,
+      name: o.name,
+      kind: o.bottle.kind,
+      near: o.bottle.near,
+      lore: o.lore,
+    })),
     recommendation: fallback
-      ? { action: 'bottle', bottle: options.find((o) => o.name === fallback.name)?.bottle.key, name: fallback.name, kind: fallback.kind }
+      ? {
+          action: 'bottle',
+          bottle: options.find((o) => o.name === fallback.name)?.bottle.key,
+          name: fallback.name,
+          kind: fallback.kind,
+        }
       : null,
     sprite: {
       size: `${SPRITE_SIZE} lines of ${SPRITE_SIZE} characters`,
@@ -96,7 +107,11 @@ export function plan(world: World, date: string) {
 export function commitTitle(world: World): string {
   const last = latest(world);
   const suffix =
-    last.action === 'wish' ? ` (wish #${last.issue} by @${last.wisher})` : last.action === 'bottle' ? ' (message in a bottle)' : '';
+    last.action === 'wish'
+      ? ` (wish #${last.issue} by @${last.wisher})`
+      : last.action === 'bottle'
+        ? ' (message in a bottle)'
+        : '';
   const max = 120 - suffix.length;
   const title = last.title.length > max ? `${last.title.slice(0, max - 3).trimEnd()}...` : last.title;
   return `Day ${last.day}: ${title}${suffix}`;
@@ -109,11 +124,15 @@ export function commitMessage(world: World, options: { wisherId?: number } = {})
   const land = last.land?.length ?? 0;
   const sea = land > 0 ? ` The sea raised ${land} ${land === 1 ? 'tile' : 'tiles'} of shore.` : '';
   if (last.action === 'wish') {
-    lines.push(`Wished by @${last.wisher} in #${last.issue} with ${last.votes ?? 0} ${last.votes === 1 ? 'vote' : 'votes'}.${sea}`);
+    lines.push(
+      `Wished by @${last.wisher} in #${last.issue} with ${last.votes ?? 0} ${last.votes === 1 ? 'vote' : 'votes'}.${sea}`,
+    );
     if (options.wisherId)
       lines.push('', `Co-authored-by: ${last.wisher} <${options.wisherId}+${last.wisher}@users.noreply.github.com>`);
   } else if (last.action === 'bottle') {
-    lines.push(`A message in a bottle from the islanders${last.source === 'director' ? ', picked by the director' : ''}.${sea}`);
+    lines.push(
+      `A message in a bottle from the islanders${last.source === 'director' ? ', picked by the director' : ''}.${sea}`,
+    );
   }
   return `${lines.join('\n').trimEnd()}\n`;
 }
@@ -234,4 +253,3 @@ export function declinedComment(reason: DeclineReason): string {
     `You are very welcome to wish for something else – [RULES.md](${repoUrl('blob/main/RULES.md')}) shows what fits on the island.`,
   ].join('\n');
 }
-

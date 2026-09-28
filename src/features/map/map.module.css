@@ -152,3 +152,21 @@
     grid-row: 3;
   }
 }
+
+.wish {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-4);
+  align-items: start;
+  text-decoration: none;
+}
+
+.wish > span {
+  display: grid;
+  gap: 4px;
+}
+
+.wishLore {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}

@@ -23,7 +23,11 @@
   display: grid;
   place-items: center;
   aspect-ratio: 4 / 3;
-  background: radial-gradient(circle at 30% 20%, rgb(255 255 255 / 0.5), transparent 60%), var(--cover, var(--sea-2));
+  background:
+    radial-gradient(1.5px 1.5px at 18% 22%, var(--moon) 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 18%, var(--moon) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 84% 64%, var(--gold) 50%, transparent 51%),
+    radial-gradient(circle at 50% 62%, rgb(255 212 94 / 0.22), transparent 58%), var(--cover, var(--night-3));
 }
 
 .chapterCover svg {

@@ -23,7 +23,7 @@
   aspect-ratio: 1;
   border-radius: var(--r-m);
   overflow: hidden;
-  background: linear-gradient(150deg, var(--sea-1), var(--grass));
+  background: linear-gradient(150deg, var(--night-3), var(--violet));
   display: grid;
   place-items: center;
 }

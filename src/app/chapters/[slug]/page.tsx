@@ -5,7 +5,7 @@ import type { CSSProperties } from 'react';
 import { ViewTransition } from 'react';
 import { chapterBySlug, CHAPTERS } from '@/features/chapters';
 import { SceneDirective } from '@/features/scene';
-import { PixelIcon } from '@/shared/ui';
+import { ICONS, Sprite } from '@/features/sprites';
 import pageStyles from '../../page.module.css';
 
 export const dynamicParams = false;
@@ -36,7 +36,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
       <header className={pageStyles.chapterHead}>
         <ViewTransition name={`chapter-cover-${chapter.slug}`} share="morph" default="none">
           <div className={pageStyles.chapterCover} style={{ '--cover': chapter.cover } as CSSProperties}>
-            <PixelIcon name={chapter.icon} size={180} />
+            <Sprite rows={ICONS[chapter.icon]} size={168} />
           </div>
         </ViewTransition>
         <p className="eyebrow">

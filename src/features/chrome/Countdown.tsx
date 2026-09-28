@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 const RUN_HOUR = 8;
-const RUN_MINUTE = 47;
+const RUN_MINUTE = 59;
 
 function berlinWallClock(now: Date): number {
   const parts = new Intl.DateTimeFormat('en-GB', {
@@ -20,7 +20,7 @@ function berlinWallClock(now: Date): number {
   return Date.UTC(get('year'), get('month') - 1, get('day'), get('hour'), get('minute'), get('second'));
 }
 
-/** Milliseconds until the next routine run at 08:47 in Heilbronn. */
+/** Milliseconds until the next routine run at 08:59 in Heilbronn. */
 export function untilNextRun(now = new Date()): number {
   const wall = berlinWallClock(now);
   const day = new Date(wall);
@@ -31,7 +31,7 @@ export function untilNextRun(now = new Date()): number {
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
-/** Live countdown to tomorrow's tile. Renders a placeholder on the server (no hydration mismatch). */
+/** Live countdown to the next wish. Renders a placeholder on the server (no hydration mismatch). */
 export function Countdown({ className }: { className?: string }) {
   const [ms, setMs] = useState<number | null>(null);
   useEffect(() => {

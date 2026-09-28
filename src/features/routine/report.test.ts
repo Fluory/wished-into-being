@@ -1,7 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import { applyBottle, applyDay, createGenesis } from '@/features/island';
 import { wish } from '@/features/island/testing';
-import { commitMessage, commitTitle, declinedComment, grantedComment, plan, prBody, status, waitingComment } from './report';
+import {
+  commitMessage,
+  commitTitle,
+  declinedComment,
+  grantedComment,
+  plan,
+  prBody,
+  status,
+  waitingComment,
+} from './report';
 
 const genesis = createGenesis('2026-09-28');
 const granted = applyDay(genesis, wish({ issue: 12, wisher: 'octo-cat', votes: 5 }), '2026-09-29').world;
@@ -31,21 +40,33 @@ describe('commit and pull request', () => {
   });
 
   it('keeps the title within what the merge job accepts', () => {
-    const long = applyDay(genesis, wish({ title: 'A'.repeat(80), wisher: 'a'.repeat(39), issue: 12345 }), '2026-09-29').world;
+    const long = applyDay(
+      genesis,
+      wish({ title: 'A'.repeat(80), wisher: 'a'.repeat(39), issue: 12345 }),
+      '2026-09-29',
+    ).world;
     const title = commitTitle(long);
     expect(title).toMatch(/^Day [0-9]+: .{3,120}$/);
     expect(title.endsWith(`(wish #12345 by @${'a'.repeat(39)})`)).toBe(true);
   });
 
   it('credits the wisher as co-author when the user id is known', () => {
-    expect(commitMessage(granted, { wisherId: 4242 })).toContain('Co-authored-by: octo-cat <4242+octo-cat@users.noreply.github.com>');
+    expect(commitMessage(granted, { wisherId: 4242 })).toContain(
+      'Co-authored-by: octo-cat <4242+octo-cat@users.noreply.github.com>',
+    );
     expect(commitMessage(granted)).not.toContain('Co-authored-by');
     expect(commitMessage(granted)).toContain('Wished by @octo-cat in #12 with 5 votes.');
   });
 
   it('writes the PR body in the template sections and closes the wish', () => {
     const body = prBody(granted, { imageUrl: 'https://example.org/isle.svg' });
-    for (const heading of ['## Warum', '## Was ist passiert (Klartext)', '## Plan-Pflicht', '## Nachweis', '## Doku-Entscheidung'])
+    for (const heading of [
+      '## Warum',
+      '## Was ist passiert (Klartext)',
+      '## Plan-Pflicht',
+      '## Nachweis',
+      '## Doku-Entscheidung',
+    ])
       expect(body).toContain(heading);
     expect(body).toContain('Closes #12');
     expect(prBody(applyBottle(genesis, '2026-09-29').world)).not.toContain('Closes');
@@ -54,7 +75,9 @@ describe('commit and pull request', () => {
 
 describe('issue comments', () => {
   it('have a fixed, friendly wording', () => {
-    expect(grantedComment(granted, { prUrl: 'https://github.com/x/y/pull/3' })).toMatch(/came true on day 1.*A glass lantern/s);
+    expect(grantedComment(granted, { prUrl: 'https://github.com/x/y/pull/3' })).toMatch(
+      /came true on day 1.*A glass lantern/s,
+    );
     expect(waitingComment('the island has room for 4 buildings and already has 4')).toContain('does not fit yet');
     expect(declinedComment('brand')).toContain('trademarks');
   });

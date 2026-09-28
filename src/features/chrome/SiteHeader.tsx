@@ -5,11 +5,11 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import styles from './chrome.module.css';
 import { Logo } from './Logo';
-import { ThemeToggle } from './ThemeToggle';
 
 const LINKS = [
   { href: '/', label: 'Story' },
-  { href: '/map', label: 'Map' },
+  { href: '/map', label: 'Island' },
+  { href: '/wishes', label: 'Wishes' },
   { href: '/logbook', label: 'Logbook' },
   { href: '/chapters', label: 'Chapters' },
 ];
@@ -22,7 +22,7 @@ function GitHubIcon() {
   );
 }
 
-export function SiteHeader({ day, repo }: { day: number; repo: string }) {
+export function SiteHeader({ day, repo, wishUrl }: { day: number; repo: string; wishUrl: string }) {
   const pathname = usePathname();
   // The menu belongs to the page it was opened on – navigating closes it without an effect.
   const [openOn, setOpenOn] = useState<string | null>(null);
@@ -32,9 +32,9 @@ export function SiteHeader({ day, repo }: { day: number; repo: string }) {
   return (
     <header className={styles.header}>
       <div className={`${styles.bar} glass`}>
-        <Link href="/" className={styles.brand} aria-label="One Tile a Day – home">
+        <Link href="/" className={styles.brand} aria-label="Wished into Being – home">
           <Logo className={styles.brandMark} />
-          <span>One Tile a Day</span>
+          <span>Wished into Being</span>
         </Link>
         <nav className={styles.nav} aria-label="Main">
           {LINKS.map((l) => (
@@ -48,11 +48,13 @@ export function SiteHeader({ day, repo }: { day: number; repo: string }) {
             </Link>
           ))}
         </nav>
-        <Link href={`/day/${day}`} className={styles.dayBadge} title="Today's tile">
+        <Link href={`/day/${day}`} className={styles.dayBadge} title="Today's wish">
           <span className="dot" aria-hidden="true" />
           DAY {String(day).padStart(3, '0')}
         </Link>
-        <ThemeToggle />
+        <a className={`${styles.wishButton} btn btn-accent`} href={wishUrl}>
+          Make a wish
+        </a>
         <a
           className={`${styles.iconLink} ${styles.github}`}
           href={`https://github.com/${repo}`}
@@ -88,6 +90,7 @@ export function SiteHeader({ day, repo }: { day: number; repo: string }) {
               {l.label}
             </Link>
           ))}
+          <a href={wishUrl}>Make a wish ✦</a>
           <a href={`https://github.com/${repo}`}>GitHub ↗</a>
         </nav>
       </div>

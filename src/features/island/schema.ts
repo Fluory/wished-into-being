@@ -24,7 +24,12 @@ export type Action = (typeof ACTIONS)[number];
 export const LOGIN = /^[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}$/;
 
 const isoDate = z.string().refine(isIsoDate, 'expected a date as YYYY-MM-DD');
-const coord = (max: number) => z.number().int().min(0).max(max - 1);
+const coord = (max: number) =>
+  z
+    .number()
+    .int()
+    .min(0)
+    .max(max - 1);
 const spriteRow = z.string().regex(new RegExp(`^[${TRANSPARENT}${PALETTE_CHARS.join('')}]{${SPRITE_SIZE}}$`));
 
 export const ElementSchema = z
@@ -61,7 +66,11 @@ export const DayEntrySchema = z
     issue: z.number().int().min(1).optional(),
     wisher: z.string().regex(LOGIN).optional(),
     votes: z.number().int().min(0).max(100_000).optional(),
-    land: z.array(z.tuple([coord(WIDTH), coord(HEIGHT)])).min(1).max(4).optional(),
+    land: z
+      .array(z.tuple([coord(WIDTH), coord(HEIGHT)]))
+      .min(1)
+      .max(4)
+      .optional(),
     stars: z.array(StarSchema).max(60).optional(),
   })
   .strict();
@@ -73,7 +82,14 @@ export const WorldSchema = z
     genesis: isoDate,
     width: z.literal(WIDTH),
     height: z.literal(HEIGHT),
-    terrain: z.array(z.string().regex(/^[~.,]+$/).length(WIDTH)).length(HEIGHT),
+    terrain: z
+      .array(
+        z
+          .string()
+          .regex(/^[~.,]+$/)
+          .length(WIDTH),
+      )
+      .length(HEIGHT),
     elements: z.array(ElementSchema).min(1),
     days: z.array(DayEntrySchema).min(1),
   })

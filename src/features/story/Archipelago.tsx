@@ -30,8 +30,8 @@ export async function Archipelago() {
           title="One island is a mechanic. Three are an archipelago."
           id="islands-title"
         >
-          This island grows by its own rules. Two sister islands grow by other forces – the real weather in Heilbronn
-          and the wishes of strangers. Same routine, same one commit a day.
+          This island grows from the wishes of strangers. Two sister islands grow by other forces – one tile of living
+          world a day, and the real weather in Heilbronn. Same routine, same one commit a day.
         </SectionHead>
         <Reveal className={styles.islands} stagger="a">
           {SITE.siblings.map((s, i) => (

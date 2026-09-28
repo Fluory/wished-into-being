@@ -24,7 +24,10 @@ export function renderElementSvg(sprite: readonly string[], title: string): stri
       }
       return `<path fill="${color}" d="${runs.map(([x, y, w]) => `M${x} ${y}h${w}v1h-${w}z`).join('')}"/>`;
     });
-  const safe = title.replace(/[<>&"']/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' })[c] ?? c);
+  const safe = title.replace(
+    /[<>&"']/g,
+    (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' })[c] ?? c,
+  );
   return [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="64" height="64" shape-rendering="crispEdges" role="img" aria-label="${safe}">`,
     ...paths,

@@ -29,9 +29,9 @@ describe('sprites', () => {
   it('rejects wrong sizes, foreign characters and near-empty drawings', () => {
     expect(checkSprite(lantern.slice(1))).toMatch(/16 rows/);
     expect(checkSprite(lantern.map((r, i) => (i === 3 ? `${r.slice(0, 15)}X` : r)))).toMatch(/only/);
-    expect(checkSprite(Array.from({ length: 16 }, (_, i) => (i === 8 ? 'kkkkkkkk........' : '................')))).toMatch(
-      /at least 20/,
-    );
+    expect(
+      checkSprite(Array.from({ length: 16 }, (_, i) => (i === 8 ? 'kkkkkkkk........' : '................'))),
+    ).toMatch(/at least 20/);
     expect(checkSprite(Array.from({ length: 16 }, () => 'kkkkkkkkkkkkkkkk'))).toMatch(/two colours|whole tile/);
   });
   it('parses sprites from text, ignoring spaces and blank lines', () => {
@@ -102,7 +102,9 @@ describe('granting a wish', () => {
     const [sx, sy] = tilesOf(genesis, '.')[0] ?? [0, 0];
     expect(() => applyDay(genesis, wish({ kind: 'building', x: sx, y: sy }), date(1))).toThrow(/needs grass/);
     expect(() => applyDay(genesis, wish({ kind: 'water', x: 32, y: 31 }), date(1))).toThrow(/water next to the shore/);
-    expect(() => applyDay(genesis, wish({ kind: 'plant', x: 32, y: 32 }), date(1))).toThrow(/taken by The wishing well/);
+    expect(() => applyDay(genesis, wish({ kind: 'plant', x: 32, y: 32 }), date(1))).toThrow(
+      /taken by The wishing well/,
+    );
     expect(() => applyDay(genesis, wish({ kind: 'light', x: 1, y: 1 }), date(1))).toThrow(/edge/);
   });
 

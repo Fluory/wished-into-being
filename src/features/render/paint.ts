@@ -102,7 +102,11 @@ export function paintIsland(world: World, options: PaintOptions = {}): PaintedIs
   const latest = world.days[world.days.length - 1];
 
   // the island, painted into its own canvases and copied below the sky
-  const island = { base: new PixelCanvas(width, width), waveA: new PixelCanvas(width, width), waveB: new PixelCanvas(width, width) };
+  const island = {
+    base: new PixelCanvas(width, width),
+    waveA: new PixelCanvas(width, width),
+    waveB: new PixelCanvas(width, width),
+  };
   const map = IslandMap.fromRows(world.terrain);
   paintTerrain(map, frame, island);
   const copy = (from: PixelCanvas, to: PixelCanvas) => {
@@ -117,10 +121,18 @@ export function paintIsland(world: World, options: PaintOptions = {}): PaintedIs
   copy(island.waveB, overlays.waveB);
 
   const stars =
-    sky > 0 ? paintSky({ base, twinkleA: overlays.twinkleA, twinkleB: overlays.twinkleB }, sky, latest?.date ?? world.genesis, latest?.stars ?? []) : [];
+    sky > 0
+      ? paintSky(
+          { base, twinkleA: overlays.twinkleA, twinkleB: overlays.twinkleB },
+          sky,
+          latest?.date ?? world.genesis,
+          latest?.stars ?? [],
+        )
+      : [];
 
   // the wishes, back to front
-  const inFrame = (e: Element) => e.x >= frame.x && e.y >= frame.y && e.x < frame.x + frame.size && e.y < frame.y + frame.size;
+  const inFrame = (e: Element) =>
+    e.x >= frame.x && e.y >= frame.y && e.x < frame.x + frame.size && e.y < frame.y + frame.size;
   const drawables = world.elements.filter(inFrame).sort((a, b) => a.y - b.y || a.x - b.x);
   const boxes: PaintedIsland['boxes'] = [];
   for (const e of drawables) {
@@ -181,7 +193,13 @@ function mixShadow(color: string): string {
   let out = SHADOWS.get(color);
   if (!out) {
     const rgb = [1, 3, 5].map((i) => parseInt(color.slice(i, i + 2), 16));
-    out = `#${rgb.map((v) => Math.round(v * 0.55).toString(16).padStart(2, '0')).join('')}`;
+    out = `#${rgb
+      .map((v) =>
+        Math.round(v * 0.55)
+          .toString(16)
+          .padStart(2, '0'),
+      )
+      .join('')}`;
     SHADOWS.set(color, out);
   }
   return out;

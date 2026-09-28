@@ -8,6 +8,8 @@ import { useRef, type ReactNode } from 'react';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 interface Props {
+  /** The element to render – lists stay lists for screen readers. */
+  as?: 'div' | 'ol' | 'ul';
   children: ReactNode;
   className?: string;
   /** Selector of children to stagger; the wrapper itself animates when omitted. */
@@ -16,8 +18,8 @@ interface Props {
 }
 
 /** Fade-and-rise when the block scrolls into view. */
-export function Reveal({ children, className, stagger, y = 28 }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
+export function Reveal({ as: Tag = 'div', children, className, stagger, y = 28 }: Props) {
+  const ref = useRef<HTMLElement>(null);
   useGSAP(
     () => {
       const el = ref.current;
@@ -35,8 +37,8 @@ export function Reveal({ children, className, stagger, y = 28 }: Props) {
     { scope: ref },
   );
   return (
-    <div ref={ref} className={className}>
+    <Tag ref={ref as React.RefObject<never>} className={className}>
       {children}
-    </div>
+    </Tag>
   );
 }

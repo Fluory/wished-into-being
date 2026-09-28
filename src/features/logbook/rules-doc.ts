@@ -29,7 +29,8 @@ export function renderRulesDoc(): string {
     return `| **${info.label}** | ${info.rule} | ${info.examples} |`;
   });
   const palette = PALETTE_CHARS.map(
-    (c) => `| \`${c}\` | ${PALETTE_NAMES[c]} | \`${SPRITE_PALETTE[c]}\` | ${GLOWING.includes(c) ? 'glows at night' : ''} |`,
+    (c) =>
+      `| \`${c}\` | ${PALETTE_NAMES[c]} | \`${SPRITE_PALETTE[c]}\` | ${GLOWING.includes(c) ? 'glows at night' : ''} |`,
   );
   return [
     '# Rules of the island',

@@ -4,25 +4,20 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { formatDate, type World } from '@/features/island';
 import { useScene } from '@/features/scene';
-import { formatDate, type World } from '@/features/world';
+import { Sprite } from '@/features/sprites';
+import { daysLite, type DayLite } from './days';
 import styles from './Timelapse.module.css';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export interface DayLite {
-  day: number;
-  date: string;
-  title: string;
-  lore: string;
-}
-
 const MIN_REAL_DAYS = 30;
 
 /**
- * The centre piece: scroll to replay the island day by day. While the real island is
- * younger than a month, the section shows a clearly labelled simulated year grown by the
- * same rules – and one click switches to the real history.
+ * The centre piece: scroll to replay the island day by day – the sea raising shore, one wish
+ * after another. While the real island is younger than a month, the section shows a clearly
+ * labelled simulated year (messages in a bottle only) – one click switches to the real history.
  */
 export function Timelapse({ real }: { real: DayLite[] }) {
   const realLast = real[real.length - 1]?.day ?? 0;
@@ -44,7 +39,7 @@ export function Timelapse({ real }: { real: DayLite[] }) {
       .then((w) => {
         if (cancelled) return;
         useScene.getState().set({ simulation: w });
-        setSimDays(w.days.map(({ day: d, date, title, lore }) => ({ day: d, date, title, lore })));
+        setSimDays(daysLite(w));
       })
       .catch(() => setSource('real'));
     return () => {
@@ -69,7 +64,7 @@ export function Timelapse({ real }: { real: DayLite[] }) {
       useScene.getState().set({
         day: d,
         source,
-        camera: 'overview',
+        camera: 'hero',
         dim: 0,
         shift: 0,
         shiftY: window.innerWidth > 900 ? 0 : -0.12,
@@ -123,7 +118,7 @@ export function Timelapse({ real }: { real: DayLite[] }) {
                   <span className={styles.simBadge}>SIMULATION</span>
                   <span>
                     The real island is {realLast} {realLast === 1 ? 'day' : 'days'} old. This year was grown by the same
-                    rules.
+                    rules – with messages in a bottle only, so every sprite repeats. Real wishes will look different.
                   </span>
                   <button type="button" className={styles.switch} onClick={() => setSource('real')}>
                     Show the real island
@@ -131,7 +126,7 @@ export function Timelapse({ real }: { real: DayLite[] }) {
                 </>
               ) : (
                 <>
-                  <span>Scroll to replay every day since the sandbank.</span>
+                  <span>Scroll to replay every day since the well.</span>
                   <button type="button" className={styles.switch} onClick={() => setSource('simulation')}>
                     Show a simulated year
                   </button>
@@ -141,11 +136,14 @@ export function Timelapse({ real }: { real: DayLite[] }) {
           </div>
           <div className={`${styles.caption} glass`}>
             {entry ? (
-              <>
-                <p className="eyebrow">Day {entry.day}</p>
-                <p className={styles.captionTitle}>{entry.title}</p>
-                <p className="muted">{entry.lore}</p>
-              </>
+              <div className={styles.captionBody}>
+                <Sprite rows={entry.sprite} size={72} className={styles.captionSprite} />
+                <div>
+                  <p className="eyebrow">Day {entry.day}</p>
+                  <p className={styles.captionTitle}>{entry.title}</p>
+                  <p className="muted">{entry.lore}</p>
+                </div>
+              </div>
             ) : (
               <p className="muted">Loading the island…</p>
             )}

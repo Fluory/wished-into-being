@@ -4,9 +4,9 @@ import { getWorld } from '@/features/world-data';
 import pageStyles from '../page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Map & timeline',
+  title: 'The island',
   description:
-    'Zoom into the pixel island, scrub through every day since the sandbank and read the story of each tile.',
+    'The pixel island tile by tile: zoom in, scrub through every day since the well and see who wished for what.',
   alternates: { canonical: '/map' },
 };
 
@@ -14,10 +14,12 @@ export default function MapPage() {
   return (
     <div className={`container ${pageStyles.page}`}>
       <header className={pageStyles.head}>
-        <p className="eyebrow">Map &amp; timeline</p>
-        <h1 className="h2">Every tile has a day.</h1>
+        <p className="eyebrow">The island</p>
+        <h1 className="h2">
+          Every tile has <em>a wish.</em>
+        </h1>
         <p className="lede">
-          Drag the timeline back to the sandbank or press play. Click any tile to read what happened there.
+          Drag the timeline back to the well or press play. Click any tile to see what was wished for there.
         </p>
       </header>
       <MapExplorer world={getWorld()} />

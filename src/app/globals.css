@@ -1,4 +1,4 @@
-/* One Tile a Day – design system entry. Order matters: tokens → base → components → motion. */
+/* Wished into Being – design system entry. Order matters: tokens → base → components → motion. */
 @import './styles/tokens.css';
 @import './styles/base.css';
 @import './styles/components.css';

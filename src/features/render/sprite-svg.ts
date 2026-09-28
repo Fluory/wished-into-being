@@ -76,7 +76,9 @@ export function renderSpriteSvg(sprite: readonly string[], options: SpriteSvgOpt
       canvas.put(16 + x, 8 + y, color);
       canvas.put(16 + x, 40 + y, color);
     }
-    parts.push(`<g transform="translate(${left} ${margin}) scale(${(panel / 48).toFixed(3)})">${canvasPaths(canvas)}</g>`);
+    parts.push(
+      `<g transform="translate(${left} ${margin}) scale(${(panel / 48).toFixed(3)})">${canvasPaths(canvas)}</g>`,
+    );
     parts.push(label('ON THE ISLAND AT NIGHT', left, margin - GLYPH_HEIGHT * 2 - 8));
   }
 

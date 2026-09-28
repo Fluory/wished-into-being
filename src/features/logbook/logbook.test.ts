@@ -15,7 +15,9 @@ describe('LOGBOOK.md', () => {
   });
 
   it('credits wishers with links, and bottles as bottles', () => {
-    expect(book).toContain('wished by [@octo-cat](https://github.com/octo-cat) in [#12](https://github.com/Fluory/wished-into-being/issues/12) · 1 vote');
+    expect(book).toContain(
+      'wished by [@octo-cat](https://github.com/octo-cat) in [#12](https://github.com/Fluory/wished-into-being/issues/12) · 1 vote',
+    );
     expect(book).toContain('a message in a bottle from the islanders · picked by the director');
   });
 });

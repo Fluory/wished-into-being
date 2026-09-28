@@ -1,6 +1,14 @@
 import type { MDXComponents } from 'mdx/types';
 import Link from 'next/link';
-import { Callout, IslandFigure, RuleTable, Sprites, Swatches } from '@/features/chapters/mdx/components';
+import {
+  Bottles,
+  Callout,
+  GrowthNumbers,
+  IslandFigure,
+  KindTable,
+  Palette,
+  SpriteSource,
+} from '@/features/chapters/mdx/components';
 
 const components: MDXComponents = {
   a: ({ href = '', children, ...rest }) =>
@@ -13,11 +21,13 @@ const components: MDXComponents = {
         {children}
       </a>
     ),
+  Bottles,
   Callout,
+  GrowthNumbers,
   IslandFigure,
-  RuleTable,
-  Sprites,
-  Swatches,
+  KindTable,
+  Palette,
+  SpriteSource,
 };
 
 export function useMDXComponents(): MDXComponents {

@@ -46,7 +46,9 @@ export function createGenesis(date: string): World {
     height: HEIGHT,
     terrain: map.rows(),
     elements: [well],
-    days: [{ day: 0, date, action: 'genesis', element: 'w1', title: GENESIS_TITLE, lore: GENESIS_LORE, source: 'genesis' }],
+    days: [
+      { day: 0, date, action: 'genesis', element: 'w1', title: GENESIS_TITLE, lore: GENESIS_LORE, source: 'genesis' },
+    ],
   };
 }
 
@@ -105,7 +107,8 @@ export interface DayResult {
 export function checkWish(state: IslandState, input: WishInput): { reason: string; wait: boolean } | null {
   const bad = (reason: string, wait = false) => ({ reason, wait });
   const name = tidyName(input.name);
-  const text = checkText('name', name) ?? checkText('lore', input.lore) ?? (input.title ? checkText('title', input.title) : null);
+  const text =
+    checkText('name', name) ?? checkText('lore', input.lore) ?? (input.title ? checkText('title', input.title) : null);
   if (text) return bad(text);
   const sprite = checkSprite(input.sprite);
   if (sprite) return bad(sprite);
@@ -167,7 +170,12 @@ export function applyDay(world: World, input: WishInput, date: string): DayResul
     ...(input.stars && input.stars.length > 0 ? { stars: input.stars.slice(0, 60) } : {}),
   };
   return {
-    world: { ...world, terrain: state.map.rows(), elements: [...world.elements, element], days: [...world.days, entry] },
+    world: {
+      ...world,
+      terrain: state.map.rows(),
+      elements: [...world.elements, element],
+      days: [...world.days, entry],
+    },
     entry,
     element,
   };

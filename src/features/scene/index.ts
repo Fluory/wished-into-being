@@ -1,4 +1,4 @@
-/** Public interface of the scene module: the persistent canvas and the ways to direct it. */
+/** Public interface of the 3D scene. Pages direct it; they never import three.js themselves. */
 export { SceneDirective } from './SceneDirective';
 export { SceneRoot } from './SceneRoot';
-export { useScene, type CameraPreset, type Source } from './store';
+export { activeWorld, useScene, type CameraPreset, type Focus, type Source } from './store';

@@ -1,4 +1,4 @@
-import type { IconName } from '@/features/render';
+import type { IconName } from '@/features/sprites';
 
 /**
  * The chapters – short case studies of how the island works. Content lives in
@@ -16,40 +16,42 @@ export interface Chapter {
 
 export const CHAPTERS: readonly Chapter[] = [
   {
-    slug: 'why-one-tile',
+    slug: 'why-wishes',
     no: '01',
-    title: 'Why one tile a day?',
-    summary: 'A world that is only allowed to change once a day – and why that makes it worth watching.',
-    icon: 'tree',
-    cover: '#7fd0d4',
+    title: 'An island made of wishes',
+    summary: 'Why a public repository is a good place to wish for things – and why only one wish a day comes true.',
+    icon: 'well',
+    cover: '#5b3f8c',
     minutes: 3,
   },
   {
-    slug: 'world-rules',
+    slug: 'sixteen-colours',
     no: '02',
-    title: 'How the island decides',
-    summary: 'Twenty rules, a director with a sense of drama, and why a library has to wait for three houses.',
-    icon: 'library',
-    cover: '#c7b6f2',
+    title: 'Sixteen by sixteen, fifteen colours',
+    summary: 'How a wish becomes a sprite: the palette, the checks, and how Claude draws what you only described.',
+    icon: 'lantern',
+    cover: '#2b2d5c',
+    minutes: 4,
+  },
+  {
+    slug: 'the-sea-and-the-rules',
+    no: '03',
+    title: 'The sea and the rules',
+    summary:
+      'Two tiles of shore every dawn, room that grows with the land, and why the island can never lock itself up.',
+    icon: 'rowboat',
+    cover: '#162256',
     minutes: 5,
   },
   {
     slug: 'the-routine',
-    no: '03',
-    title: 'A day in the life of the routine',
-    summary: 'What happens between 08:47 and the merge: idempotency, one pull request and exactly one commit.',
-    icon: 'lighthouse',
-    cover: '#ffd96a',
-    minutes: 5,
-  },
-  {
-    slug: 'pixels-and-seasons',
     no: '04',
-    title: 'Pixels, palettes and seasons',
-    summary: 'Hand-drawn sprites, soft coastlines from hard tiles, dithered seas – and the same island in 3D.',
-    icon: 'windmill',
-    cover: '#ff9f8a',
-    minutes: 4,
+    title: 'A routine with guard rails',
+    summary:
+      'What happens between 08:59 and the merge – and how a wish that says “ignore your instructions” stays just a wish.',
+    icon: 'owl',
+    cover: '#211c4d',
+    minutes: 5,
   },
 ];
 

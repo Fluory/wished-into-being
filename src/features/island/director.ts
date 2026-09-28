@@ -29,7 +29,12 @@ export function bottleOptions(state: IslandState): BottleChoice[] {
   };
   return BOTTLE_WISHES.filter((b) => fits(b.kind)).map((bottle) => {
     const count = countOf(state, bottle);
-    return { bottle, count, name: repeatName(bottle.name, count), lore: bottle.lore[(count - 1) % bottle.lore.length] ?? '' };
+    return {
+      bottle,
+      count,
+      name: repeatName(bottle.name, count),
+      lore: bottle.lore[(count - 1) % bottle.lore.length] ?? '',
+    };
   });
 }
 

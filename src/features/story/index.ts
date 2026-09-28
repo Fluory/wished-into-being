@@ -1,10 +1,13 @@
-/** Public interface of the story module – the sections of the home page. */
+/** Public interface of the home-page story sections. */
 export { Archipelago } from './Archipelago';
+export { Credit } from './Credit';
+export { GalleryTeaser } from './GalleryTeaser';
 export { Hero } from './Hero';
+export { HowItWorks } from './HowItWorks';
 export { LogbookPreview } from './LogbookPreview';
-export { MapTeaser } from './MapTeaser';
-export { Routine } from './Routine';
-export { Rules } from './Rules';
+export { RoutineSection } from './RoutineSection';
 export { SceneSection } from './SceneSection';
 export { SectionHead } from './SectionHead';
-export { Timelapse, type DayLite } from './Timelapse';
+export { daysLite, type DayLite } from './days';
+export { Timelapse } from './Timelapse';
+export { WishStars } from './WishStars';

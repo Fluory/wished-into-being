@@ -1,3 +1,14 @@
-/** Public interface: build-time world access for pages and route handlers. */
-export { getDay, getDaysNewestFirst, getLatest, getSimulation, getStats, getWorld } from './world';
-export { SITE, siteUrl, repoUrl } from './site';
+/** Public interface of the site's data layer. */
+export { repoUrl, SITE, siteUrl } from './site';
+export {
+  getDay,
+  getDaysNewestFirst,
+  getElement,
+  getLatest,
+  getSimulation,
+  getStars,
+  getStats,
+  getWishes,
+  getWorld,
+  getWorldAt,
+} from './world';

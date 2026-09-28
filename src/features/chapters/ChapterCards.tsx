@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { ViewTransition } from 'react';
 import styles from './ChapterCards.module.css';
-import { PixelIcon } from '@/shared/ui';
+import { ICONS, Sprite } from '@/features/sprites';
 import { Reveal } from '@/shared/motion';
 import { CHAPTERS } from './registry';
 
@@ -20,7 +20,7 @@ export function ChapterCards() {
         >
           <ViewTransition name={`chapter-cover-${c.slug}`} share="morph" default="none">
             <div className={styles.chapterCover}>
-              <PixelIcon name={c.icon} size={120} />
+              <Sprite rows={ICONS[c.icon]} size={112} />
             </div>
           </ViewTransition>
           <div className={styles.chapterBody}>

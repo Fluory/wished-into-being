@@ -36,7 +36,8 @@ function chunk(type: string, data: Uint8Array): Uint8Array {
 /** Encode a canvas (at most 255 colours, alpha allowed) as an 8-bit indexed PNG. */
 export function encodePng(canvas: PixelCanvas): Uint8Array {
   const { width, height } = canvas;
-  if (canvas.colors.length > 255) throw new Error(`a PNG layer can hold 255 colours, this one has ${canvas.colors.length}`);
+  if (canvas.colors.length > 255)
+    throw new Error(`a PNG layer can hold 255 colours, this one has ${canvas.colors.length}`);
   // index 0 is "transparent", the canvas colours follow
   const palette = new Uint8Array(3 * (canvas.colors.length + 1));
   const alpha = new Uint8Array(canvas.colors.length + 1);

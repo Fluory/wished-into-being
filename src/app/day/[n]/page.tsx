@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ViewTransition } from 'react';
+import { formatDate, islandStats, KIND_INFO, worldAt } from '@/features/island';
 import { renderIsleSvg } from '@/features/render';
 import { SceneDirective } from '@/features/scene';
-import { CATALOGUE, formatDate, worldAt, worldStats } from '@/features/world';
-import { getDay, getWorld, repoUrl } from '@/features/world-data';
+import { Sprite } from '@/features/sprites';
+import { Credit } from '@/features/story';
+import { getDay, getElement, getWorld, repoUrl } from '@/features/world-data';
 import pageStyles from '../../page.module.css';
 
 export const dynamicParams = false;
@@ -29,47 +31,52 @@ export default async function DayPage({ params }: { params: Promise<{ n: string 
   const { n } = await params;
   const entry = getDay(Number(n));
   if (!entry) notFound();
+  const element = getElement(entry.element);
+  if (!element) notFound();
   const world = getWorld();
   const then = worldAt(world, entry.day);
-  const stats = worldStats(then);
+  const stats = islandStats(then);
   const svg = renderIsleSvg(then, { caption: false });
   const index = world.days.findIndex((d) => d.day === entry.day);
   const prev = world.days[index - 1];
   const next = world.days[index + 1];
-  const label = entry.action === 'genesis' ? 'Genesis' : CATALOGUE[entry.action].label;
-  const emoji = entry.action === 'genesis' ? '🌊' : CATALOGUE[entry.action].emoji;
+  const kind = entry.action === 'genesis' ? 'the beginning' : KIND_INFO[element.kind].label;
 
   return (
     <div className={`container ${pageStyles.page}`}>
-      <SceneDirective camera="focus" focus={{ x: entry.x, y: entry.y }} day={entry.day} dim={0.45} orbit={false} />
+      <SceneDirective camera="focus" focus={{ x: element.x, y: element.y }} day={entry.day} dim={0.4} orbit={false} />
       <div className={pageStyles.dayHero}>
         <header className={pageStyles.head}>
           <p className="eyebrow">
-            Day {entry.day} · {formatDate(entry.date)} · {label}
+            Day {entry.day} · {formatDate(entry.date)} · {kind}
           </p>
+          <div className={pageStyles.daySprite}>
+            <Sprite rows={element.sprite} size={128} label={element.name} />
+          </div>
           <ViewTransition name={`day-title-${entry.day}`} share="morph" default="none">
-            <h1 className="h2">
-              <span aria-hidden="true">{emoji}</span> {entry.title}
-            </h1>
+            <h1 className="h2">{entry.title}</h1>
           </ViewTransition>
+          <p className={pageStyles.dayCredit}>
+            <Credit entry={entry} />
+          </p>
           <p className="lede">{entry.lore}</p>
           <div className={pageStyles.stats}>
-            <span className="pill">{stats.land} tiles of land</span>
-            <span className="pill">{stats.inhabitants} inhabitants</span>
             <span className="pill">
-              tile {entry.x}, {entry.y}
+              tile {element.x}, {element.y}
             </span>
+            <span className="pill">{stats.land} tiles of land that day</span>
+            {entry.land && <span className="pill">the sea raised {entry.land.length} tiles</span>}
             <span className="pill">
               {entry.source === 'director'
-                ? 'chosen by the director'
+                ? 'picked by the director'
                 : entry.source === 'claude'
-                  ? 'chosen by Claude'
+                  ? 'drawn by Claude'
                   : 'genesis'}
             </span>
           </div>
           <p>
-            <a className="btn btn-ghost" href={repoUrl(`commits/main/world/world.json`)}>
-              See the commits <span className="arrow">→</span>
+            <a className="btn btn-ghost" href={repoUrl(`blob/main/world/sprites/${element.id}.svg`)}>
+              The sprite on GitHub <span className="arrow">→</span>
             </a>
           </p>
         </header>

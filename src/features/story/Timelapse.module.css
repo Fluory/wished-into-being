@@ -56,6 +56,17 @@
   min-height: 150px;
 }
 
+.captionBody {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-4);
+  align-items: center;
+}
+
+.captionSprite {
+  filter: drop-shadow(0 0 12px rgb(255 212 94 / 0.25));
+}
+
 .captionTitle {
   font-family: var(--font-display);
   font-size: var(--step-2);
@@ -75,7 +86,7 @@
   position: absolute;
   inset: 0;
   transform-origin: left;
-  background: linear-gradient(90deg, var(--sea-2), var(--grass), var(--sun), var(--accent));
+  background: linear-gradient(90deg, var(--violet), var(--lilac), var(--gold));
 }
 
 .simNote {
@@ -94,8 +105,8 @@
   letter-spacing: 0.08em;
   padding: 4px 10px;
   border-radius: var(--r-pill);
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--gold);
+  color: var(--on-accent);
 }
 
 .switch {
