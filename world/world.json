@@ -38,8 +38,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -71,9 +71,11 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   ],
   "elements": [
-    {"id":"w1","day":0,"kind":"object","name":"The wishing well","x":32,"y":32,"sprite":["................","......kkkk......","....kkuuuukk....","...kuuuuuuuuk...","..kuuuuuuuuuuk..","..kkkkkkkkkkkk..","...ku......uk...","...ku..kk..uk...","...ku..ke..uk...","..kkkkkkkkkkkk..","..keeeeeeeeeek..","..kebbbbbbbbek..","..keeekeeekeek..","..kekeeekeeeek..","..keeeeeeeeeek..","...kkkkkkkkkk..."]}
+    {"id":"w1","day":0,"kind":"object","name":"The wishing well","x":32,"y":32,"sprite":["................","......kkkk......","....kkuuuukk....","...kuuuuuuuuk...","..kuuuuuuuuuuk..","..kkkkkkkkkkkk..","...ku......uk...","...ku..kk..uk...","...ku..ke..uk...","..kkkkkkkkkkkk..","..keeeeeeeeeek..","..kebbbbbbbbek..","..keeekeeekeek..","..kekeeekeeeek..","..keeeeeeeeeek..","...kkkkkkkkkk..."]},
+    {"id":"w2","day":1,"kind":"light","name":"A lantern for the path","x":31,"y":32,"sprite":["................",".......kk.......","......kyyk......",".....kkkkkk.....",".....kcyyck.....",".....kyccyk.....",".....kcyyck.....",".....kkkkkk.....",".......kk.......",".......ek.......",".......ek.......",".......ek.......",".......ek.......",".......ek.......",".....kkkkkk.....",".....keeeek....."]}
   ],
   "days": [
-    {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"}
+    {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
+    {"day":1,"date":"2026-09-29","action":"bottle","element":"w2","title":"A lantern for the path","lore":"The first light on the island is small and patient. It waits by the well for whoever makes the first wish.","source":"claude","land":[[30,34],[29,33]]}
   ]
 }
