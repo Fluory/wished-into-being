@@ -39,8 +39,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -72,10 +72,12 @@
   ],
   "elements": [
     {"id":"w1","day":0,"kind":"object","name":"The wishing well","x":32,"y":32,"sprite":["................","......kkkk......","....kkuuuukk....","...kuuuuuuuuk...","..kuuuuuuuuuuk..","..kkkkkkkkkkkk..","...ku......uk...","...ku..kk..uk...","...ku..ke..uk...","..kkkkkkkkkkkk..","..keeeeeeeeeek..","..kebbbbbbbbek..","..keeekeeekeek..","..kekeeekeeeek..","..keeeeeeeeeek..","...kkkkkkkkkk..."]},
-    {"id":"w2","day":1,"kind":"light","name":"A lantern for the path","x":31,"y":32,"sprite":["................",".......kk.......","......kyyk......",".....kkkkkk.....",".....kcyyck.....",".....kyccyk.....",".....kcyyck.....",".....kkkkkk.....",".......kk.......",".......ek.......",".......ek.......",".......ek.......",".......ek.......",".......ek.......",".....kkkkkk.....",".....keeeek....."]}
+    {"id":"w2","day":1,"kind":"light","name":"A lantern for the path","x":31,"y":32,"sprite":["................",".......kk.......","......kyyk......",".....kkkkkk.....",".....kcyyck.....",".....kyccyk.....",".....kcyyck.....",".....kkkkkk.....",".......kk.......",".......ek.......",".......ek.......",".......ek.......",".......ek.......",".......ek.......",".....kkkkkk.....",".....keeeek....."]},
+    {"id":"w3","day":2,"kind":"object","name":"A bench for stargazing","x":34,"y":32,"sprite":["................","................","................","................",".kkkkkkkkkkkkkk.",".kuuuuuuuuuuuuk.",".kkkkkkkkkkkkkk.",".kuuuuuuuuuuuuk.",".kkkkkkkkkkkkkk.","................",".kkkkkkkkkkkkkk.",".kuuuuuuuuuuuuk.",".kkkkkkkkkkkkkk.","..kk........kk..","..kk........kk..","................"]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
-    {"day":1,"date":"2026-09-29","action":"bottle","element":"w2","title":"A lantern for the path","lore":"The first light on the island is small and patient. It waits by the well for whoever makes the first wish.","source":"claude","land":[[30,34],[29,33]]}
+    {"day":1,"date":"2026-09-29","action":"bottle","element":"w2","title":"A lantern for the path","lore":"The first light on the island is small and patient. It waits by the well for whoever makes the first wish.","source":"claude","land":[[30,34],[29,33]]},
+    {"day":2,"date":"2026-09-30","action":"bottle","element":"w3","title":"A bench for stargazing","lore":"A bench faces the water, with room for two. On clear nights it waits for someone to sit and count the stars.","source":"claude","land":[[31,35],[30,35]]}
   ]
 }
