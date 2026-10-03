@@ -39,8 +39,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -75,13 +75,15 @@
     {"id":"w2","day":1,"kind":"light","name":"A lantern for the path","x":31,"y":32,"sprite":["................",".......kk.......","......kyyk......",".....kkkkkk.....",".....kcyyck.....",".....kyccyk.....",".....kcyyck.....",".....kkkkkk.....",".......kk.......",".......ek.......",".......ek.......",".......ek.......",".......ek.......",".......ek.......",".....kkkkkk.....",".....keeeek....."]},
     {"id":"w3","day":2,"kind":"object","name":"A bench for stargazing","x":34,"y":32,"sprite":["................","................","................","................",".kkkkkkkkkkkkkk.",".kuuuuuuuuuuuuk.",".kkkkkkkkkkkkkk.",".kuuuuuuuuuuuuk.",".kkkkkkkkkkkkkk.","................",".kkkkkkkkkkkkkk.",".kuuuuuuuuuuuuk.",".kkkkkkkkkkkkkk.","..kk........kk..","..kk........kk..","................"]},
     {"id":"w4","day":3,"kind":"water","name":"A small rowboat","x":32,"y":35,"sprite":["................","................",".......k........",".......kw.......",".......kww......",".......kwww.....",".......kwwww....",".......kwwwww...",".......k........",".kkkkkkkkkkkkkk.",".kuuuuuuuuuuuuk.","..kuuuuuuuuuuk..","...kkkkkkkkkk...","..bb..bbbb..bb..","................","................"]},
-    {"id":"w5","day":4,"kind":"plant","name":"A bed of night flowers","x":31,"y":31,"sprite":["................","................","................","...kk.....kk....","..kppk...kyyk...","..kpypk.kyoyk...","...kpk...kyk....","....g.....g.....","....g..kk.g.....","....g.krrk.g....","...gg.kryrk.g...","..g.g..krk..g...","....gg..g..gg...","...dgdggggdgd...","..dddddddddddd..","................"]}
+    {"id":"w5","day":4,"kind":"plant","name":"A bed of night flowers","x":31,"y":31,"sprite":["................","................","................","...kk.....kk....","..kppk...kyyk...","..kpypk.kyoyk...","...kpk...kyk....","....g.....g.....","....g..kk.g.....","....g.krrk.g....","...gg.kryrk.g...","..g.g..krk..g...","....gg..g..gg...","...dgdggggdgd...","..dddddddddddd..","................"]},
+    {"id":"w6","day":5,"kind":"creature","name":"An owl","x":28,"y":35,"sprite":["................","....k......k....","....kk....kk....","....kukkkkuk....","....kuuuuuuk....","...kcykuukyck...","...kkkkuukkkk...","...kuuuoouuuk...","...kucuuuucuk...","...kuucuucuuk...","...kucuuuucuk...","....kuuuuuuk....","....kkkkkkkk....",".....ko..ok.....","..kkkkkkkkkkkk..","................"]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
     {"day":1,"date":"2026-09-29","action":"bottle","element":"w2","title":"A lantern for the path","lore":"The first light on the island is small and patient. It waits by the well for whoever makes the first wish.","source":"claude","land":[[30,34],[29,33]]},
     {"day":2,"date":"2026-09-30","action":"bottle","element":"w3","title":"A bench for stargazing","lore":"A bench faces the water, with room for two. On clear nights it waits for someone to sit and count the stars.","source":"claude","land":[[31,35],[30,35]]},
     {"day":3,"date":"2026-10-01","action":"bottle","element":"w4","title":"A small rowboat","lore":"A small rowboat rests at the shore, tied with a loose knot. It never goes far, but it always comes back by morning.","source":"claude","land":[[29,34],[29,35]]},
-    {"day":4,"date":"2026-10-02","action":"bottle","element":"w5","title":"A bed of night flowers","lore":"Night flowers grow in a small bed of their own. They open when the lantern is lit and close again before anyone wakes.","source":"claude","land":[[29,32],[28,33]]}
+    {"day":4,"date":"2026-10-02","action":"bottle","element":"w5","title":"A bed of night flowers","lore":"Night flowers grow in a small bed of their own. They open when the lantern is lit and close again before anyone wakes.","source":"claude","land":[[29,32],[28,33]]},
+    {"day":5,"date":"2026-10-03","action":"bottle","element":"w6","title":"An owl","lore":"An owl settles in the quietest corner of the island. Each night she counts the lights below and has not lost track once.","source":"claude","land":[[28,34],[28,35]]}
   ]
 }
