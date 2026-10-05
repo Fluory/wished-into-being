@@ -36,10 +36,10 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~..,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~..,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -77,7 +77,8 @@
     {"id":"w4","day":3,"kind":"water","name":"A small rowboat","x":32,"y":35,"sprite":["................","................",".......k........",".......kw.......",".......kww......",".......kwww.....",".......kwwww....",".......kwwwww...",".......k........",".kkkkkkkkkkkkkk.",".kuuuuuuuuuuuuk.","..kuuuuuuuuuuk..","...kkkkkkkkkk...","..bb..bbbb..bb..","................","................"]},
     {"id":"w5","day":4,"kind":"plant","name":"A bed of night flowers","x":31,"y":31,"sprite":["................","................","................","...kk.....kk....","..kppk...kyyk...","..kpypk.kyoyk...","...kpk...kyk....","....g.....g.....","....g..kk.g.....","....g.krrk.g....","...gg.kryrk.g...","..g.g..krk..g...","....gg..g..gg...","...dgdggggdgd...","..dddddddddddd..","................"]},
     {"id":"w6","day":5,"kind":"creature","name":"An owl","x":28,"y":35,"sprite":["................","....k......k....","....kk....kk....","....kukkkkuk....","....kuuuuuuk....","...kcykuukyck...","...kkkkuukkkk...","...kuuuoouuuk...","...kucuuuucuk...","...kuucuucuuk...","...kucuuuucuk...","....kuuuuuuk....","....kkkkkkkk....",".....ko..ok.....","..kkkkkkkkkkkk..","................"]},
-    {"id":"w7","day":6,"kind":"building","name":"A cottage with warm windows","x":33,"y":32,"sprite":["................","..........kk....","....kkkkkkkuk...","...krrrrrrrkk...","..krrrrrrrrrrk..",".krrrrrrrrrrrrk.","kkkkkkkkkkkkkkkk",".kccccccccccccck",".kcckkkcccckkkck",".kcckykcccckykck",".kcckkkcccckkkck",".kcccccckkccccck",".kcccccckuccccck",".kcccccckuccccck",".kkkkkkkkkkkkkkk","................"]}
+    {"id":"w7","day":6,"kind":"building","name":"A cottage with warm windows","x":33,"y":32,"sprite":["................","..........kk....","....kkkkkkkuk...","...krrrrrrrkk...","..krrrrrrrrrrk..",".krrrrrrrrrrrrk.","kkkkkkkkkkkkkkkk",".kccccccccccccck",".kcckkkcccckkkck",".kcckykcccckykck",".kcckkkcccckkkck",".kcccccckkccccck",".kcccccckuccccck",".kcccccckuccccck",".kkkkkkkkkkkkkkk","................"]},
+    {"id":"w8","day":7,"kind":"light","name":"A campfire","x":31,"y":35,"sprite":["................","................",".......y........","......yo........","......yoy.......",".....yoroy......",".....orrryo.....","....yorrrrry....","....oryyyyro....",".....oyccyo.....","...kkuukkuukk...","..kuukkuukkuuk..","...kkeek.keek...","..keek....keek..","..kk........kk..","................"]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -86,6 +87,7 @@
     {"day":3,"date":"2026-10-01","action":"bottle","element":"w4","title":"A small rowboat","lore":"A small rowboat rests at the shore, tied with a loose knot. It never goes far, but it always comes back by morning.","source":"claude","land":[[29,34],[29,35]]},
     {"day":4,"date":"2026-10-02","action":"bottle","element":"w5","title":"A bed of night flowers","lore":"Night flowers grow in a small bed of their own. They open when the lantern is lit and close again before anyone wakes.","source":"claude","land":[[29,32],[28,33]]},
     {"day":5,"date":"2026-10-03","action":"bottle","element":"w6","title":"An owl","lore":"An owl settles in the quietest corner of the island. Each night she counts the lights below and has not lost track once.","source":"claude","land":[[28,34],[28,35]]},
-    {"day":6,"date":"2026-10-04","action":"bottle","element":"w7","title":"A cottage with warm windows","lore":"A cottage with warm windows stands near the well. Nobody lives there yet, but the door is never locked and the kettle is always full.","source":"claude","land":[[29,36],[28,32]]}
+    {"day":6,"date":"2026-10-04","action":"bottle","element":"w7","title":"A cottage with warm windows","lore":"A cottage with warm windows stands near the well. Nobody lives there yet, but the door is never locked and the kettle is always full.","source":"claude","land":[[29,36],[28,32]]},
+    {"day":7,"date":"2026-10-05","action":"bottle","element":"w8","title":"A campfire","lore":"A small campfire crackles near the water. Wishes are easier to say out loud beside a fire, even when nobody is listening yet.","source":"claude","land":[[29,31],[27,34]]}
   ]
 }
