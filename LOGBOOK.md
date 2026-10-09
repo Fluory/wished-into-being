@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 10** · 0 wishes granted for 0 people · 10 messages in a bottle · 41 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 11** · 0 wishes granted for 0 people · 11 messages in a bottle · 43 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w12.svg" width="40" height="40" alt=""> Day 11 · A telescope
+
+<sub>9 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A telescope stands by the water, pointed at the empty sky. Someone is waiting for the first star to appear.
 
 ### <img src="world/sprites/w11.svg" width="40" height="40" alt=""> Day 10 · A grey cat
 
