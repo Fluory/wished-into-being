@@ -36,8 +36,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~......~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~..,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -82,7 +82,8 @@
     {"id":"w9","day":8,"kind":"plant","name":"A young pine","x":30,"y":33,"sprite":[".......kk.......","......kddk......",".....kdgddk.....","....kddgdddk....",".....kdddgk.....","....kdgddddk....","...kddddgdddk...","....kddgdddk....","...kdgdddddgk...","..kdddgddddddk..","...kkkkkkkkkk...",".......kuk......",".......kuk......",".......kuk......","......kkkkk.....","................"]},
     {"id":"w10","day":9,"kind":"water","name":"A golden fish","x":29,"y":37,"sprite":["................","................","................","................",".....kkkkk......","...kkoooook..kk.","..kooooooookkok.",".kocoooooooooko.",".kooooooooookok.","..kooooooookkok.","...kkoooook..kk.",".....kkkkk......","..b.......b..b..","................","................","................"]},
     {"id":"w11","day":10,"kind":"creature","name":"A grey cat","x":32,"y":33,"sprite":["................","................","..k...k.........","..kk.kk.........","..kekek.........","..keeek.........","..kyeyk.........","..keeek.....k...","...kek.....kek..","..keeeekkkkek...","..keeeeeeeek....","..keeeeeeeek....","..keeeeeeeek....","..kek.kek.kek...","..kk..kk..kk....","................"]},
-    {"id":"w12","day":11,"kind":"object","name":"A telescope","x":30,"y":35,"sprite":["................",".............kk.","...........kkbk.",".........kkbbbk.",".......kkbbbbk..",".....kkbbbbkk...","....kebbbkk.....","....kkkkk.......",".....kuk........","....kuuk........","...ku.kuk.......","..ku...kuk......",".ku.....kuk.....","kk.......kk.....","................","................"]}
+    {"id":"w12","day":11,"kind":"object","name":"A telescope","x":30,"y":35,"sprite":["................",".............kk.","...........kkbk.",".........kkbbbk.",".......kkbbbbk..",".....kkbbbbkk...","....kebbbkk.....","....kkkkk.......",".....kuk........","....kuuk........","...ku.kuk.......","..ku...kuk......",".ku.....kuk.....","kk.......kk.....","................","................"]},
+    {"id":"w13","day":12,"kind":"building","name":"A violet tent","x":27,"y":32,"sprite":["................","........k.......",".......kyk......","......kvyvk.....",".....kvvkvvk....","....kvvvkvvvk...","....kvvvkvvvk...","...kvvvkckvvvk..","...kvvvkckvvvk..","..kvvvkcyckvvvk.","..kvvvkcyckvvvk.",".kvvvvkcyckvvvvk",".kkkkkkkkkkkkkkk","................","................","................"]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -96,6 +97,7 @@
     {"day":8,"date":"2026-10-06","action":"bottle","element":"w9","title":"A young pine","lore":"A young pine takes root on the island. It smells of winter even in autumn, and the owl has already chosen a branch.","source":"claude","land":[[27,33],[30,30]]},
     {"day":9,"date":"2026-10-07","action":"bottle","element":"w10","title":"A golden fish","lore":"A golden fish circles near the rowboat. It grants no wishes. It only listens, which on some nights is better.","source":"claude","land":[[27,32],[28,31]]},
     {"day":10,"date":"2026-10-08","action":"bottle","element":"w11","title":"A grey cat","lore":"A grey cat arrives by the well and decides to stay. Nobody wished for a cat. The cat does not mind at all.","source":"claude","land":[[27,31],[29,30]]},
-    {"day":11,"date":"2026-10-09","action":"bottle","element":"w12","title":"A telescope","lore":"A telescope stands by the water, pointed at the empty sky. Someone is waiting for the first star to appear.","source":"claude","land":[[28,30],[26,33]]}
+    {"day":11,"date":"2026-10-09","action":"bottle","element":"w12","title":"A telescope","lore":"A telescope stands by the water, pointed at the empty sky. Someone is waiting for the first star to appear.","source":"claude","land":[[28,30],[26,33]]},
+    {"day":12,"date":"2026-10-10","action":"bottle","element":"w13","title":"A violet tent","lore":"A violet tent is pitched in a quiet corner. It is meant for guests who come to see the island and forget to leave.","source":"claude","land":[[26,32],[26,31]]}
   ]
 }
