@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 13** · 0 wishes granted for 0 people · 13 messages in a bottle · 47 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 14** · 0 wishes granted for 0 people · 14 messages in a bottle · 49 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w15.svg" width="40" height="40" alt=""> Day 14 · A snail with a golden shell
+
+<sub>12 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A snail with a golden shell sets off from a quiet corner. It is the slowest islander and plans to reach the well by spring.
 
 ### <img src="world/sprites/w14.svg" width="40" height="40" alt=""> Day 13 · A glowing crystal
 
