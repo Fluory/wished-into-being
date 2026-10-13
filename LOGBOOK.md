@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 14** · 0 wishes granted for 0 people · 14 messages in a bottle · 49 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 15** · 0 wishes granted for 0 people · 15 messages in a bottle · 51 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w16.svg" width="40" height="40" alt=""> Day 15 · A ring of mushrooms
+
+<sub>13 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A ring of mushrooms appears in a quiet patch overnight, which is exactly what mushrooms like to do. The snail is very pleased.
 
 ### <img src="world/sprites/w15.svg" width="40" height="40" alt=""> Day 14 · A snail with a golden shell
 

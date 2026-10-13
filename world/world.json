@@ -38,8 +38,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~..,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -85,7 +85,8 @@
     {"id":"w12","day":11,"kind":"object","name":"A telescope","x":30,"y":35,"sprite":["................",".............kk.","...........kkbk.",".........kkbbbk.",".......kkbbbbk..",".....kkbbbbkk...","....kebbbkk.....","....kkkkk.......",".....kuk........","....kuuk........","...ku.kuk.......","..ku...kuk......",".ku.....kuk.....","kk.......kk.....","................","................"]},
     {"id":"w13","day":12,"kind":"building","name":"A violet tent","x":27,"y":32,"sprite":["................","........k.......",".......kyk......","......kvyvk.....",".....kvvkvvk....","....kvvvkvvvk...","....kvvvkvvvk...","...kvvvkckvvvk..","...kvvvkckvvvk..","..kvvvkcyckvvvk.","..kvvvkcyckvvvk.",".kvvvvkcyckvvvvk",".kkkkkkkkkkkkkkk","................","................","................"]},
     {"id":"w14","day":13,"kind":"light","name":"A glowing crystal","x":27,"y":30,"sprite":["................",".......kk.......","......ktbk......",".....kttbbk.....",".....ktwtbk.....","....kttwtbbk....","....ktttttbk....","....kttttbbk....","....ktttbbbk....",".....kttbbk.....",".....kttbbk.....","......kbbk......","...kkkkkkkkkk...","..keeeeeeeeeek..","...kkkkkkkkkk...","................"]},
-    {"id":"w15","day":14,"kind":"creature","name":"A snail with a golden shell","x":25,"y":32,"sprite":["................","................","................","................","......kkkk......",".....koooook....","....koyyyoook...","....koykyyook...","....koyyyoook.k.","....kooooook.kk.","..kkkkkkkkkkkck.",".keeeeeeeeeeeek.","..kkkkkkkkkkkk..","................","................","................"]}
+    {"id":"w15","day":14,"kind":"creature","name":"A snail with a golden shell","x":25,"y":32,"sprite":["................","................","................","................","......kkkk......",".....koooook....","....koyyyoook...","....koykyyook...","....koyyyoook.k.","....kooooook.kk.","..kkkkkkkkkkkck.",".keeeeeeeeeeeek.","..kkkkkkkkkkkk..","................","................","................"]},
+    {"id":"w16","day":15,"kind":"plant","name":"A ring of mushrooms","x":29,"y":31,"sprite":["................","................","................","....kkkk........","...krwrrk.......","..krrrrwrk......","..kkkkkkkk..kk..","....kcck...krrk.","....kcck..krwrrk","....kcck..kkkkkk","....kcck...kcck.","...kkkkkk..kcck.","..........kkkkk.","................","................","................"]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -102,6 +103,7 @@
     {"day":11,"date":"2026-10-09","action":"bottle","element":"w12","title":"A telescope","lore":"A telescope stands by the water, pointed at the empty sky. Someone is waiting for the first star to appear.","source":"claude","land":[[28,30],[26,33]]},
     {"day":12,"date":"2026-10-10","action":"bottle","element":"w13","title":"A violet tent","lore":"A violet tent is pitched in a quiet corner. It is meant for guests who come to see the island and forget to leave.","source":"claude","land":[[26,32],[26,31]]},
     {"day":13,"date":"2026-10-11","action":"bottle","element":"w14","title":"A glowing crystal","lore":"A glowing crystal appears in a quiet spot overnight. Nobody knows where it came from, but it hums softly whenever a new wish arrives.","source":"claude","land":[[27,30],[25,32]]},
-    {"day":14,"date":"2026-10-12","action":"bottle","element":"w15","title":"A snail with a golden shell","lore":"A snail with a golden shell sets off from a quiet corner. It is the slowest islander and plans to reach the well by spring.","source":"claude","land":[[26,30],[25,31]]}
+    {"day":14,"date":"2026-10-12","action":"bottle","element":"w15","title":"A snail with a golden shell","lore":"A snail with a golden shell sets off from a quiet corner. It is the slowest islander and plans to reach the well by spring.","source":"claude","land":[[26,30],[25,31]]},
+    {"day":15,"date":"2026-10-13","action":"bottle","element":"w16","title":"A ring of mushrooms","lore":"A ring of mushrooms appears in a quiet patch overnight, which is exactly what mushrooms like to do. The snail is very pleased.","source":"claude","land":[[25,33],[26,34]]}
   ]
 }
