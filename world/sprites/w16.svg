@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="64" height="64" shape-rendering="crispEdges" role="img" aria-label="A ring of mushrooms">
+<path fill="#1b1330" d="M4 3h4v1h-4zM3 4h1v1h-1zM8 4h1v1h-1zM2 5h1v1h-1zM9 5h1v1h-1zM2 6h8v1h-8zM12 6h2v1h-2zM4 7h1v1h-1zM7 7h1v1h-1zM11 7h1v1h-1zM14 7h1v1h-1zM4 8h1v1h-1zM7 8h1v1h-1zM10 8h1v1h-1zM15 8h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM10 9h6v1h-6zM4 10h1v1h-1zM7 10h1v1h-1zM11 10h1v1h-1zM14 10h1v1h-1zM3 11h6v1h-6zM11 11h1v1h-1zM14 11h1v1h-1zM10 12h5v1h-5z"/>
+<path fill="#d9534f" d="M4 4h1v1h-1zM6 4h2v1h-2zM3 5h4v1h-4zM8 5h1v1h-1zM12 7h2v1h-2zM11 8h1v1h-1zM13 8h2v1h-2z"/>
+<path fill="#f5f5f5" d="M5 4h1v1h-1zM7 5h1v1h-1zM12 8h1v1h-1z"/>
+<path fill="#fff3c4" d="M5 7h2v1h-2zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2zM12 10h2v1h-2zM12 11h2v1h-2z"/>
+</svg>
