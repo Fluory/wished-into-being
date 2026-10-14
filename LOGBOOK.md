@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 15** · 0 wishes granted for 0 people · 15 messages in a bottle · 51 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 16** · 0 wishes granted for 0 people · 16 messages in a bottle · 53 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w17.svg" width="40" height="40" alt=""> Day 16 · A birdhouse
+
+<sub>14 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A small birdhouse hangs near the young pine. It was built for birds that have not arrived yet. The owl says they will.
 
 ### <img src="world/sprites/w16.svg" width="40" height="40" alt=""> Day 15 · A ring of mushrooms
 
