@@ -35,9 +35,9 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~..........~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~..,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -87,7 +87,8 @@
     {"id":"w14","day":13,"kind":"light","name":"A glowing crystal","x":27,"y":30,"sprite":["................",".......kk.......","......ktbk......",".....kttbbk.....",".....ktwtbk.....","....kttwtbbk....","....ktttttbk....","....kttttbbk....","....ktttbbbk....",".....kttbbk.....",".....kttbbk.....","......kbbk......","...kkkkkkkkkk...","..keeeeeeeeeek..","...kkkkkkkkkk...","................"]},
     {"id":"w15","day":14,"kind":"creature","name":"A snail with a golden shell","x":25,"y":32,"sprite":["................","................","................","................","......kkkk......",".....koooook....","....koyyyoook...","....koykyyook...","....koyyyoook.k.","....kooooook.kk.","..kkkkkkkkkkkck.",".keeeeeeeeeeeek.","..kkkkkkkkkkkk..","................","................","................"]},
     {"id":"w16","day":15,"kind":"plant","name":"A ring of mushrooms","x":29,"y":31,"sprite":["................","................","................","....kkkk........","...krwrrk.......","..krrrrwrk......","..kkkkkkkk..kk..","....kcck...krrk.","....kcck..krwrrk","....kcck..kkkkkk","....kcck...kcck.","...kkkkkk..kcck.","..........kkkkk.","................","................","................"]},
-    {"id":"w17","day":16,"kind":"object","name":"A birdhouse","x":29,"y":36,"sprite":["................",".......kk.......",".....kkrrkk.....","....krrrrrrk....","...krrrrrrrrk...","..kkkkkkkkkkkk..","...kuuuuuuuuk...","...kuuukkuuuk...","...kuukkkkuuk...","...kuuukkuuuk...","...kuuuuuuuuk...","...kkkkkkkkkk...",".......uk.......",".......uk.......",".......uk.......","......kkkk......"]}
+    {"id":"w17","day":16,"kind":"object","name":"A birdhouse","x":29,"y":36,"sprite":["................",".......kk.......",".....kkrrkk.....","....krrrrrrk....","...krrrrrrrrk...","..kkkkkkkkkkkk..","...kuuuuuuuuk...","...kuuukkuuuk...","...kuukkkkuuk...","...kuuukkuuuk...","...kuuuuuuuuk...","...kkkkkkkkkk...",".......uk.......",".......uk.......",".......uk.......","......kkkk......"]},
+    {"id":"w18","day":17,"kind":"object","name":"A red kite","x":28,"y":30,"sprite":["..........kk....",".........krrk...","........kryyrk..",".......kryyyyrk.","........kryyrk..",".........krrk...","..........kk....","..........e.....",".........e......","........e.......",".......r........","......e.........",".....e..........","....o...........","...e............","..kk............"]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -106,6 +107,7 @@
     {"day":13,"date":"2026-10-11","action":"bottle","element":"w14","title":"A glowing crystal","lore":"A glowing crystal appears in a quiet spot overnight. Nobody knows where it came from, but it hums softly whenever a new wish arrives.","source":"claude","land":[[27,30],[25,32]]},
     {"day":14,"date":"2026-10-12","action":"bottle","element":"w15","title":"A snail with a golden shell","lore":"A snail with a golden shell sets off from a quiet corner. It is the slowest islander and plans to reach the well by spring.","source":"claude","land":[[26,30],[25,31]]},
     {"day":15,"date":"2026-10-13","action":"bottle","element":"w16","title":"A ring of mushrooms","lore":"A ring of mushrooms appears in a quiet patch overnight, which is exactly what mushrooms like to do. The snail is very pleased.","source":"claude","land":[[25,33],[26,34]]},
-    {"day":16,"date":"2026-10-14","action":"bottle","element":"w17","title":"A birdhouse","lore":"A small birdhouse hangs near the young pine. It was built for birds that have not arrived yet. The owl says they will.","source":"claude","land":[[25,30],[24,31]]}
+    {"day":16,"date":"2026-10-14","action":"bottle","element":"w17","title":"A birdhouse","lore":"A small birdhouse hangs near the young pine. It was built for birds that have not arrived yet. The owl says they will.","source":"claude","land":[[25,30],[24,31]]},
+    {"day":17,"date":"2026-10-15","action":"bottle","element":"w18","title":"A red kite","lore":"A red kite flies above the water, tied to a stone because the wind here has ideas of its own.","source":"claude","land":[[24,30],[24,32]]}
   ]
 }
