@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 16** · 0 wishes granted for 0 people · 16 messages in a bottle · 53 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 17** · 0 wishes granted for 0 people · 17 messages in a bottle · 55 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w18.svg" width="40" height="40" alt=""> Day 17 · A red kite
+
+<sub>15 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A red kite flies above the water, tied to a stone because the wind here has ideas of its own.
 
 ### <img src="world/sprites/w17.svg" width="40" height="40" alt=""> Day 16 · A birdhouse
 
