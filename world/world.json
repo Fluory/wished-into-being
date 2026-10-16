@@ -34,8 +34,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~..........~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~.,,.......~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -88,7 +88,8 @@
     {"id":"w15","day":14,"kind":"creature","name":"A snail with a golden shell","x":25,"y":32,"sprite":["................","................","................","................","......kkkk......",".....koooook....","....koyyyoook...","....koykyyook...","....koyyyoook.k.","....kooooook.kk.","..kkkkkkkkkkkck.",".keeeeeeeeeeeek.","..kkkkkkkkkkkk..","................","................","................"]},
     {"id":"w16","day":15,"kind":"plant","name":"A ring of mushrooms","x":29,"y":31,"sprite":["................","................","................","....kkkk........","...krwrrk.......","..krrrrwrk......","..kkkkkkkk..kk..","....kcck...krrk.","....kcck..krwrrk","....kcck..kkkkkk","....kcck...kcck.","...kkkkkk..kcck.","..........kkkkk.","................","................","................"]},
     {"id":"w17","day":16,"kind":"object","name":"A birdhouse","x":29,"y":36,"sprite":["................",".......kk.......",".....kkrrkk.....","....krrrrrrk....","...krrrrrrrrk...","..kkkkkkkkkkkk..","...kuuuuuuuuk...","...kuuukkuuuk...","...kuukkkkuuk...","...kuuukkuuuk...","...kuuuuuuuuk...","...kkkkkkkkkk...",".......uk.......",".......uk.......",".......uk.......","......kkkk......"]},
-    {"id":"w18","day":17,"kind":"object","name":"A red kite","x":28,"y":30,"sprite":["..........kk....",".........krrk...","........kryyrk..",".......kryyyyrk.","........kryyrk..",".........krrk...","..........kk....","..........e.....",".........e......","........e.......",".......r........","......e.........",".....e..........","....o...........","...e............","..kk............"]}
+    {"id":"w18","day":17,"kind":"object","name":"A red kite","x":28,"y":30,"sprite":["..........kk....",".........krrk...","........kryyrk..",".......kryyyyrk.","........kryyrk..",".........krrk...","..........kk....","..........e.....",".........e......","........e.......",".......r........","......e.........",".....e..........","....o...........","...e............","..kk............"]},
+    {"id":"w19","day":18,"kind":"object","name":"A signpost","x":32,"y":31,"sprite":["................",".......kk.......","..kkkkkkkkkkk...","..kcccccccccck..","..kcukukuukcck..","..kkkkkkkkkkk...",".......uk.......","...kkkkkkkkkkk..","..kccccccccccck.","..kcuukuukucck..","...kkkkkkkkkkk..",".......uk.......",".......uk.......",".......uk.......","......kkkk......","................"]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -108,6 +109,7 @@
     {"day":14,"date":"2026-10-12","action":"bottle","element":"w15","title":"A snail with a golden shell","lore":"A snail with a golden shell sets off from a quiet corner. It is the slowest islander and plans to reach the well by spring.","source":"claude","land":[[26,30],[25,31]]},
     {"day":15,"date":"2026-10-13","action":"bottle","element":"w16","title":"A ring of mushrooms","lore":"A ring of mushrooms appears in a quiet patch overnight, which is exactly what mushrooms like to do. The snail is very pleased.","source":"claude","land":[[25,33],[26,34]]},
     {"day":16,"date":"2026-10-14","action":"bottle","element":"w17","title":"A birdhouse","lore":"A small birdhouse hangs near the young pine. It was built for birds that have not arrived yet. The owl says they will.","source":"claude","land":[[25,30],[24,31]]},
-    {"day":17,"date":"2026-10-15","action":"bottle","element":"w18","title":"A red kite","lore":"A red kite flies above the water, tied to a stone because the wind here has ideas of its own.","source":"claude","land":[[24,30],[24,32]]}
+    {"day":17,"date":"2026-10-15","action":"bottle","element":"w18","title":"A red kite","lore":"A red kite flies above the water, tied to a stone because the wind here has ideas of its own.","source":"claude","land":[[24,30],[24,32]]},
+    {"day":18,"date":"2026-10-16","action":"bottle","element":"w19","title":"A signpost","lore":"A signpost stands by the well. One arrow points home, and the other points at the next wish, whenever it comes.","source":"claude","land":[[25,29],[26,29]]}
   ]
 }
