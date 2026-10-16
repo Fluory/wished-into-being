@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 17** · 0 wishes granted for 0 people · 17 messages in a bottle · 55 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 18** · 0 wishes granted for 0 people · 18 messages in a bottle · 57 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w19.svg" width="40" height="40" alt=""> Day 18 · A signpost
+
+<sub>16 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A signpost stands by the well. One arrow points home, and the other points at the next wish, whenever it comes.
 
 ### <img src="world/sprites/w18.svg" width="40" height="40" alt=""> Day 17 · A red kite
 
