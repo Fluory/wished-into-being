@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 19** · 0 wishes granted for 0 people · 19 messages in a bottle · 59 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 20** · 0 wishes granted for 0 people · 20 messages in a bottle · 61 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w21.svg" width="40" height="40" alt=""> Day 20 · A little light buoy
+
+<sub>18 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A little buoy bobs off the shore with a small gold light on top. It shows the rowboat the way home on dark nights.
 
 ### <img src="world/sprites/w20.svg" width="40" height="40" alt=""> Day 19 · A small hedgehog
 
