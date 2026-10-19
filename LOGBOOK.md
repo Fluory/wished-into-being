@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 20** · 0 wishes granted for 0 people · 20 messages in a bottle · 61 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 21** · 0 wishes granted for 0 people · 21 messages in a bottle · 63 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w22.svg" width="40" height="40" alt=""> Day 21 · A small apple tree
+
+<sub>19 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A small apple tree grows by the well. Its first red apples are just ripe, and the cottage kettle smells of cinnamon.
 
 ### <img src="world/sprites/w21.svg" width="40" height="40" alt=""> Day 20 · A little light buoy
 

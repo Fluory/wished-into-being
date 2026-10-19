@@ -33,9 +33,9 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~.,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~.,,,......~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~.,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,.....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -91,7 +91,8 @@
     {"id":"w18","day":17,"kind":"object","name":"A red kite","x":28,"y":30,"sprite":["..........kk....",".........krrk...","........kryyrk..",".......kryyyyrk.","........kryyrk..",".........krrk...","..........kk....","..........e.....",".........e......","........e.......",".......r........","......e.........",".....e..........","....o...........","...e............","..kk............"]},
     {"id":"w19","day":18,"kind":"object","name":"A signpost","x":32,"y":31,"sprite":["................",".......kk.......","..kkkkkkkkkkk...","..kcccccccccck..","..kcukukuukcck..","..kkkkkkkkkkk...",".......uk.......","...kkkkkkkkkkk..","..kccccccccccck.","..kcuukuukucck..","...kkkkkkkkkkk..",".......uk.......",".......uk.......",".......uk.......","......kkkk......","................"]},
     {"id":"w20","day":19,"kind":"creature","name":"A small hedgehog","x":24,"y":29,"sprite":["................","................","................","................","................","................","......k.k.k.....","....kkukukukk...","...kueueueueuk..","..kcuuuuuuuuuuk.","..kcckueueueuuk.",".kccccuuuuuuuuk.","..kcccuueueuuuk.","...kkuuuuuuuukk.","....kek....kek..","....kk.....kk..."]},
-    {"id":"w21","day":20,"kind":"water","name":"A little light buoy","x":34,"y":34,"sprite":["................","................",".......y........","......yoy.......",".......k........","......kkk.......",".....krrrk......",".....kwwwk......",".....krrrk......","....kwwwwwk.....","....krrrrrk.....","...kkkkkkkkk....","..bbkrrrrrkbb...",".bbbbkkkkkbbbb..","..bbbbbbbbbbb...","................"]}
+    {"id":"w21","day":20,"kind":"water","name":"A little light buoy","x":34,"y":34,"sprite":["................","................",".......y........","......yoy.......",".......k........","......kkk.......",".....krrrk......",".....kwwwk......",".....krrrk......","....kwwwwwk.....","....krrrrrk.....","...kkkkkkkkk....","..bbkrrrrrkbb...",".bbbbkkkkkbbbb..","..bbbbbbbbbbb...","................"]},
+    {"id":"w22","day":21,"kind":"plant","name":"A small apple tree","x":33,"y":33,"sprite":["................",".....kkkkkk.....","...kkggggggkk...","..kggggrgggggk..","..kgrggggggrgk..",".kggggggrggggdk.",".kgggrgggggggdk.",".kggggggggrggdk.","..kdgrgggggddk..","..kkddddddddkk..","....kkkuukkk....","......kuuk......","......kuuk......","......kuuk......",".....kuuuuk.....","....kkkkkkkk...."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -114,6 +115,7 @@
     {"day":17,"date":"2026-10-15","action":"bottle","element":"w18","title":"A red kite","lore":"A red kite flies above the water, tied to a stone because the wind here has ideas of its own.","source":"claude","land":[[24,30],[24,32]]},
     {"day":18,"date":"2026-10-16","action":"bottle","element":"w19","title":"A signpost","lore":"A signpost stands by the well. One arrow points home, and the other points at the next wish, whenever it comes.","source":"claude","land":[[25,29],[26,29]]},
     {"day":19,"date":"2026-10-17","action":"bottle","element":"w20","title":"A small hedgehog","lore":"A small hedgehog snuffles through the quiet grass at night. It has decided the mushroom ring is its garden now.","source":"claude","land":[[24,29],[25,28]]},
-    {"day":20,"date":"2026-10-18","action":"bottle","element":"w21","title":"A little light buoy","lore":"A little buoy bobs off the shore with a small gold light on top. It shows the rowboat the way home on dark nights.","source":"claude","land":[[27,29],[26,28]]}
+    {"day":20,"date":"2026-10-18","action":"bottle","element":"w21","title":"A little light buoy","lore":"A little buoy bobs off the shore with a small gold light on top. It shows the rowboat the way home on dark nights.","source":"claude","land":[[27,29],[26,28]]},
+    {"day":21,"date":"2026-10-19","action":"bottle","element":"w22","title":"A small apple tree","lore":"A small apple tree grows by the well. Its first red apples are just ripe, and the cottage kettle smells of cinnamon.","source":"claude","land":[[28,29],[27,28]]}
   ]
 }
