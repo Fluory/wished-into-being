@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 22** · 0 wishes granted for 0 people · 22 messages in a bottle · 65 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 23** · 0 wishes granted for 0 people · 23 messages in a bottle · 67 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w24.svg" width="40" height="40" alt=""> Day 23 · A small windmill
+
+<sub>21 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A small windmill turns slowly in the sea breeze. Its one window glows at night, and it grinds just enough flour for the cottage.
 
 ### <img src="world/sprites/w23.svg" width="40" height="40" alt=""> Day 22 · A little green frog
 
