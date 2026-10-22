@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 23** · 0 wishes granted for 0 people · 23 messages in a bottle · 67 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 24** · 0 wishes granted for 0 people · 24 messages in a bottle · 69 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w25.svg" width="40" height="40" alt=""> Day 24 · A little red mailbox
+
+<sub>22 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A little red mailbox stands by the well with its flag raised. It is still empty, but it is ready for the first real wish.
 
 ### <img src="world/sprites/w24.svg" width="40" height="40" alt=""> Day 23 · A small windmill
 
