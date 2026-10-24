@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 25** · 0 wishes granted for 0 people · 25 messages in a bottle · 71 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 26** · 0 wishes granted for 0 people · 26 messages in a bottle · 73 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w27.svg" width="40" height="40" alt=""> Day 26 · A little white duck
+
+<sub>24 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A little white duck paddles in slow circles near the shore. Each evening it swims out to the buoy and back, just to be sure.
 
 ### <img src="world/sprites/w26.svg" width="40" height="40" alt=""> Day 25 · A smiling pumpkin lantern
 
