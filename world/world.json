@@ -35,11 +35,11 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~...,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~....,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~.,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -97,7 +97,8 @@
     {"id":"w24","day":23,"kind":"building","name":"A small windmill","x":28,"y":29,"sprite":["................","..kk.......kk...","..kck.....kck...","...kck...kck....","....kckkkck.....",".....kkrkk......","....kckkkck.....","...kckrrrkck....","..kck.kcck.kck..","..kk..kcck..kk..","......kcck......",".....kccyck.....",".....kccyck.....","....kccuucck....","....kccuucck....","....kkkkkkkk...."]},
     {"id":"w25","day":24,"kind":"object","name":"A little red mailbox","x":33,"y":31,"sprite":["................","................","................","..........kk....","....kkkkkkkyk...","...krrrrrrkyk...","..krrrrrrrrkk...","..krwwwwwrrrk...","..krrrrrrrrrk...","..krrrrrrrrrk...","..kkkkkkkkkkk...","......kuk.......","......kuk.......","......kuk.......",".....kuuuk......","....kkkkkkk....."]},
     {"id":"w26","day":25,"kind":"light","name":"A smiling pumpkin lantern","x":31,"y":34,"sprite":["................","................","................","................",".......kk.......",".......kdk......","....kkkkdkkk....","...kooooooook...","..kooooooooook..","..kooyoooooyok..","..koyyyoooyyyk..","..kooooooooook..","..kooyooooyook..","..koooyyyyoook..","...kooooooook...","....kkkkkkkk...."]},
-    {"id":"w27","day":26,"kind":"water","name":"A little white duck","x":33,"y":35,"sprite":["................","................","................","................","....kkk.........","...kwwwk........","..okwkwk........",".ookwwwk........","..kkwwwk...kk...","....kwwwkkkwwk..","...kwwwwwwwwwk..","...kwwwewwwwwk..","....kwweeeewk...",".bbbkkkkkkkkbbb.","..bbbbbbbbbbbb..","................"]}
+    {"id":"w27","day":26,"kind":"water","name":"A little white duck","x":33,"y":35,"sprite":["................","................","................","................","....kkk.........","...kwwwk........","..okwkwk........",".ookwwwk........","..kkwwwk...kk...","....kwwwkkkwwk..","...kwwwwwwwwwk..","...kwwwewwwwwk..","....kwweeeewk...",".bbbkkkkkkkkbbb.","..bbbbbbbbbbbb..","................"]},
+    {"id":"w28","day":27,"kind":"plant","name":"A tall sunflower","x":28,"y":31,"sprite":["................",".....k.kk.k.....","....kykyykyk....","...kyyyyyyyyk...","..kyyykkkkyyyk..","...kyykuukyyk...","..kyyykuukyyyk..","...kyykkkkyyk...","...kyyyyyyyyk...","....kykyykyk....",".....k.kgk.k....",".....kk.gk......","....kddkgk.kk...",".....kddgkkddk..","......kkgkddk...",".......kkkkk...."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -126,6 +127,7 @@
     {"day":23,"date":"2026-10-21","action":"bottle","element":"w24","title":"A small windmill","lore":"A small windmill turns slowly in the sea breeze. Its one window glows at night, and it grinds just enough flour for the cottage.","source":"claude","land":[[24,33],[30,29]]},
     {"day":24,"date":"2026-10-22","action":"bottle","element":"w25","title":"A little red mailbox","lore":"A little red mailbox stands by the well with its flag raised. It is still empty, but it is ready for the first real wish.","source":"claude","land":[[25,34],[34,30]]},
     {"day":25,"date":"2026-10-23","action":"bottle","element":"w26","title":"A smiling pumpkin lantern","lore":"A pumpkin lantern grins on the grass as the nights grow long. The candle inside keeps the hedgehog company until morning.","source":"claude","land":[[31,29],[29,28]]},
-    {"day":26,"date":"2026-10-24","action":"bottle","element":"w27","title":"A little white duck","lore":"A little white duck paddles in slow circles near the shore. Each evening it swims out to the buoy and back, just to be sure.","source":"claude","land":[[32,29],[33,29]]}
+    {"day":26,"date":"2026-10-24","action":"bottle","element":"w27","title":"A little white duck","lore":"A little white duck paddles in slow circles near the shore. Each evening it swims out to the buoy and back, just to be sure.","source":"claude","land":[[32,29],[33,29]]},
+    {"day":27,"date":"2026-10-25","action":"bottle","element":"w28","title":"A tall sunflower","lore":"A tall sunflower stands in the grass and turns toward the lantern after dark. It has decided that will do until the sun is back.","source":"claude","land":[[24,34],[23,30]]}
   ]
 }
