@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 29** · 0 wishes granted for 0 people · 29 messages in a bottle · 79 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 30** · 0 wishes granted for 0 people · 30 messages in a bottle · 81 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w31.svg" width="40" height="40" alt=""> Day 30 · A tiny striped lighthouse
+
+<sub>28 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A tiny striped lighthouse stands on a rock by the shore. Its small gold lamp turns all night so the duck and the rowboat find home.
 
 ### <img src="world/sprites/w30.svg" width="40" height="40" alt=""> Day 29 · A little straw beehive
 
