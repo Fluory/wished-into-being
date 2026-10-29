@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 30** · 0 wishes granted for 0 people · 30 messages in a bottle · 81 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 31** · 0 wishes granted for 0 people · 31 messages in a bottle · 83 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## October 2026
+
+### <img src="world/sprites/w32.svg" width="40" height="40" alt=""> Day 31 · A little red squirrel
+
+<sub>29 Oct 2026 · a message in a bottle from the islanders</sub>
+
+> A little red squirrel darts along the path with its tail held high. It hides acorns under the apple tree and forgets half of them by spring.
 
 ### <img src="world/sprites/w31.svg" width="40" height="40" alt=""> Day 30 · A tiny striped lighthouse
 
