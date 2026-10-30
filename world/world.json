@@ -34,8 +34,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~......~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,.....~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -102,7 +102,8 @@
     {"id":"w29","day":28,"kind":"creature","name":"A small grey rabbit","x":26,"y":34,"sprite":["................","....kk.kk.......","...kek.kek......","...kpk.kpk......","...kek.kek......","...kekkkek......","..keeeeeeek.....","..kekeeeeek.....","..kpeeeeeeekkk..","...kkeeeeeeeek..","....keeeeeeeewk.","....keeeeeeeewk.","....keeceeeeek..","....kcckkkcckk..",".....kk....kk...","................"]},
     {"id":"w30","day":29,"kind":"object","name":"A little straw beehive","x":23,"y":31,"sprite":["................","...........ww...","..........kyk...","......kkkk......","....kkuuuukk....","...kuuuucuuuk...","...kkkkkkkkkk...","..kuuuuuuucuuk..","..kkkkkkkkkkkk..","..kuuuuuuuuuuk..","..kkkkkkkkkkkk..","..kuuuukkuuuuk..","..kuuukkkkuuuk..",".kkkkkkkkkkkkkk.",".kuuuuuuuuuuuuk.",".kkkkkkkkkkkkkk."]},
     {"id":"w31","day":30,"kind":"building","name":"A tiny striped lighthouse","x":24,"y":33,"sprite":["................",".......kk.......","......krrk......",".....kkkkkk.....",".....kyyyyk.....",".....kkkkkk.....","......kwwk......","......krrk......","......kwwk......",".....kwwwwk.....",".....krrrrk.....",".....kwwwwk.....","....kwwwwwwk....","....krrkkrrk....","...kkkkkkkkkk...","..keeeeeeeeeek.."]},
-    {"id":"w32","day":31,"kind":"creature","name":"A little red squirrel","x":35,"y":31,"sprite":["................","................","..........kkk...",".........kuuuk..","........kuuuuuk.","...k.k..kuukuuk.","..kuuuk..kk.kuk.",".kuukuuk....kuk.",".kuuuuuk...kuuk.","..kkuuuk..kuuk..","...kuuuukkuuk...","..kuuuuuuuuk....","..kuucuuuuuk....","..kuuccuuuk.....","..kkuukuukk.....","...kkk.kkk......"]}
+    {"id":"w32","day":31,"kind":"creature","name":"A little red squirrel","x":35,"y":31,"sprite":["................","................","..........kkk...",".........kuuuk..","........kuuuuuk.","...k.k..kuukuuk.","..kuuuk..kk.kuk.",".kuukuuk....kuk.",".kuuuuuk...kuuk.","..kkuuuk..kuuk..","...kuuuukkuuk...","..kuuuuuuuuk....","..kuucuuuuuk....","..kuuccuuuk.....","..kkuukuukk.....","...kkk.kkk......"]},
+    {"id":"w33","day":32,"kind":"object","name":"A little blue watering can","x":27,"y":34,"sprite":["................","................","................","................",".......kkkkkk...","......k......k..",".kk...k......k..",".kbk.kkkkkkkkkk.","..kbkkbbbbbbbbk.","...kbkbbwbbbbbk.","....kbbbwbbbbbk.",".....kbbbbbbbbk.",".....kbbbbbbbbk.",".....kbbbbbbbbk.",".....kbbbbbbbbk.",".....kkkkkkkkkk."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -136,6 +137,7 @@
     {"day":28,"date":"2026-10-26","action":"bottle","element":"w29","title":"A small grey rabbit","lore":"A small grey rabbit hops out from the quiet grass at dusk. It nibbles the clover by the mushrooms and keeps one ear on the owl.","source":"claude","land":[[23,31],[23,32]]},
     {"day":29,"date":"2026-10-27","action":"bottle","element":"w30","title":"A little straw beehive","lore":"A little straw beehive sits on a plank in the quiet grass. One sleepy bee hums home late, following the sunflower's glow.","source":"claude","land":[[35,31],[23,33]]},
     {"day":30,"date":"2026-10-28","action":"bottle","element":"w31","title":"A tiny striped lighthouse","lore":"A tiny striped lighthouse stands on a rock by the shore. Its small gold lamp turns all night so the duck and the rowboat find home.","source":"claude","land":[[26,35],[25,35]]},
-    {"day":31,"date":"2026-10-29","action":"bottle","element":"w32","title":"A little red squirrel","lore":"A little red squirrel darts along the path with its tail held high. It hides acorns under the apple tree and forgets half of them by spring.","source":"claude","land":[[23,29],[24,28]]}
+    {"day":31,"date":"2026-10-29","action":"bottle","element":"w32","title":"A little red squirrel","lore":"A little red squirrel darts along the path with its tail held high. It hides acorns under the apple tree and forgets half of them by spring.","source":"claude","land":[[23,29],[24,28]]},
+    {"day":32,"date":"2026-10-30","action":"bottle","element":"w33","title":"A little blue watering can","lore":"A little blue watering can waits in the grass, half full of rain. Each morning someone tips it over the sunflower and the young pine.","source":"claude","land":[[34,29],[35,30]]}
   ]
 }
