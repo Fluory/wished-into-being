@@ -4,7 +4,16 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 33** · 0 wishes granted for 0 people · 33 messages in a bottle · 87 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 34** · 0 wishes granted for 0 people · 34 messages in a bottle · 89 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+
+## November 2026
+
+### <img src="world/sprites/w35.svg" width="40" height="40" alt=""> Day 34 · A little violet bat
+
+<sub>1 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A little violet bat wakes when the lanterns come on. It loops over the quiet grass, chasing moths, and sleeps under the windmill by day.
+
 
 ## October 2026
 
