@@ -33,8 +33,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~.......~~.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,..,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~..........~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -105,7 +105,8 @@
     {"id":"w32","day":31,"kind":"creature","name":"A little red squirrel","x":35,"y":31,"sprite":["................","................","..........kkk...",".........kuuuk..","........kuuuuuk.","...k.k..kuukuuk.","..kuuuk..kk.kuk.",".kuukuuk....kuk.",".kuuuuuk...kuuk.","..kkuuuk..kuuk..","...kuuuukkuuk...","..kuuuuuuuuk....","..kuucuuuuuk....","..kuuccuuuk.....","..kkuukuukk.....","...kkk.kkk......"]},
     {"id":"w33","day":32,"kind":"object","name":"A little blue watering can","x":27,"y":34,"sprite":["................","................","................","................",".......kkkkkk...","......k......k..",".kk...k......k..",".kbk.kkkkkkkkkk.","..kbkkbbbbbbbbk.","...kbkbbwbbbbbk.","....kbbbwbbbbbk.",".....kbbbbbbbbk.",".....kbbbbbbbbk.",".....kbbbbbbbbk.",".....kbbbbbbbbk.",".....kkkkkkkkkk."]},
     {"id":"w34","day":33,"kind":"water","name":"A little red sailboat","x":25,"y":36,"sprite":["................","................",".......k........",".......kk.......",".......kwk......","......kkwwk.....",".....kwkwwwk....","....kwwkwwwwk...","...kwwwkwwwwwk..","..kkkkkkkkkkkkk.",".......k........",".kkkkkkkkkkkkkk.",".krrrrrrrrrrrrk.","..krrrcrrrrrrk..","...kkkkkkkkkk...","..bb.bbbb.bbbb.."]},
-    {"id":"w35","day":34,"kind":"creature","name":"A little violet bat","x":33,"y":28,"sprite":["................","................","................","................","......k..k......","......kvvk......",".k...kyvvyk...k.",".kk..kvvvvk..kk.",".kpk.kvvvvk.kpk.",".kppkkvvvvkkppk.",".kpppppvvpppppk.",".kpppppvvpppppk.","..kppkpvvpkppk..","..kk.kkvvkk.kk..",".......kk.......","................"]}
+    {"id":"w35","day":34,"kind":"creature","name":"A little violet bat","x":33,"y":28,"sprite":["................","................","................","................","......k..k......","......kvvk......",".k...kyvvyk...k.",".kk..kvvvvk..kk.",".kpk.kvvvvk.kpk.",".kppkkvvvvkkppk.",".kpppppvvpppppk.",".kpppppvvpppppk.","..kppkpvvpkppk..","..kk.kkvvkk.kk..",".......kk.......","................"]},
+    {"id":"w36","day":35,"kind":"plant","name":"A little holly bush","x":33,"y":30,"sprite":["................","................","................","................","................","................","....k.k..k.k....","...kgkgkkgkgk...","..kgggggggggdk..",".kggrgggggrggdk.",".kgrrggggrrggdk.",".kgggggrgggggdk.",".kgggrrgggrgddk.",".kdgggggggrrddk.","..kddddddddddk..","...kkkkkkkkkk..."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -142,6 +143,7 @@
     {"day":31,"date":"2026-10-29","action":"bottle","element":"w32","title":"A little red squirrel","lore":"A little red squirrel darts along the path with its tail held high. It hides acorns under the apple tree and forgets half of them by spring.","source":"claude","land":[[23,29],[24,28]]},
     {"day":32,"date":"2026-10-30","action":"bottle","element":"w33","title":"A little blue watering can","lore":"A little blue watering can waits in the grass, half full of rain. Each morning someone tips it over the sunflower and the young pine.","source":"claude","land":[[34,29],[35,30]]},
     {"day":33,"date":"2026-10-31","action":"bottle","element":"w34","title":"A little red sailboat","lore":"A little red sailboat rocks at anchor off the shore. On calm nights its white sails catch the lighthouse glow and shine like two folded wings.","source":"claude","land":[[24,35],[23,34]]},
-    {"day":34,"date":"2026-11-01","action":"bottle","element":"w35","title":"A little violet bat","lore":"A little violet bat wakes when the lanterns come on. It loops over the quiet grass, chasing moths, and sleeps under the windmill by day.","source":"claude","land":[[33,28],[30,28]]}
+    {"day":34,"date":"2026-11-01","action":"bottle","element":"w35","title":"A little violet bat","lore":"A little violet bat wakes when the lanterns come on. It loops over the quiet grass, chasing moths, and sleeps under the windmill by day.","source":"claude","land":[[33,28],[30,28]]},
+    {"day":35,"date":"2026-11-02","action":"bottle","element":"w36","title":"A little holly bush","lore":"A little holly bush grows low and prickly in the grass. Its red berries stay bright all winter, a small feast for the birds.","source":"claude","land":[[31,28],[32,28]]}
   ]
 }
