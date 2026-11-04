@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 36** · 0 wishes granted for 0 people · 36 messages in a bottle · 93 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 37** · 0 wishes granted for 0 people · 37 messages in a bottle · 95 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## November 2026
+
+### <img src="world/sprites/w38.svg" width="40" height="40" alt=""> Day 37 · A little grey heron
+
+<sub>4 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A little grey heron stands on one leg at the water's edge. It watches the golden fish for hours and has not caught it once.
 
 ### <img src="world/sprites/w37.svg" width="40" height="40" alt=""> Day 36 · A little red wheelbarrow
 
