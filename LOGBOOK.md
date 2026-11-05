@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 37** · 0 wishes granted for 0 people · 37 messages in a bottle · 95 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 38** · 0 wishes granted for 0 people · 38 messages in a bottle · 97 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## November 2026
+
+### <img src="world/sprites/w39.svg" width="40" height="40" alt=""> Day 38 · A little jar of fireflies
+
+<sub>5 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A little jar of fireflies glows on the grass, its lid left open. The fireflies come and go as they please and always return by dawn.
 
 ### <img src="world/sprites/w38.svg" width="40" height="40" alt=""> Day 37 · A little grey heron
 
