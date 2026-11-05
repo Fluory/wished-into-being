@@ -32,12 +32,12 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~............~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~..........,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,.,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~...~.,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -108,7 +108,8 @@
     {"id":"w35","day":34,"kind":"creature","name":"A little violet bat","x":33,"y":28,"sprite":["................","................","................","................","......k..k......","......kvvk......",".k...kyvvyk...k.",".kk..kvvvvk..kk.",".kpk.kvvvvk.kpk.",".kppkkvvvvkkppk.",".kpppppvvpppppk.",".kpppppvvpppppk.","..kppkpvvpkppk..","..kk.kkvvkk.kk..",".......kk.......","................"]},
     {"id":"w36","day":35,"kind":"plant","name":"A little holly bush","x":33,"y":30,"sprite":["................","................","................","................","................","................","....k.k..k.k....","...kgkgkkgkgk...","..kgggggggggdk..",".kggrgggggrggdk.",".kgrrggggrrggdk.",".kgggggrgggggdk.",".kgggrrgggrgddk.",".kdgggggggrrddk.","..kddddddddddk..","...kkkkkkkkkk..."]},
     {"id":"w37","day":36,"kind":"object","name":"A little red wheelbarrow","x":30,"y":30,"sprite":["................","................","................","................","................","................",".uu.............","..uu............","...kkkkkkkkkkkk.","...krrrrrrrrrrk.","...krrrrrrrwrrk.","....krrrrrrrrk..",".....kkkkkkkkk..",".....k...kkkk...",".....k..keeeek..","....kk...kkkk..."]},
-    {"id":"w38","day":37,"kind":"creature","name":"A little grey heron","x":27,"y":28,"sprite":["................","................","........kkkk....","...uuuukeekk....","........keek....",".........kek....",".........kek....","........keek....",".......keeeek...","......keeeeeek..","......kbeeeeeek.",".......kbbbeek..","........kkkkk...",".........k.k....",".........k.k....","........kk.kk..."]}
+    {"id":"w38","day":37,"kind":"creature","name":"A little grey heron","x":27,"y":28,"sprite":["................","................","........kkkk....","...uuuukeekk....","........keek....",".........kek....",".........kek....","........keek....",".......keeeek...","......keeeeeek..","......kbeeeeeek.",".......kbbbeek..","........kkkkk...",".........k.k....",".........k.k....","........kk.kk..."]},
+    {"id":"w39","day":38,"kind":"light","name":"A little jar of fireflies","x":35,"y":29,"sprite":["................","................","................","................",".....kkkkkk.....",".....kuuuuk.....",".....kkkkkk.....","....knnnnnnk....","...knwnnnnnnk...","...knwnnnynnk...","...knnynnnnnk...","...knnnnnynnk...","...knnnynnnnk...","...knnnnnnynk...","....knnnnnnk....",".....kkkkkk....."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -148,6 +149,7 @@
     {"day":34,"date":"2026-11-01","action":"bottle","element":"w35","title":"A little violet bat","lore":"A little violet bat wakes when the lanterns come on. It loops over the quiet grass, chasing moths, and sleeps under the windmill by day.","source":"claude","land":[[33,28],[30,28]]},
     {"day":35,"date":"2026-11-02","action":"bottle","element":"w36","title":"A little holly bush","lore":"A little holly bush grows low and prickly in the grass. Its red berries stay bright all winter, a small feast for the birds.","source":"claude","land":[[31,28],[32,28]]},
     {"day":36,"date":"2026-11-03","action":"bottle","element":"w37","title":"A little red wheelbarrow","lore":"A little red wheelbarrow rests by the path after a day of carrying. Tonight it holds three apples, a pinecone and one sleepy snail.","source":"claude","land":[[34,28],[35,29]]},
-    {"day":37,"date":"2026-11-04","action":"bottle","element":"w38","title":"A little grey heron","lore":"A little grey heron stands on one leg at the water's edge. It watches the golden fish for hours and has not caught it once.","source":"claude","land":[[35,28],[22,33]]}
+    {"day":37,"date":"2026-11-04","action":"bottle","element":"w38","title":"A little grey heron","lore":"A little grey heron stands on one leg at the water's edge. It watches the golden fish for hours and has not caught it once.","source":"claude","land":[[35,28],[22,33]]},
+    {"day":38,"date":"2026-11-05","action":"bottle","element":"w39","title":"A little jar of fireflies","lore":"A little jar of fireflies glows on the grass, its lid left open. The fireflies come and go as they please and always return by dawn.","source":"claude","land":[[22,32],[34,27]]}
   ]
 }
