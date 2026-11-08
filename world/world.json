@@ -32,8 +32,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~.........,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~.......,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -111,7 +111,8 @@
     {"id":"w38","day":37,"kind":"creature","name":"A little grey heron","x":27,"y":28,"sprite":["................","................","........kkkk....","...uuuukeekk....","........keek....",".........kek....",".........kek....","........keek....",".......keeeek...","......keeeeeek..","......kbeeeeeek.",".......kbbbeek..","........kkkkk...",".........k.k....",".........k.k....","........kk.kk..."]},
     {"id":"w39","day":38,"kind":"light","name":"A little jar of fireflies","x":35,"y":29,"sprite":["................","................","................","................",".....kkkkkk.....",".....kuuuuk.....",".....kkkkkk.....","....knnnnnnk....","...knwnnnnnnk...","...knwnnnynnk...","...knnynnnnnk...","...knnnnnynnk...","...knnnynnnnk...","...knnnnnnynk...","....knnnnnnk....",".....kkkkkk....."]},
     {"id":"w40","day":39,"kind":"building","name":"A little striped beach hut","x":24,"y":34,"sprite":["................","................","................",".......kk.......","......krrk......",".....krrrrk.....","....krrrrrrk....","...krrrrrrrrk...","..kkkkkkkkkkkk..","...kbwbwbwbwk...","...kbwbkkkbwk...","...kbwbknkbwk...","...kbwbknkbwk...","...kbwbknkbwk...","..kkkkkkkkkkkk..",".kuuuuuuuuuuuuk."]},
-    {"id":"w41","day":40,"kind":"creature","name":"A little red ladybug","x":29,"y":34,"sprite":["................","................","................","................","......kkkk......",".....kkwkwk.....","....kkkkkkkk....","...krrrrkrrrrk..","..krrkkrkrkkrrk.","..krrkkrkrkkrrk.","..krrrrrkrrrrrk.","..krrrrrkrrrrrk.","..krkkrrkrrkkrk.","...krkrrkrrkrk..","....krrrkrrrk...",".....kkkkkkk...."]}
+    {"id":"w41","day":40,"kind":"creature","name":"A little red ladybug","x":29,"y":34,"sprite":["................","................","................","................","......kkkk......",".....kkwkwk.....","....kkkkkkkk....","...krrrrkrrrrk..","..krrkkrkrkkrrk.","..krrkkrkrkkrrk.","..krrrrrkrrrrrk.","..krrrrrkrrrrrk.","..krkkrrkrrkkrk.","...krkrrkrrkrk..","....krrrkrrrk...",".....kkkkkkk...."]},
+    {"id":"w42","day":41,"kind":"plant","name":"A clump of cattails","x":34,"y":31,"sprite":["................","........k.......",".......kuk......","...k...kuk......","..kuk..kuk..k...","..kuk..kuk.kuk..","..kuk...g..kuk..","..kuk...g..kuk..","...g....g...g...","...g..g.g...g...",".g.g..g.g.g.g...",".g.gg.g.gg.g.g..",".gg.g.gdg.gg.g..","..ggdgdgdggdg...","..dddddddddddd..","...dddddddddd..."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -154,6 +155,7 @@
     {"day":37,"date":"2026-11-04","action":"bottle","element":"w38","title":"A little grey heron","lore":"A little grey heron stands on one leg at the water's edge. It watches the golden fish for hours and has not caught it once.","source":"claude","land":[[35,28],[22,33]]},
     {"day":38,"date":"2026-11-05","action":"bottle","element":"w39","title":"A little jar of fireflies","lore":"A little jar of fireflies glows on the grass, its lid left open. The fireflies come and go as they please and always return by dawn.","source":"claude","land":[[22,32],[34,27]]},
     {"day":39,"date":"2026-11-06","action":"bottle","element":"w40","title":"A little striped beach hut","lore":"A little striped beach hut stands on planks above the sand. Inside wait a folded towel, a bucket and a shell no one has counted yet.","source":"claude","land":[[36,30],[36,29]]},
-    {"day":40,"date":"2026-11-07","action":"bottle","element":"w41","title":"A little red ladybug","lore":"A little red ladybug wanders through the grass, counting her own spots. She always gets six, then starts again to be sure.","source":"claude","land":[[33,27],[35,27]]}
+    {"day":40,"date":"2026-11-07","action":"bottle","element":"w41","title":"A little red ladybug","lore":"A little red ladybug wanders through the grass, counting her own spots. She always gets six, then starts again to be sure.","source":"claude","land":[[33,27],[35,27]]},
+    {"day":41,"date":"2026-11-08","action":"bottle","element":"w42","title":"A clump of cattails","lore":"A clump of cattails grows where the grass meets the shore. When the wind blows, their brown heads nod to the heron as if they agree.","source":"claude","land":[[32,27],[31,27]]}
   ]
 }

@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 40** · 0 wishes granted for 0 people · 40 messages in a bottle · 101 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 41** · 0 wishes granted for 0 people · 41 messages in a bottle · 103 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## November 2026
+
+### <img src="world/sprites/w42.svg" width="40" height="40" alt=""> Day 41 · A clump of cattails
+
+<sub>8 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A clump of cattails grows where the grass meets the shore. When the wind blows, their brown heads nod to the heron as if they agree.
 
 ### <img src="world/sprites/w41.svg" width="40" height="40" alt=""> Day 40 · A little red ladybug
 
