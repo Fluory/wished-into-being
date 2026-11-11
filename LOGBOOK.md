@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 43** · 0 wishes granted for 0 people · 43 messages in a bottle · 107 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 44** · 0 wishes granted for 0 people · 44 messages in a bottle · 109 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## November 2026
+
+### <img src="world/sprites/w45.svg" width="40" height="40" alt=""> Day 44 · A round paper lantern
+
+<sub>11 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A round paper lantern hangs from a wooden post, glowing gold and orange. On the darkest November nights it lights the way home.
 
 ### <img src="world/sprites/w44.svg" width="40" height="40" alt=""> Day 43 · A little blue whale
 
