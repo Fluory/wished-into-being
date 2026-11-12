@@ -33,8 +33,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.......~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~......,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~......,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -115,7 +115,8 @@
     {"id":"w42","day":41,"kind":"plant","name":"A clump of cattails","x":34,"y":31,"sprite":["................","........k.......",".......kuk......","...k...kuk......","..kuk..kuk..k...","..kuk..kuk.kuk..","..kuk...g..kuk..","..kuk...g..kuk..","...g....g...g...","...g..g.g...g...",".g.g..g.g.g.g...",".g.gg.g.gg.g.g..",".gg.g.gdg.gg.g..","..ggdgdgdggdg...","..dddddddddddd..","...dddddddddd..."]},
     {"id":"w43","day":42,"kind":"object","name":"A little picnic basket","x":28,"y":34,"sprite":["................","................","................","................",".....kkkkkk.....","....k......k....","...k........k...","...k........k...",".kkkkkkkkkkkkkk.",".krwrwrwrwrwrwk.","..kuuuuuuuuuuk..","..kukukukukuuk..","..kuuuuuuuuuuk..","...kukukukukk...","...kuuuuuuuuk...","....kkkkkkkk...."]},
     {"id":"w44","day":43,"kind":"water","name":"A little blue whale","x":21,"y":31,"sprite":["................","................",".....w.w........","......w.........","......w.........","...........k.k..","......kkkk.kbk..","....kkbbbbkkbk..","...kbbbbbbbbbk..","..kbkbbbbbbbbk..","..kbbbbbbbbbk...","..kbwwwbbbbk....","...kwwwwkkk.....","....kkkk........",".bb..bbbb..bbb..","................"]},
-    {"id":"w45","day":44,"kind":"light","name":"A round paper lantern","x":34,"y":33,"sprite":["................","...uuuuuuuuu....","...u.....k......","...u.....k......","...u...kkkkk....","...u..kryyyrk...","...u.koyyyyyok..","...u.koyyyyyok..","...u.koyyyyyok..","...u..kryyyrk...","...u...kkkkk....","...u............","...u............","...u............","..uuu...........",".uuuuu.........."]}
+    {"id":"w45","day":44,"kind":"light","name":"A round paper lantern","x":34,"y":33,"sprite":["................","...uuuuuuuuu....","...u.....k......","...u.....k......","...u...kkkkk....","...u..kryyyrk...","...u.koyyyyyok..","...u.koyyyyyok..","...u.koyyyyyok..","...u..kryyyrk...","...u...kkkkk....","...u............","...u............","...u............","..uuu...........",".uuuuu.........."]},
+    {"id":"w46","day":45,"kind":"creature","name":"A little woolly sheep","x":33,"y":29,"sprite":["................","................","................","................","................",".....kk.kk.k....","....kwwkwwkwk...","...kwwwwwwwwwk..","..kkwwwwwwwwwwk.",".kkkkwwwwwwwwwk.",".kwkkwwwwwwwwwk.","..kkkwwwwwwwwek.","....kewwwwwweek.",".....keeeeeeek..",".....k.k..k.k...",".....k.k..k.k..."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -162,6 +163,7 @@
     {"day":41,"date":"2026-11-08","action":"bottle","element":"w42","title":"A clump of cattails","lore":"A clump of cattails grows where the grass meets the shore. When the wind blows, their brown heads nod to the heron as if they agree.","source":"claude","land":[[32,27],[31,27]]},
     {"day":42,"date":"2026-11-09","action":"bottle","element":"w43","title":"A little picnic basket","lore":"A little picnic basket sits in the grass under a checked cloth. No one remembers packing it, but there is always enough for one more.","source":"claude","land":[[36,28],[30,27]]},
     {"day":43,"date":"2026-11-10","action":"bottle","element":"w44","title":"A little blue whale","lore":"A little blue whale visits the shallows when the tide is high. It blows a tiny fountain to greet the sailboat, then dives back out to sea.","source":"claude","land":[[22,31],[36,31]]},
-    {"day":44,"date":"2026-11-11","action":"bottle","element":"w45","title":"A round paper lantern","lore":"A round paper lantern hangs from a wooden post, glowing gold and orange. On the darkest November nights it lights the way home.","source":"claude","land":[[36,27],[37,30]]}
+    {"day":44,"date":"2026-11-11","action":"bottle","element":"w45","title":"A round paper lantern","lore":"A round paper lantern hangs from a wooden post, glowing gold and orange. On the darkest November nights it lights the way home.","source":"claude","land":[[36,27],[37,30]]},
+    {"day":45,"date":"2026-11-12","action":"bottle","element":"w46","title":"A little woolly sheep","lore":"A little woolly sheep grazes in the grass and grows fluffier each week. On cold nights the rabbit and the hedgehog sleep against her side.","source":"claude","land":[[37,29],[37,28]]}
   ]
 }
