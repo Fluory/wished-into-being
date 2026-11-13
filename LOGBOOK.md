@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 45** · 0 wishes granted for 0 people · 45 messages in a bottle · 111 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 46** · 0 wishes granted for 0 people · 46 messages in a bottle · 113 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## November 2026
+
+### <img src="world/sprites/w47.svg" width="40" height="40" alt=""> Day 46 · A little blue umbrella
+
+<sub>13 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A little blue umbrella stands open in the grass, forgotten after a rainy walk. The snail has moved in underneath and calls it home.
 
 ### <img src="world/sprites/w46.svg" width="40" height="40" alt=""> Day 45 · A little woolly sheep
 
