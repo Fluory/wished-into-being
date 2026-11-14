@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 46** · 0 wishes granted for 0 people · 46 messages in a bottle · 113 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 47** · 0 wishes granted for 0 people · 47 messages in a bottle · 115 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## November 2026
+
+### <img src="world/sprites/w48.svg" width="40" height="40" alt=""> Day 47 · A little mushroom house
+
+<sub>14 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A little mushroom house stands in the quiet grass with a red spotted roof. Its one round window glows gold, though no one has seen who lives inside.
 
 ### <img src="world/sprites/w47.svg" width="40" height="40" alt=""> Day 46 · A little blue umbrella
 
