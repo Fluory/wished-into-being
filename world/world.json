@@ -33,8 +33,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~......,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~......,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,....~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -121,7 +121,8 @@
     {"id":"w48","day":47,"kind":"building","name":"A little mushroom house","x":31,"y":28,"sprite":["................","................",".....kkkkkk.....","...kkrrwrrrkk...","..krrrrrrrwrrk..",".krwwrrrrrrrrrk.",".krwwrrrrrwwrrk.",".krrrrrrrrwwrrk.",".kkkkkkkkkkkkkk.","....kwwwwwwk....","....kwyywwwk....","....kwyywkkk....","....kwwwwkuk....","....kwwwwkuk....","....kwwwwkuk....","...kkkkkkkkkk..."]},
     {"id":"w49","day":48,"kind":"creature","name":"A little red fox","x":38,"y":30,"sprite":["................","................",".....k.k........","....krkrk.......","....krrrrk......","...krkrrrk......","..kwwrrrrk......","...kkwwrrk......",".....kwrrrk.....",".....kwrrrrk....","....kwwrrrrk.k..","....kwwrrrrkkrk.","....kwrrrrrkrwk.","....krrrrrrkrrk.","....krkkrrkrrk..","...kkk.kkkkkk..."]},
     {"id":"w50","day":49,"kind":"building","name":"A little glass greenhouse","x":31,"y":30,"sprite":["................","................","................",".......kk.......","......kbbk......",".....kbwbbk.....","....kbwbbbbk....","...kbbbbbbbbk...","..kkkkkkkkkkkk..","..kbwkbbkbbkbk..","..kbbkbbkbbkbk..","..kbbkbbkbbkbk..","..kgbkgbkbgkgk..","..kggkggkggkgk..","..kkkkkkkkkkkk..","..kuuuuuuuuuuk.."]},
-    {"id":"w51","day":50,"kind":"object","name":"A little birthday cake","x":31,"y":33,"sprite":["................","................","................",".....y..y..y....",".....w..w..w....","...kkkkkkkkkkk..","..kwwwwwwwwwwwk.","..kwrwwwrwwwrwk.","..kpppppppppppk.","..kpppppppppppk.","..kwwwwwwwwwwwk.","..kpppppppppppk.","..kpppppppppppk.",".kkkkkkkkkkkkkk.",".keeeeeeeeeeeek.","..kkkkkkkkkkkk.."]}
+    {"id":"w51","day":50,"kind":"object","name":"A little birthday cake","x":31,"y":33,"sprite":["................","................","................",".....y..y..y....",".....w..w..w....","...kkkkkkkkkkk..","..kwwwwwwwwwwwk.","..kwrwwwrwwwrwk.","..kpppppppppppk.","..kpppppppppppk.","..kwwwwwwwwwwwk.","..kpppppppppppk.","..kpppppppppppk.",".kkkkkkkkkkkkkk.",".keeeeeeeeeeeek.","..kkkkkkkkkkkk.."]},
+    {"id":"w52","day":51,"kind":"creature","name":"A little robin","x":29,"y":28,"sprite":["................","................","................","................","......kkkk......",".....kuuuuk.....","....kukuuuuk....","..kkuuuuuuuk....","....krrruuuuk...","....krrrruuuuk..","....krrrruuuuuk.",".....krrruuuuk..","......kkkkkkuk..","........k.k.kk..","........k.k.....",".......kk.kk...."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -174,6 +175,7 @@
     {"day":47,"date":"2026-11-14","action":"bottle","element":"w48","title":"A little mushroom house","lore":"A little mushroom house stands in the quiet grass with a red spotted roof. Its one round window glows gold, though no one has seen who lives inside.","source":"claude","land":[[37,31],[22,34]]},
     {"day":48,"date":"2026-11-15","action":"bottle","element":"w49","title":"A little red fox","lore":"A little red fox sits very still in the quiet grass, tail curled around her paws. She is only watching the owl, and pretends not to notice the rabbit.","source":"claude","land":[[37,27],[38,28]]},
     {"day":49,"date":"2026-11-16","action":"bottle","element":"w50","title":"A little glass greenhouse","lore":"A little glass greenhouse catches the last warm light of autumn. Inside, small green shoots wait for spring and the windows fog up every morning.","source":"claude","land":[[38,27],[38,31]]},
-    {"day":50,"date":"2026-11-17","action":"bottle","element":"w51","title":"A little birthday cake","lore":"A little birthday cake with three candles waits by the well. The island is fifty days old, and every creature gets one crumb.","source":"claude","land":[[39,30],[39,29]]}
+    {"day":50,"date":"2026-11-17","action":"bottle","element":"w51","title":"A little birthday cake","lore":"A little birthday cake with three candles waits by the well. The island is fifty days old, and every creature gets one crumb.","source":"claude","land":[[39,30],[39,29]]},
+    {"day":51,"date":"2026-11-18","action":"bottle","element":"w52","title":"A little robin","lore":"A little robin hops along the path with a bright red breast. She sings first each morning, before even the owl has gone to sleep.","source":"claude","land":[[39,28],[40,29]]}
   ]
 }
