@@ -100,6 +100,8 @@ votes, brands, rule changes – run on every pull request. Found a way around th
 
 ## The website
 
+**Live:** [wished-into-being.vercel.app](https://wished-into-being.vercel.app)
+
 A Next.js site shows the island at night in 3D – one persistent WebGL canvas stays alive behind every page.
 Every wish is a little voxel figure that turns to face you like paper theatre, lanterns cast pools of light,
 and the sky holds a golden star for every waiting wish. Walk the island on a pixel map with a timeline,
@@ -178,3 +180,9 @@ nicht vertrauenswürdig: Ein nur lesender Wish-Reader kopiert sie, der Code prü
 
 Code: [MIT](LICENSE) · Island (world data, sprites, images, logbook – including the wishes): [CC BY 4.0](world/LICENSE.md) ·
 Built on the [fluory development system](https://github.com/Fluory) – `AGENTS.md`, `docs/ARCHITEKTUR.md`.
+
+---
+
+Made by [Florian Hein](https://github.com/Fluory) in Heilbronn. The same way of working – rules in code,
+an AI routine inside guard rails, CI as the gate – is what I use to build software prototypes for
+companies: [see my website](https://final-portfolio-website-ten.vercel.app/en/).
