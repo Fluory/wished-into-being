@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 51** · 0 wishes granted for 0 people · 51 messages in a bottle · 123 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 52** · 0 wishes granted for 0 people · 52 messages in a bottle · 125 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## November 2026
+
+### <img src="world/sprites/w53.svg" width="40" height="40" alt=""> Day 52 · A slender birch tree
+
+<sub>19 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A slender birch tree stands with a white trunk striped in black. In the moonlight it is the brightest thing on the island that does not glow.
 
 ### <img src="world/sprites/w52.svg" width="40" height="40" alt=""> Day 51 · A little robin
 
