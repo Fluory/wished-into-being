@@ -35,8 +35,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~..........~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~......,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,....~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,.....~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~..,,,.,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -123,7 +123,8 @@
     {"id":"w50","day":49,"kind":"building","name":"A little glass greenhouse","x":31,"y":30,"sprite":["................","................","................",".......kk.......","......kbbk......",".....kbwbbk.....","....kbwbbbbk....","...kbbbbbbbbk...","..kkkkkkkkkkkk..","..kbwkbbkbbkbk..","..kbbkbbkbbkbk..","..kbbkbbkbbkbk..","..kgbkgbkbgkgk..","..kggkggkggkgk..","..kkkkkkkkkkkk..","..kuuuuuuuuuuk.."]},
     {"id":"w51","day":50,"kind":"object","name":"A little birthday cake","x":31,"y":33,"sprite":["................","................","................",".....y..y..y....",".....w..w..w....","...kkkkkkkkkkk..","..kwwwwwwwwwwwk.","..kwrwwwrwwwrwk.","..kpppppppppppk.","..kpppppppppppk.","..kwwwwwwwwwwwk.","..kpppppppppppk.","..kpppppppppppk.",".kkkkkkkkkkkkkk.",".keeeeeeeeeeeek.","..kkkkkkkkkkkk.."]},
     {"id":"w52","day":51,"kind":"creature","name":"A little robin","x":29,"y":28,"sprite":["................","................","................","................","......kkkk......",".....kuuuuk.....","....kukuuuuk....","..kkuuuuuuuk....","....krrruuuuk...","....krrrruuuuk..","....krrrruuuuuk.",".....krrruuuuk..","......kkkkkkuk..","........k.k.kk..","........k.k.....",".......kk.kk...."]},
-    {"id":"w53","day":52,"kind":"plant","name":"A slender birch tree","x":27,"y":31,"sprite":["................",".....kkkkk......","....kgggggk.....","...kgdggggdk....","..kgggggdgggk...","..kgdgggggggk...","..kggggdggdgk...","...kgggggggk....","....kkkwkkk.....","......kwk.......","......kkk.......","......kwk.......","......kwk.......","......kkk.......","......kwk.......","....dgkwkgd....."]}
+    {"id":"w53","day":52,"kind":"plant","name":"A slender birch tree","x":27,"y":31,"sprite":["................",".....kkkkk......","....kgggggk.....","...kgdggggdk....","..kgggggdgggk...","..kgdgggggggk...","..kggggdggdgk...","...kgggggggk....","....kkkwkkk.....","......kwk.......","......kkk.......","......kwk.......","......kwk.......","......kkk.......","......kwk.......","....dgkwkgd....."]},
+    {"id":"w54","day":53,"kind":"object","name":"A little red sled","x":32,"y":28,"sprite":["................","................","................","................","................","................","................","................","................","..uu............","...ukkkkkkkkkk..","...krwrrrrrrrk..","...kkkkkkkkkkk..",".k..k...k...k...",".k..k...k...k...","..kkkkkkkkkkkkk."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -178,6 +179,7 @@
     {"day":49,"date":"2026-11-16","action":"bottle","element":"w50","title":"A little glass greenhouse","lore":"A little glass greenhouse catches the last warm light of autumn. Inside, small green shoots wait for spring and the windows fog up every morning.","source":"claude","land":[[38,27],[38,31]]},
     {"day":50,"date":"2026-11-17","action":"bottle","element":"w51","title":"A little birthday cake","lore":"A little birthday cake with three candles waits by the well. The island is fifty days old, and every creature gets one crumb.","source":"claude","land":[[39,30],[39,29]]},
     {"day":51,"date":"2026-11-18","action":"bottle","element":"w52","title":"A little robin","lore":"A little robin hops along the path with a bright red breast. She sings first each morning, before even the owl has gone to sleep.","source":"claude","land":[[39,28],[40,29]]},
-    {"day":52,"date":"2026-11-19","action":"bottle","element":"w53","title":"A slender birch tree","lore":"A slender birch tree stands with a white trunk striped in black. In the moonlight it is the brightest thing on the island that does not glow.","source":"claude","land":[[39,27],[40,28]]}
+    {"day":52,"date":"2026-11-19","action":"bottle","element":"w53","title":"A slender birch tree","lore":"A slender birch tree stands with a white trunk striped in black. In the moonlight it is the brightest thing on the island that does not glow.","source":"claude","land":[[39,27],[40,28]]},
+    {"day":53,"date":"2026-11-20","action":"bottle","element":"w54","title":"A little red sled","lore":"A little red sled waits in the grass for the first snow. Until then the rabbit sits on it, pretending to fly downhill.","source":"claude","land":[[40,30],[39,31]]}
   ]
 }
