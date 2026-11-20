@@ -5,6 +5,10 @@ Only what changes **in the product** – the daily wishes live in [LOGBOOK.md](L
 
 ## [Unreleased]
 
+### Security
+- Lockfile: `next` 16.3.6 → 16.4.6, `zod` and `source-map-js` patched (`npm audit fix`, no `package.json` change; one critical and two high advisories in production dependencies).
+- The daily auto-merge only merges the exact commit the check ran on (`--match-head-commit`); a later push to the pull request makes the merge fail instead of slipping through unchecked.
+
 ### Added
 - Island engine: 16 × 16 sprites in a fifteen-colour palette with checks, six kinds with room that grows with the land, a sea that raises two tiles of shore every dawn (grass and beach derived from the land, harbours kept open around boats), placement hints, messages in a bottle as the fallback, and a validator that replays every dawn and every wish.
 - Wish flow: an issue form, labels as code, the read-only `wish-reader` agent, `npm run day -- wishes` to check and rank wishes in code, fixed wording for granted, waiting and declined wishes, the wisher as co-author of the day's commit.
