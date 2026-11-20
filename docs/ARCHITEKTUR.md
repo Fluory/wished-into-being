@@ -82,7 +82,7 @@ flowchart LR
 - **GitHub** – repository, issues (wishes), Actions (CI, label sync, monthly timelapse release), pull requests.
 - **Vercel** – static hosting of the website (Hobby). Imprint data as environment variables.
 - **Claude routine** (Claude Code in the cloud) – runs `ROUTINE.md` daily at 08:59 Europe/Berlin.
-- Sister islands (`Fluory/one-tile-a-day`, `Fluory/Grow`) – their README images are fetched server-side at build time (ISR, 6 h) and inlined.
+- Sister islands (`Fluory/one-tile-a-day`, `Fluory/Grow`) – their README images are fetched server-side at build time (no revalidation – refreshed with the daily deploy) and inlined.
 
 ## Decisions (mini ADRs)
 
@@ -121,3 +121,11 @@ flowchart LR
 - **Decision:** before every day's wish the sea raises two free shore tiles (a fixed field per island shapes capes and bays, never next to a water wish); grass and sand are derived from the land; room per kind grows by more than one place per tile in total.
 - **Why:** growth that only happened when a wish found no tile locked the island up after a few months; with steady growth some kind always has room and half of the island stays open.
 - **Rejected:** one tile per day (a packed inventory grid), growth on demand (deadlock), stored grass/sand choices (history would need more rules).
+
+### ADR-7 · 2026-11-20 · Fully static build – no Vercel compute per request ("Fast Origin Transfer")
+
+- **Context:** the owner's Vercel Hobby account was paused after exceeding 10 GB Fast Origin Transfer. Vercel: "Fast Origin Transfer is incurred when using several Vercel products including Vercel Functions, Middleware, Blob and Data Cache (used through ISR)"; "Usage is incurred on both the input and output data transfer" (https://vercel.com/docs/manage-cdn-usage, read 2026-11-20). Static files are served by the CDN and do not count.
+- **Cause here:** the sister-island fetch on `/` used `next: { revalidate: 21_600 }`, so the build reported `/` as ISR (revalidate 6 h). The home page is the largest page and every page prefetches it through the header link, so its HTML and RSC reached the ISR cache instead of the static CDN path.
+- **Decision:** the fetch runs at build time only; the site redeploys once a day anyway. Measured on a local production build, typical visit (6 pages, `npm run measure:origin`): 0.437 MB of ISR traffic before → 0 MB after. Real numbers: Vercel → Usage → Fast Origin Transfer.
+- **Rules for future changes:** (1) every route stays prerendered without `revalidate`, `force-dynamic`, request-time APIs or server actions, and dynamic segments keep `dynamicParams = false`; (2) no `middleware.ts`/`proxy.ts` – if one is ever needed, its `matcher` covers only the paths that need it.
+- **Guard:** `npm run verify` ends with `npm run check:static` (reads the build output, fails on ISR, per-request routes or middleware); `src/app/static.test.ts` catches the usual causes in source.
