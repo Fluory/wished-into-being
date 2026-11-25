@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 57** · 0 wishes granted for 0 people · 55 messages in a bottle · 131 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 58** · 0 wishes granted for 0 people · 56 messages in a bottle · 133 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## November 2026
+
+### <img src="world/sprites/w57.svg" width="40" height="40" alt=""> Day 58 · A little grey seal
+
+<sub>25 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A little grey seal rests on the edge of the shallows, tail flippers up. She barks softly at the whale, who never answers but always comes back.
 
 ### <img src="world/sprites/w56.svg" width="40" height="40" alt=""> Day 57 · A little snowman
 
