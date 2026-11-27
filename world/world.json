@@ -35,8 +35,8 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~......,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,......~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,,.......~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~.,,,,,,,,,,,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~..,,,.,,,,..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -127,7 +127,8 @@
     {"id":"w54","day":53,"kind":"object","name":"A little red sled","x":32,"y":28,"sprite":["................","................","................","................","................","................","................","................","................","..uu............","...ukkkkkkkkkk..","...krwrrrrrrrk..","...kkkkkkkkkkk..",".k..k...k...k...",".k..k...k...k...","..kkkkkkkkkkkkk."]},
     {"id":"w55","day":56,"kind":"creature","name":"A little grey mouse","x":22,"y":33,"sprite":["................","................","................","................","................","................","................","......kk.kk.....",".....kppkppk....","....keeeeeeek...","..kkeeekeeeeek..",".kpeeeeeeeeeeek.","..kkeeeeeeeeeek.","....keeeeeeeek..",".....kkkkkkkk.k.",".....k..k...kk.."]},
     {"id":"w56","day":57,"kind":"object","name":"A little snowman","x":30,"y":27,"sprite":["................","......kkkk......","......kkkk......",".....kkkkkk.....",".....kwwwwk.....","....kwkwwkwk....","....kwwwoowk....",".....kwwwwk.....","....krrrrrrk....","...kwwwrwwwwk...","..kwwwwrwkwwwk..","..kwwwwwwwwwek..","..kwwwwkwwwwek..","..kewwwwwwweek..","...keeeeeeeek...","....kkkkkkkk...."]},
-    {"id":"w57","day":58,"kind":"water","name":"A little grey seal","x":34,"y":26,"sprite":["................","................","................","................","................","................","................","...kkkk.........","..keeeek........",".keekeeek.......",".kweeeeeek......","..keeeeeeekk.kk.","..keeeeeeeeekek.","...kwweeeeeeek..","....kkkkkkkkk...",".bb..bbbbb..bb.."]}
+    {"id":"w57","day":58,"kind":"water","name":"A little grey seal","x":34,"y":26,"sprite":["................","................","................","................","................","................","................","...kkkk.........","..keeeek........",".keekeeek.......",".kweeeeeek......","..keeeeeeekk.kk.","..keeeeeeeeekek.","...kwweeeeeeek..","....kkkkkkkkk...",".bb..bbbbb..bb.."]},
+    {"id":"w58","day":60,"kind":"creature","name":"A little green turtle","x":24,"y":35,"sprite":["................","................","................","................","................","................","................","................","................","......kkkkk.....",".....kgdgdgk....",".kk.kdgdgdgdk...",".kgkkgdgdgdgdk..",".kggkkkkkkkkkkk.","..kk.kgk...kgk..",".....kk.....kk.."]}
   ],
   "days": [
     {"day":0,"date":"2026-09-28","action":"genesis","element":"w1","title":"A wishing well on a small island","lore":"Somebody has to make the first wish. The well is ready when you are.","source":"genesis"},
@@ -186,6 +187,7 @@
     {"day":53,"date":"2026-11-20","action":"bottle","element":"w54","title":"A little red sled","lore":"A little red sled waits in the grass for the first snow. Until then the rabbit sits on it, pretending to fly downhill.","source":"claude","land":[[40,30],[39,31]]},
     {"day":56,"date":"2026-11-23","action":"bottle","element":"w55","title":"A little grey mouse","lore":"A little grey mouse lives under the picnic basket. Each night she carries one crumb home and leaves one for the robin.","source":"claude","land":[[40,27],[41,28]]},
     {"day":57,"date":"2026-11-24","action":"bottle","element":"w56","title":"A little snowman","lore":"A little snowman stands in the grass with a red scarf and a carrot nose. Nobody knows where the snow came from, but the red sled is very pleased.","source":"claude","land":[[41,29],[41,30]]},
-    {"day":58,"date":"2026-11-25","action":"bottle","element":"w57","title":"A little grey seal","lore":"A little grey seal rests on the edge of the shallows, tail flippers up. She barks softly at the whale, who never answers but always comes back.","source":"claude","land":[[40,31],[42,29]]}
+    {"day":58,"date":"2026-11-25","action":"bottle","element":"w57","title":"A little grey seal","lore":"A little grey seal rests on the edge of the shallows, tail flippers up. She barks softly at the whale, who never answers but always comes back.","source":"claude","land":[[40,31],[42,29]]},
+    {"day":60,"date":"2026-11-27","action":"bottle","element":"w58","title":"A little green turtle","lore":"A little green turtle walks very slowly from the shore to the lighthouse. She set out last spring and is quite sure she will arrive by summer.","source":"claude","land":[[42,30],[41,31]]}
   ]
 }
