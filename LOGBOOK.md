@@ -4,9 +4,15 @@
 > ([ROUTINE.md](ROUTINE.md)). The single source of truth is [`world/world.json`](world/world.json);
 > this file is generated from it.
 
-**Day 60** · 0 wishes granted for 0 people · 57 messages in a bottle · 135 tiles of land · 0 stars still waiting · founded 28 Sep 2026
+**Day 61** · 0 wishes granted for 0 people · 58 messages in a bottle · 137 tiles of land · 0 stars still waiting · founded 28 Sep 2026
 
 ## November 2026
+
+### <img src="world/sprites/w59.svg" width="40" height="40" alt=""> Day 61 · A little blue teapot
+
+<sub>28 Nov 2026 · a message in a bottle from the islanders</sub>
+
+> A little blue teapot sits in the grass, still warm. On cold evenings the mouse and the robin share one cup of mint tea between them.
 
 ### <img src="world/sprites/w58.svg" width="40" height="40" alt=""> Day 60 · A little green turtle
 
